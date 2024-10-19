@@ -1,18 +1,143 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxwj846bjca2"]
+[gd_scene load_steps=25 format=3 uid="uid://cxwj846bjca2"]
 
 [ext_resource type="Script" path="res://scripts/armadilha_chao.gd" id="1_3xmyd"]
-[ext_resource type="Texture2D" uid="uid://ojbianr18fjo" path="res://assets/espinhos_teste.png" id="2_kgegh"]
 [ext_resource type="Texture2D" uid="uid://8w51h81jn3a0" path="res://assets/antes_espinhos_teste.png" id="3_4x4xa"]
+[ext_resource type="Texture2D" path="res://assets/Animation_spike1.png" id="3_ql23c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvjc7"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 112, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hybrd"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 32, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr6im"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 16, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsgb6"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 0, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4d64"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 0, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krjx0"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 0, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5e63s"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 16, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbofk"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 32, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oquqy"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 48, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7aidx"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 64, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipljy"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 80, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwwyo"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 96, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxiu0"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 112, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vswlb"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 48, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17hlw"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 16, 256, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo48p"]
+atlas = ExtResource("3_ql23c")
+region = Rect2(0, 0, 256, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_62jgt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_kgegh")
+"texture": SubResource("AtlasTexture_xvjc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hybrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr6im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rsgb6")
+}],
+"loop": false,
+"name": &"descendo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4d64")
 }],
 "loop": true,
 "name": &"machucando",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krjx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5e63s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbofk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oquqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7aidx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipljy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwwyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxiu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxiu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxiu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vswlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17hlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo48p")
+}],
+"loop": false,
+"name": &"subindo",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -52,21 +177,33 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"surgindo"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
-[sub_resource type="Animation" id="Animation_em2af"]
-resource_name = "life_span"
-length = 2.0
+[sub_resource type="Animation" id="Animation_455k4"]
+resource_name = "spikes"
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"times": PackedFloat32Array(0, 1, 2.5, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -75,30 +212,42 @@ tracks/1/path = NodePath("AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.6),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [&"surgindo", &"machucando"]
+"values": [&"machucando", &"subindo"]
 }
-tracks/2/type = "method"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".")
+tracks/2/path = NodePath("CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2),
+"times": PackedFloat32Array(0, 1.13333, 2.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.7),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"destroy"
+"method": &"queue_free"
 }]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ict4c"]
 _data = {
 "RESET": SubResource("Animation_3jkjd"),
-"life_span": SubResource("Animation_em2af")
+"spikes": SubResource("Animation_455k4")
 }
 
 [node name="Armadilha-chao" type="Area2D"]
@@ -106,9 +255,10 @@ position = Vector2(94, 62)
 script = ExtResource("1_3xmyd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 sprite_frames = SubResource("SpriteFrames_62jgt")
 animation = &"surgindo"
-autoplay = "surgindo"
+autoplay = "machucando"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
@@ -120,4 +270,4 @@ disabled = true
 libraries = {
 "": SubResource("AnimationLibrary_ict4c")
 }
-autoplay = "life_span"
+autoplay = "spikes"
