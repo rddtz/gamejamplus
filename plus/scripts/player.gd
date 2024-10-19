@@ -23,12 +23,21 @@ const STIME = 5
 var player_has_shield = true
 var timer_shield = 0
 
+var moving := false
+
+func move_false():
+	moving = false
 
 func move():
 	time_mov = TIME
 	rayan.force_raycast_update()
-	if !rayan.is_colliding():	
-		position += rayan.target_position
+	if !rayan.is_colliding():
+		if !moving:
+			moving = true
+			var tween = create_tween()
+			tween.tween_property(self, "position", position + rayan.target_position, .1)
+			tween.tween_callback(move_false)
+		#position += rayan.target_position
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -97,7 +106,8 @@ func _on_dano_area_entered(area: Area2D) -> void:
 	else:
 		get_tree().reload_current_scene()
 
-
+func _input(event: InputEvent) -> void:
+	pass
 
 
 	#get_tree().reload_current_scene()
