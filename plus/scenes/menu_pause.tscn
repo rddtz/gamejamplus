@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" path="res://shaders/menu_pause.gdshader" id="1_a72j3"]
 [ext_resource type="Script" path="res://scripts/menu_pause.gd" id="1_pw61s"]
-[ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="1_t4ocs"]
+[ext_resource type="FontFile" uid="uid://00ch3p5s45x2" path="res://assets/fonts/BOD_BLAI.TTF" id="3_8yci8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ryv2"]
 shader = ExtResource("1_a72j3")
@@ -112,7 +112,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("1_t4ocs")
+theme_override_fonts/font = ExtResource("3_8yci8")
 theme_override_font_sizes/font_size = 50
 text = "PAUSED"
 horizontal_alignment = 1

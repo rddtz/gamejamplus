@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cl05qearacoj8"]
+[gd_scene load_steps=14 format=3 uid="uid://cl05qearacoj8"]
 
 [ext_resource type="Script" path="res://scripts/final.gd" id="1_cyc0y"]
 [ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="1_o1u10"]
+[ext_resource type="FontFile" uid="uid://00ch3p5s45x2" path="res://assets/fonts/BOD_BLAI.TTF" id="2_0g3hh"]
 [ext_resource type="Script" path="res://scripts/line_edit.gd" id="2_isjwd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cg606"]
@@ -74,21 +75,21 @@ theme_override_constants/separation = 4
 
 [node name="Label" type="Label" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_o1u10")
-theme_override_font_sizes/font_size = 37
-text = "Insira as iniciais"
+theme_override_fonts/font = ExtResource("2_0g3hh")
+theme_override_font_sizes/font_size = 35
+text = "INSIRA AS INICIAIS"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 9
 
 [node name="LineEdit" type="LineEdit" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_0smak")
 theme_override_constants/caret_width = 3
-theme_override_fonts/font = ExtResource("1_o1u10")
-theme_override_font_sizes/font_size = 50
+theme_override_fonts/font = ExtResource("2_0g3hh")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_o6ntu")
 max_length = 3
 caret_blink = true
@@ -99,21 +100,21 @@ script = ExtResource("2_isjwd")
 [node name="enviar" type="Button" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("1_o1u10")
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("2_0g3hh")
+theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_driek")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ruktu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6lecd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_32uh0")
-text = "Enviar"
+text = "ENVIAR"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Container/HBoxContainer"]
 layout_mode = 2
 
 [node name="ScorePlayer" type="Label" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_o1u10")
-theme_override_font_sizes/font_size = 37
+theme_override_fonts/font = ExtResource("2_0g3hh")
+theme_override_font_sizes/font_size = 35
 text = "SCORE
 "
 
@@ -133,14 +134,14 @@ theme_override_constants/separation = 320
 
 [node name="nomes" type="Label" parent="VBoxContainer/Container2/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_o1u10")
+theme_override_fonts/font = ExtResource("2_0g3hh")
 theme_override_font_sizes/font_size = 30
-text = "Nomes"
+text = "NOMES"
 
 [node name="scores" type="Label" parent="VBoxContainer/Container2/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_o1u10")
+theme_override_fonts/font = ExtResource("2_0g3hh")
 theme_override_font_sizes/font_size = 30
-text = "Scores"
+text = "SCORES"
 
 [connection signal="pressed" from="VBoxContainer/Container/HBoxContainer/VBoxContainer/HBoxContainer/enviar" to="." method="_on_enviar_pressed"]

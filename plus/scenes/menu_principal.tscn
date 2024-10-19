@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://1cp5hnyn2mh5"]
 
 [ext_resource type="Script" path="res://scripts/menu_principal.gd" id="1_k1ykh"]
-[ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="1_m0fhc"]
 [ext_resource type="Texture2D" uid="uid://dfwirun0i1scp" path="res://assets/title_screen.png" id="2_cdfrj"]
+[ext_resource type="FontFile" uid="uid://00ch3p5s45x2" path="res://assets/fonts/BOD_BLAI.TTF" id="3_oy2oy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x5fp"]
 bg_color = Color(0.054902, 0.054902, 0.0588235, 1)
@@ -13,25 +13,25 @@ texture = ExtResource("2_cdfrj")
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qc8ai"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u3rxo"]
-bg_color = Color(0.77084, 0.770839, 0.770839, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+bg_color = Color(0.683078, 0.683077, 0.683077, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e1um"]
-bg_color = Color(0.544975, 0.544974, 0.544974, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+bg_color = Color(0.454525, 0.454524, 0.454524, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4m2h"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
+bg_color = Color(0.77084, 0.770839, 0.770839, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
 
 [node name="Menu Principal" type="Control"]
 layout_mode = 3
@@ -86,7 +86,7 @@ theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.295867, 0.295866, 0.295866, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
@@ -94,7 +94,7 @@ theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_m0fhc")
+theme_override_fonts/font = ExtResource("3_oy2oy")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qc8ai")
 theme_override_styles/hover = SubResource("StyleBoxFlat_u3rxo")
@@ -110,7 +110,7 @@ theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.295867, 0.295866, 0.295866, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
@@ -118,7 +118,7 @@ theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_m0fhc")
+theme_override_fonts/font = ExtResource("3_oy2oy")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_qc8ai")
 theme_override_styles/hover = SubResource("StyleBoxFlat_u3rxo")
