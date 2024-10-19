@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cuxa2y5u7l0y2"]
+[gd_scene load_steps=24 format=3 uid="uid://cuxa2y5u7l0y2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pix2n"]
 [ext_resource type="Texture2D" uid="uid://dilvk1j30buuy" path="res://assets/player.webp" id="2_32oxi"]
+[ext_resource type="Texture2D" uid="uid://dxqketygi0qsh" path="res://assets/shining_animation.png" id="4_2x0fn"]
 [ext_resource type="Texture2D" uid="uid://cerb1bxgutxov" path="res://assets/Parry_animation.png" id="4_kyw13"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pejul"]
@@ -49,23 +50,35 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seueo"]
 size = Vector2(12, 14)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fmcng"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_axvx5"]
 atlas = ExtResource("4_kyw13")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mvn8t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewpof"]
 atlas = ExtResource("4_kyw13")
-region = Rect2(0, 16, 16, 16)
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d6u4j"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_23uhm"]
 atlas = ExtResource("4_kyw13")
-region = Rect2(0, 16, 16, 16)
+region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_x6d2k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kefxn"]
+atlas = ExtResource("4_kyw13")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf12r"]
+atlas = ExtResource("4_kyw13")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2loey"]
+atlas = ExtResource("4_kyw13")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u6gmb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fmcng")
+"texture": null
 }],
 "loop": true,
 "name": &"null",
@@ -73,7 +86,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mvn8t")
+"texture": SubResource("AtlasTexture_axvx5")
 }],
 "loop": true,
 "name": &"shield_front",
@@ -81,7 +94,70 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d6u4j")
+"texture": SubResource("AtlasTexture_ewpof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23uhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kefxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gf12r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2loey")
+}],
+"loop": true,
+"name": &"sucess_parry",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgdhx"]
+atlas = ExtResource("4_2x0fn")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d0d2"]
+atlas = ExtResource("4_2x0fn")
+region = Rect2(16, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwkb1"]
+atlas = ExtResource("4_2x0fn")
+region = Rect2(32, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqo1j"]
+atlas = ExtResource("4_2x0fn")
+region = Rect2(48, 0, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0obsl"]
+atlas = ExtResource("4_2x0fn")
+region = Rect2(64, 0, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mp70i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"null",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgdhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d0d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwkb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqo1j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0obsl")
 }],
 "loop": true,
 "name": &"sucess_parry",
@@ -114,8 +190,14 @@ shape = SubResource("RectangleShape2D_seueo")
 
 [node name="Escudo" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, 11)
-sprite_frames = SubResource("SpriteFrames_x6d2k")
+sprite_frames = SubResource("SpriteFrames_u6gmb")
 animation = &"sucess_parry"
 autoplay = "sucess_parry"
+
+[node name="brilho" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 4)
+sprite_frames = SubResource("SpriteFrames_mp70i")
+animation = &"null"
+autoplay = "null"
 
 [connection signal="area_entered" from="Dano" to="." method="_on_dano_area_entered"]

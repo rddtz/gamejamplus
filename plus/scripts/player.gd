@@ -11,13 +11,14 @@ var time_mov := TIME
 @onready var rayan: RayCast2D = $RayCast2D
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 @onready var escudo: AnimatedSprite2D = $Escudo
+@onready var brilho: AnimatedSprite2D = $brilho
 
 var last = ""
 
 const PTIME = 0.3
 var defendendo = false
 var parry_timer = PTIME
-
+var foi_parry = false
 
 const STIME = 5
 var player_has_shield = true
@@ -43,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	
 	if time_mov > 0:
-		time_mov -= delta;
+		time_mov -= delta
 	
 	if !defendendo:
 		if (Input.is_action_pressed("LEFT") and !time_mov):
@@ -76,10 +77,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		defendendo = false
 	
-	if defendendo:
+	if foi_parry:
+		escudo.play("sucess_parry")
+		brilho.play("sucess_parry")
+	elif defendendo:
 		escudo.play("shield_front")
+		brilho.play("null")
 	else:
 		escudo.play("null")
+		brilho.play("null")
 	
 	if parry_timer > 0:
 		parry_timer -= delta
@@ -87,11 +93,13 @@ func _physics_process(delta: float) -> void:
 	if timer_shield > 0:
 		timer_shield -= delta
 	else:
+		foi_parry = false
 		player_has_shield = true
 
 func _on_dano_area_entered(area: Area2D) -> void:
 	if defendendo && parry_timer > 0:
 		print("parry")
+		foi_parry = true
 		defendendo = false
 		player_has_shield = false
 		timer_shield = 1
