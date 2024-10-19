@@ -14,15 +14,14 @@ position = Vector2(116, 99)
 [node name="Player" parent="." instance=ExtResource("2_1m067")]
 position = Vector2(90, 109)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(124, 100)
-scale = Vector2(5, 5)
-zoom = Vector2(4, 4)
-
 [node name="Menu pause" parent="." instance=ExtResource("3_dm2on")]
-offset_left = 226.0
-offset_top = 696.0
-offset_right = 226.0
-offset_bottom = 696.0
+offset_left = 367.0
+offset_top = 849.0
+offset_right = 367.0
+offset_bottom = 849.0
 
 [node name="CRT" parent="." instance=ExtResource("4_na3c3")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(221, 184)
+zoom = Vector2(2.2, 2.2)
