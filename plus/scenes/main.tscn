@@ -31,12 +31,11 @@ offset_right = 367.0
 offset_bottom = 849.0
 
 [node name="CRT" parent="." instance=ExtResource("4_na3c3")]
-visible = false
 
 [node name="Flecha" parent="." instance=ExtResource("6_6c0dv")]
 position = Vector2(380, 107)
 direction = 180
-speed = 180.0
+speed = 240.0
 
 [node name="Explosao" parent="." instance=ExtResource("6_2gsvk")]
 position = Vector2(44, 148)

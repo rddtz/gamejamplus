@@ -1,17 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuxa2y5u7l0y2"]
+[gd_scene load_steps=10 format=3 uid="uid://cuxa2y5u7l0y2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pix2n"]
-[ext_resource type="Texture2D" uid="uid://dov2m5y35j83i" path="res://assets/player.png" id="2_721md"]
+[ext_resource type="Texture2D" uid="uid://dilvk1j30buuy" path="res://assets/player.webp" id="2_32oxi"]
 [ext_resource type="Texture2D" uid="uid://bhx31w3c3knbc" path="res://assets/player-escudo.png" id="3_snh74"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pejul"]
+atlas = ExtResource("2_32oxi")
+region = Rect2(0, 0, 18, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2ech"]
+atlas = ExtResource("2_32oxi")
+region = Rect2(37, 0, 17, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0omsh"]
+atlas = ExtResource("2_32oxi")
+region = Rect2(19, 0, 18, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_617jy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_721md")
+"texture": SubResource("AtlasTexture_pejul")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"down",
 "speed": 5.0
 }, {
 "frames": [{
@@ -20,6 +32,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"shield",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2ech")
+}],
+"loop": true,
+"name": &"side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0omsh")
+}],
+"loop": true,
+"name": &"up",
 "speed": 5.0
 }]
 
@@ -36,10 +64,10 @@ collision_mask = 3
 script = ExtResource("1_pix2n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(51, 29)
+position = Vector2(51, 25)
 sprite_frames = SubResource("SpriteFrames_617jy")
-animation = &"idle"
-autoplay = "idle"
+animation = &"down"
+autoplay = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(51, 29)

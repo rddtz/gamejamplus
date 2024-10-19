@@ -9,22 +9,17 @@ const speed = 16
 const TIME = 10
 var time_mov := TIME
 @onready var rayan: RayCast2D = $RayCast2D
-
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
+var last = ""
 
-
-const PTIME = 0.5
+const PTIME = 0.3
 var defendendo = false
 var parry_timer = PTIME
 
 
-const STIME = 30
+const STIME = 5
 var player_has_shield = true
 var timer_shield = 0
-
-
-#Player status variables
-var vida := 1
 
 
 func move():
@@ -39,18 +34,29 @@ func _physics_process(delta: float) -> void:
 	if time_mov > 0:
 		time_mov -= delta;
 	
-	if (Input.is_action_pressed("LEFT") and !time_mov):
-		rayan.target_position = Vector2(-16,0)
-		move()
-	elif Input.is_action_pressed("RIGHT") and !time_mov:
-		rayan.target_position = Vector2(16,0)
-		move()
-	elif (Input.is_action_pressed("UP") and !time_mov):
-		rayan.target_position = Vector2(0,-16)
-		move()
-	elif (Input.is_action_pressed("DOWN") and !time_mov):
-		rayan.target_position = Vector2(0,16)
-		move()
+	if !defendendo:
+		if (Input.is_action_pressed("LEFT") and !time_mov):
+			rayan.target_position = Vector2(-16,0)
+			animation.flip_h = true
+			animation.play("side")
+			last = "side"
+			move()
+		elif Input.is_action_pressed("RIGHT") and !time_mov:
+			rayan.target_position = Vector2(16,0)
+			animation.flip_h = false
+			animation.play("side")
+			last = "side"
+			move()
+		elif (Input.is_action_pressed("UP") and !time_mov):
+			rayan.target_position = Vector2(0,-16)
+			animation.play("up")
+			last = "up"
+			move()
+		elif (Input.is_action_pressed("DOWN") and !time_mov):
+			rayan.target_position = Vector2(0,16)
+			last = "down"
+			animation.play("down")
+			move()
 	
 	if Input.is_action_pressed("parry_block") && player_has_shield:
 		if !defendendo:
@@ -62,8 +68,8 @@ func _physics_process(delta: float) -> void:
 	if defendendo:
 		animation.play("shield")
 	else:
-		animation.play("idle")
-		
+		animation.play(last)
+	
 	if parry_timer > 0:
 		parry_timer -= delta
 		
@@ -77,19 +83,19 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		print("parry")
 		defendendo = false
 		player_has_shield = false
-		timer_shield = 5
+		timer_shield = 1
 		return
 	elif defendendo:
 		defendendo = false
 		print("block")
 		player_has_shield = false
+		Global.screen_shake(3.0)
 		timer_shield = STIME
 		return
 	else:
 		get_tree().reload_current_scene()
 
 
-	Global.screen_shake(10.0)
 
 
 	#get_tree().reload_current_scene()
