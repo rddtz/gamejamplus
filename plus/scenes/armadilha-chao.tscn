@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/armadilha_chao.gd" id="1_3xmyd"]
 [ext_resource type="Texture2D" uid="uid://8w51h81jn3a0" path="res://assets/antes_espinhos_teste.png" id="3_4x4xa"]
-[ext_resource type="Texture2D" path="res://assets/Animation_spike1.png" id="3_ql23c"]
+[ext_resource type="Texture2D" uid="uid://vkjfgik8j5ar" path="res://assets/Animation_spike1.png" id="3_ql23c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvjc7"]
 atlas = ExtResource("3_ql23c")

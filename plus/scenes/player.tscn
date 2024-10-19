@@ -1,7 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuxa2y5u7l0y2"]
+[gd_scene load_steps=7 format=3 uid="uid://cuxa2y5u7l0y2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pix2n"]
 [ext_resource type="Texture2D" uid="uid://dov2m5y35j83i" path="res://assets/player.png" id="2_721md"]
+[ext_resource type="Texture2D" uid="uid://bhx31w3c3knbc" path="res://assets/player-escudo.png" id="3_snh74"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_617jy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_721md")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_snh74")
+}],
+"loop": true,
+"name": &"shield",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sx1jt"]
 size = Vector2(16, 16)
@@ -15,12 +35,14 @@ collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_pix2n")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(50, 30)
-texture = ExtResource("2_721md")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(51, 29)
+sprite_frames = SubResource("SpriteFrames_617jy")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(50, 30)
+position = Vector2(51, 29)
 shape = SubResource("RectangleShape2D_sx1jt")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -28,9 +50,10 @@ position = Vector2(50, 30)
 target_position = Vector2(0, 19)
 
 [node name="Dano" type="Area2D" parent="."]
+position = Vector2(50, 26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dano"]
-position = Vector2(50, 30)
+position = Vector2(1, 3)
 shape = SubResource("RectangleShape2D_seueo")
 
 [connection signal="area_entered" from="Dano" to="." method="_on_dano_area_entered"]
