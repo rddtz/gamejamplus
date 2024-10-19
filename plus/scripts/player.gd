@@ -42,4 +42,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_dano_area_entered(area: Area2D) -> void:
 	print(area.name)
-	get_tree().reload_current_scene()
+	Global.screen_shake(10.0)
+	#get_tree().reload_current_scene()
