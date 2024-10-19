@@ -1,21 +1,70 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7ihtsplmerbl"]
+[gd_scene load_steps=13 format=3 uid="uid://c7ihtsplmerbl"]
 
 [ext_resource type="Script" path="res://scripts/flecha.gd" id="1_gpbhr"]
 [ext_resource type="Texture2D" uid="uid://c6rjul783wuq0" path="res://assets/Flecha.png" id="1_sb2l6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qsu6x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp4kv"]
 atlas = ExtResource("1_sb2l6")
-region = Rect2(0, 0, 32, 16)
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t35c3"]
+atlas = ExtResource("1_sb2l6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxjio"]
+atlas = ExtResource("1_sb2l6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c108p"]
+atlas = ExtResource("1_sb2l6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7f2v"]
+atlas = ExtResource("1_sb2l6")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcv4b"]
+atlas = ExtResource("1_sb2l6")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dsl8"]
+atlas = ExtResource("1_sb2l6")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2orym"]
+atlas = ExtResource("1_sb2l6")
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3tbx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qsu6x")
+"texture": SubResource("AtlasTexture_xp4kv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t35c3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxjio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c108p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7f2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcv4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dsl8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2orym")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 16.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h6vc3"]
@@ -26,6 +75,8 @@ script = ExtResource("1_gpbhr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g3tbx")
+autoplay = "default"
+frame_progress = 0.996033
 
 [node name="Area2D" type="Area2D" parent="."]
 

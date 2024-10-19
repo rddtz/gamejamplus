@@ -44,4 +44,4 @@ position = Vector2(212, 156)
 [node name="Flecha" parent="." instance=ExtResource("6_guc22")]
 position = Vector2(318, 140)
 direction = 180
-speed = 60.0
+speed = 180.0
