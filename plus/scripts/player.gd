@@ -5,10 +5,14 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const speed = 16
-@onready var rayan: RayCast2D = $RayCast2D
 
 const TIME = 10
 var time_mov := TIME
+@onready var rayan: RayCast2D = $RayCast2D
+
+
+#Player status variables
+var vida := 1
 
 func move():
 	time_mov = TIME
