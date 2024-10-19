@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://c62vvxatsst46"]
+[gd_scene load_steps=9 format=3 uid="uid://c62vvxatsst46"]
 
 [ext_resource type="PackedScene" uid="uid://bqqfwtxj0i78a" path="res://scenes/mapa_exemplo.tscn" id="1_dnd6x"]
 [ext_resource type="PackedScene" uid="uid://cuxa2y5u7l0y2" path="res://scenes/player.tscn" id="2_1m067"]
 [ext_resource type="PackedScene" uid="uid://dd5cfxjs31fh6" path="res://scenes/menu_pause.tscn" id="3_dm2on"]
 [ext_resource type="PackedScene" uid="uid://dmw2g5mla1o18" path="res://scenes/crt.tscn" id="4_na3c3"]
 [ext_resource type="PackedScene" uid="uid://cx4dlkteeowlj" path="res://scenes/explosao.tscn" id="6_2gsvk"]
-[ext_resource type="PackedScene" path="res://scenes/flecha.tscn" id="6_6c0dv"]
-[ext_resource type="PackedScene" path="res://scenes/screenshake.tscn" id="6_s0a3e"]
+[ext_resource type="PackedScene" uid="uid://c7ihtsplmerbl" path="res://scenes/flecha.tscn" id="6_6c0dv"]
+[ext_resource type="PackedScene" uid="uid://cxy7ohkpuha2b" path="res://scenes/screenshake.tscn" id="6_s0a3e"]
+[ext_resource type="PackedScene" uid="uid://dmweoq67j5fjq" path="res://scenes/portao.tscn" id="8_572wc"]
 
 [node name="main" type="Node2D"]
 process_mode = 1
@@ -31,6 +32,7 @@ offset_right = 367.0
 offset_bottom = 849.0
 
 [node name="CRT" parent="." instance=ExtResource("4_na3c3")]
+visible = false
 
 [node name="Flecha" parent="." instance=ExtResource("6_6c0dv")]
 position = Vector2(380, 107)
@@ -39,3 +41,6 @@ speed = 240.0
 
 [node name="Explosao" parent="." instance=ExtResource("6_2gsvk")]
 position = Vector2(44, 148)
+
+[node name="Portao" parent="." instance=ExtResource("8_572wc")]
+position = Vector2(212, 72)

@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://dmweoq67j5fjq"]
+
+[ext_resource type="Texture2D" uid="uid://bn14i85xwh6it" path="res://assets/Gate_animation.png" id="1_n3n8g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwe53"]
+atlas = ExtResource("1_n3n8g")
+region = Rect2(0, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yw5j"]
+atlas = ExtResource("1_n3n8g")
+region = Rect2(0, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_602jb"]
+atlas = ExtResource("1_n3n8g")
+region = Rect2(32, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_045oi"]
+atlas = ExtResource("1_n3n8g")
+region = Rect2(64, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_recia"]
+atlas = ExtResource("1_n3n8g")
+region = Rect2(96, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqtrj"]
+atlas = ExtResource("1_n3n8g")
+region = Rect2(128, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t22he"]
+atlas = ExtResource("1_n3n8g")
+region = Rect2(160, 0, 32, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aebsq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwe53")
+}],
+"loop": true,
+"name": &"aberto",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yw5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_602jb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_045oi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_recia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqtrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t22he")
+}],
+"loop": true,
+"name": &"fechando",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0byoj"]
+size = Vector2(28, 16)
+
+[node name="Portao" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aebsq")
+animation = &"fechando"
+autoplay = "aberto"
+frame = 3
+frame_progress = 0.35561
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -13)
+shape = SubResource("RectangleShape2D_0byoj")
