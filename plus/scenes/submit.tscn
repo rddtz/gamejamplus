@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmh63bijc2gkq"]
+
+[ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="1_qrsqq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cg606"]
+
+[node name="Submit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -333.0
+offset_top = 160.0
+offset_right = 333.0
+offset_bottom = 294.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cg606")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="Container/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qrsqq")
+theme_override_font_sizes/font_size = 31
+text = "Insira seu nome"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Container/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qrsqq")
+theme_override_font_sizes/font_size = 50
+placeholder_text = "NOME"
+alignment = 1
+expand_to_text_length = true
+caret_blink = true
