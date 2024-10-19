@@ -5,15 +5,26 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const speed = 16
+@onready var rayan: RayCast2D = $RayCast2D
+
+func move():
+	rayan.force_raycast_update()
+	if !rayan.is_colliding():	
+		position += rayan.target_position
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-
+	
 	if Input.is_action_just_pressed("LEFT"):
-		position.x -= speed
+		rayan.target_position = Vector2(-16,0)
+		move()
 	elif Input.is_action_just_pressed("RIGHT"):
-		position.x += speed
+		rayan.target_position = Vector2(16,0)
+		move()
 	elif Input.is_action_just_pressed("UP"):
-		position.y -= speed
+		rayan.target_position = Vector2(0,-16)
+		move()
 	elif Input.is_action_just_pressed("DOWN"):
-		position.y += speed
+		rayan.target_position = Vector2(0,16)
+		move()
+		
