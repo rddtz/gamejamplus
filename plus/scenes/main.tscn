@@ -15,6 +15,15 @@ position = Vector2(116, 99)
 [node name="Armadilha-chao" parent="." instance=ExtResource("5_5gg6g")]
 position = Vector2(212, 204)
 
+[node name="Armadilha-chao2" parent="." instance=ExtResource("5_5gg6g")]
+position = Vector2(212, 188)
+
+[node name="Armadilha-chao3" parent="." instance=ExtResource("5_5gg6g")]
+position = Vector2(212, 172)
+
+[node name="Armadilha-chao4" parent="." instance=ExtResource("5_5gg6g")]
+position = Vector2(212, 156)
+
 [node name="Player" parent="." instance=ExtResource("2_1m067")]
 position = Vector2(90, 109)
 
@@ -30,12 +39,3 @@ visible = false
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(221, 184)
 zoom = Vector2(2.2, 2.2)
-
-[node name="Armadilha-chao2" parent="." instance=ExtResource("5_5gg6g")]
-position = Vector2(212, 188)
-
-[node name="Armadilha-chao3" parent="." instance=ExtResource("5_5gg6g")]
-position = Vector2(212, 172)
-
-[node name="Armadilha-chao4" parent="." instance=ExtResource("5_5gg6g")]
-position = Vector2(212, 156)
