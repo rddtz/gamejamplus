@@ -9,7 +9,7 @@ shader = ExtResource("1_a72j3")
 shader_parameter/blur = null
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpoyy"]
-bg_color = Color(0, 0, 0, 0.207843)
+bg_color = Color(0, 0, 0, 0.619608)
 
 [sub_resource type="Animation" id="Animation_vvmse"]
 length = 0.001
@@ -97,22 +97,21 @@ mouse_filter = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -192.0
-offset_top = -152.5
-offset_right = 192.0
-offset_bottom = 40.5
+offset_top = -89.0
+offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wpoyy")
 
 [node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_t4ocs")
 theme_override_font_sizes/font_size = 50
 text = "PAUSED"
