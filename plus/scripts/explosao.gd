@@ -1,5 +1,10 @@
 extends Area2D
 
+var id := "Bomba"
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+var explodiu := false
+@onready var collision: CollisionShape2D = $CollisionShape2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,7 +13,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if sprite.animation == "explosao" && !explodiu:
+		Global.screen_shake(25.0)
+		explodiu = true
+		
+	if sprite.animation == "explosao" && sprite.frame == 2:
+		collision.disabled = false
+	else:
+		collision.disabled = true
 
 func destroy():
 	queue_free()

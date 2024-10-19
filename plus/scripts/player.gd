@@ -97,6 +97,10 @@ func _physics_process(delta: float) -> void:
 		player_has_shield = true
 
 func _on_dano_area_entered(area: Area2D) -> void:
+	
+	if area.id == "Flecha":
+		area.destroy_player()
+	
 	if defendendo && parry_timer > 0:
 		print("parry")
 		foi_parry = true
@@ -112,6 +116,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		timer_shield = STIME
 		return
 	else:
+		#pass
 		get_tree().reload_current_scene()
 
 func _input(event: InputEvent) -> void:
