@@ -32,4 +32,4 @@ target_position = Vector2(0, 19)
 position = Vector2(50, 30)
 shape = SubResource("RectangleShape2D_seueo")
 
-[connection signal="body_entered" from="Dano" to="." method="_on_dano_body_entered"]
+[connection signal="area_entered" from="Dano" to="." method="_on_dano_area_entered"]

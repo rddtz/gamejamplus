@@ -38,3 +38,8 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_pressed("DOWN") or (Input.is_action_pressed("DOWN") and !time_mov):
 		rayan.target_position = Vector2(0,16)
 		move()
+
+
+func _on_dano_area_entered(area: Area2D) -> void:
+	print(area.name)
+	get_tree().reload_current_scene()

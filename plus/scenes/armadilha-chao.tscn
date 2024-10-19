@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxwj846bjca2"]
+[gd_scene load_steps=9 format=3 uid="uid://cxwj846bjca2"]
 
+[ext_resource type="Script" path="res://scripts/armadilha_chao.gd" id="1_3xmyd"]
 [ext_resource type="Texture2D" uid="uid://ojbianr18fjo" path="res://assets/espinhos_teste.png" id="2_kgegh"]
 [ext_resource type="Texture2D" uid="uid://8w51h81jn3a0" path="res://assets/antes_espinhos_teste.png" id="3_4x4xa"]
 
@@ -54,6 +55,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_em2af"]
 resource_name = "life_span"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -61,7 +63,7 @@ tracks/0/path = NodePath("CollisionShape2D:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -73,10 +75,24 @@ tracks/1/path = NodePath("AnimatedSprite2D:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 1.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [&"surgindo", &"machucando"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"destroy"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ict4c"]
@@ -87,6 +103,7 @@ _data = {
 
 [node name="Armadilha-chao" type="Area2D"]
 position = Vector2(94, 62)
+script = ExtResource("1_3xmyd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_62jgt")
@@ -103,3 +120,4 @@ disabled = true
 libraries = {
 "": SubResource("AnimationLibrary_ict4c")
 }
+autoplay = "life_span"
