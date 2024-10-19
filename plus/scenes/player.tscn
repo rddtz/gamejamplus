@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cuxa2y5u7l0y2"]
+[gd_scene load_steps=14 format=3 uid="uid://cuxa2y5u7l0y2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pix2n"]
 [ext_resource type="Texture2D" uid="uid://dilvk1j30buuy" path="res://assets/player.webp" id="2_32oxi"]
-[ext_resource type="Texture2D" uid="uid://bhx31w3c3knbc" path="res://assets/player-escudo.png" id="3_snh74"]
+[ext_resource type="Texture2D" uid="uid://cerb1bxgutxov" path="res://assets/Parry_animation.png" id="4_kyw13"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pejul"]
 atlas = ExtResource("2_32oxi")
@@ -28,14 +28,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_snh74")
-}],
-"loop": true,
-"name": &"shield",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_n2ech")
 }],
 "loop": true,
@@ -55,7 +47,46 @@ animations = [{
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seueo"]
-size = Vector2(16, 16)
+size = Vector2(12, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmcng"]
+atlas = ExtResource("4_kyw13")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvn8t"]
+atlas = ExtResource("4_kyw13")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6u4j"]
+atlas = ExtResource("4_kyw13")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x6d2k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmcng")
+}],
+"loop": true,
+"name": &"null",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvn8t")
+}],
+"loop": true,
+"name": &"shield_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6u4j")
+}],
+"loop": true,
+"name": &"sucess_parry",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -69,6 +100,7 @@ animation = &"down"
 autoplay = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_sx1jt")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -77,7 +109,13 @@ target_position = Vector2(0, 19)
 [node name="Dano" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dano"]
-position = Vector2(1, 3)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_seueo")
+
+[node name="Escudo" type="AnimatedSprite2D" parent="."]
+position = Vector2(6, 11)
+sprite_frames = SubResource("SpriteFrames_x6d2k")
+animation = &"sucess_parry"
+autoplay = "sucess_parry"
 
 [connection signal="area_entered" from="Dano" to="." method="_on_dano_area_entered"]

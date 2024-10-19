@@ -10,6 +10,8 @@ const TIME = 10
 var time_mov := TIME
 @onready var rayan: RayCast2D = $RayCast2D
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
+@onready var escudo: AnimatedSprite2D = $Escudo
+
 var last = ""
 
 const PTIME = 0.3
@@ -41,18 +43,18 @@ func _physics_process(delta: float) -> void:
 			animation.play("side")
 			last = "side"
 			move()
-		elif Input.is_action_pressed("RIGHT") and !time_mov:
+		if Input.is_action_pressed("RIGHT") and !time_mov:
 			rayan.target_position = Vector2(16,0)
 			animation.flip_h = false
 			animation.play("side")
 			last = "side"
 			move()
-		elif (Input.is_action_pressed("UP") and !time_mov):
+		if (Input.is_action_pressed("UP") and !time_mov):
 			rayan.target_position = Vector2(0,-16)
 			animation.play("up")
 			last = "up"
 			move()
-		elif (Input.is_action_pressed("DOWN") and !time_mov):
+		if (Input.is_action_pressed("DOWN") and !time_mov):
 			rayan.target_position = Vector2(0,16)
 			last = "down"
 			animation.play("down")
@@ -66,9 +68,9 @@ func _physics_process(delta: float) -> void:
 		defendendo = false
 	
 	if defendendo:
-		animation.play("shield")
+		escudo.play("shield_front")
 	else:
-		animation.play(last)
+		escudo.play("null")
 	
 	if parry_timer > 0:
 		parry_timer -= delta
