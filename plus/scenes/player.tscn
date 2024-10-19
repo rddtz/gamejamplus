@@ -64,21 +64,17 @@ collision_mask = 3
 script = ExtResource("1_pix2n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(51, 25)
 sprite_frames = SubResource("SpriteFrames_617jy")
 animation = &"down"
 autoplay = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(51, 29)
 shape = SubResource("RectangleShape2D_sx1jt")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(50, 30)
 target_position = Vector2(0, 19)
 
 [node name="Dano" type="Area2D" parent="."]
-position = Vector2(50, 26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dano"]
 position = Vector2(1, 3)
