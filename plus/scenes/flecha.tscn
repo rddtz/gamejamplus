@@ -71,6 +71,7 @@ animations = [{
 size = Vector2(8, 12)
 
 [node name="Flecha" type="Area2D"]
+z_index = 3
 script = ExtResource("1_gpbhr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
