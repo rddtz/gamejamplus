@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://cuxa2y5u7l0y2" path="res://scenes/player.tscn" id="2_1m067"]
 [ext_resource type="PackedScene" uid="uid://dd5cfxjs31fh6" path="res://scenes/menu_pause.tscn" id="3_dm2on"]
 [ext_resource type="PackedScene" uid="uid://dmw2g5mla1o18" path="res://scenes/crt.tscn" id="4_na3c3"]
-[ext_resource type="PackedScene" path="res://scenes/screenshake.tscn" id="6_s0a3e"]
+[ext_resource type="PackedScene" uid="uid://cxy7ohkpuha2b" path="res://scenes/screenshake.tscn" id="6_s0a3e"]
 [ext_resource type="PackedScene" uid="uid://t70qa33oqefg" path="res://scenes/spawner_direita.tscn" id="7_ey8y3"]
 [ext_resource type="PackedScene" uid="uid://dmweoq67j5fjq" path="res://scenes/portao.tscn" id="8_572wc"]
 [ext_resource type="PackedScene" uid="uid://bp28inyowy8io" path="res://scenes/spawner_cima.tscn" id="8_nwirj"]
 [ext_resource type="PackedScene" uid="uid://dvkib5ancnxyi" path="res://scenes/spawner_baixo.tscn" id="9_2xtjm"]
 [ext_resource type="PackedScene" uid="uid://j4j8ai7emk67" path="res://scenes/bomba_spawner.tscn" id="9_4xo4a"]
-[ext_resource type="PackedScene" path="res://scenes/spawner_esquerda.tscn" id="9_316bl"]
+[ext_resource type="PackedScene" uid="uid://bsvo265xw52dv" path="res://scenes/spawner_esquerda.tscn" id="9_316bl"]
 
 [node name="main" type="Node2D"]
 process_mode = 1

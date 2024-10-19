@@ -1,7 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://1cp5hnyn2mh5"]
+[gd_scene load_steps=10 format=3 uid="uid://1cp5hnyn2mh5"]
 
 [ext_resource type="Script" path="res://scripts/menu_principal.gd" id="1_k1ykh"]
 [ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="1_m0fhc"]
+[ext_resource type="Texture2D" uid="uid://dfwirun0i1scp" path="res://assets/title_screen.png" id="2_cdfrj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x5fp"]
+bg_color = Color(0.054902, 0.054902, 0.0588235, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77ck7"]
+texture = ExtResource("2_cdfrj")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qc8ai"]
 
@@ -43,27 +50,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3x5fp")
 
-[node name="Titulo" type="Label" parent="CanvasLayer"]
-anchors_preset = 8
+[node name="Titulo" type="Panel" parent="CanvasLayer"]
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -121.5
-offset_top = -220.5
-offset_right = 121.5
-offset_bottom = -89.5
+offset_left = -345.0
+offset_top = 103.0
+offset_right = 345.0
+offset_bottom = 234.0
 grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_m0fhc")
-theme_override_font_sizes/font_size = 80
-text = "Titulo"
-horizontal_alignment = 1
-vertical_alignment = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_77ck7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
