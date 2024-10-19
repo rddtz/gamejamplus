@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c62vvxatsst46"]
+[gd_scene load_steps=4 format=3 uid="uid://c62vvxatsst46"]
 
-[ext_resource type="PackedScene" uid="uid://bqqfwtxj0i78a" path="res://scenes/mapa_exemplo.tscn" id="1_dnd6x"]
+[ext_resource type="PackedScene" uid="uid://bqqfwtxj0i78a" path="res://mapa_exemplo.tscn" id="1_dnd6x"]
 [ext_resource type="PackedScene" uid="uid://cuxa2y5u7l0y2" path="res://scenes/player.tscn" id="2_1m067"]
+[ext_resource type="PackedScene" uid="uid://dd5cfxjs31fh6" path="res://scenes/menu_pause.tscn" id="3_dm2on"]
 
 [node name="main" type="Node2D"]
+process_mode = 1
 
 [node name="Mapa_exemplo" parent="." instance=ExtResource("1_dnd6x")]
 position = Vector2(116, 99)
@@ -15,3 +17,9 @@ position = Vector2(90, 109)
 position = Vector2(124, 100)
 scale = Vector2(5, 5)
 zoom = Vector2(4, 4)
+
+[node name="Menu pause" parent="." instance=ExtResource("3_dm2on")]
+offset_left = 226.0
+offset_top = 696.0
+offset_right = 226.0
+offset_bottom = 696.0
