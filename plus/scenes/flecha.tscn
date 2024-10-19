@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c7ihtsplmerbl"]
+[gd_scene load_steps=13 format=3 uid="uid://de8y70ljk8ycb"]
 
 [ext_resource type="Script" path="res://scripts/flecha.gd" id="1_gpbhr"]
 [ext_resource type="Texture2D" uid="uid://c6rjul783wuq0" path="res://assets/Flecha.png" id="1_sb2l6"]
@@ -79,7 +79,8 @@ autoplay = "default"
 frame_progress = 0.0888726
 
 [node name="Area2D" type="Area2D" parent="."]
+z_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(12, 0)
+position = Vector2(12, 2)
 shape = SubResource("RectangleShape2D_h6vc3")
