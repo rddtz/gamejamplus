@@ -17,7 +17,8 @@ func _ready() -> void:
 	coloca_scores()
 
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("enviar"):
+		_on_enviar_pressed()
 
 func ordena_gambiarra():
 	final_score = leaders.values()
@@ -79,3 +80,5 @@ func _on_enviar_pressed() -> void:
 		var tmp = [i, leaders[i]]
 		file.store_csv_line(tmp)
 	file.close()
+	
+	Global.call_transition("res://scenes/menu_principal.tscn")
