@@ -10,6 +10,7 @@ size = Vector2(1280, 720)
 center_offset = Vector3(640, 360, 0)
 
 [node name="CRT" type="CanvasLayer"]
+layer = 2
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 material = SubResource("ShaderMaterial_ecdbo")

@@ -14,6 +14,7 @@ var time_mov := TIME
 @onready var brilho: AnimatedSprite2D = $brilho
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+@onready var escudo_animation: AnimationPlayer = $Escudo/AnimationShield
 
 var last = ""
 
@@ -34,6 +35,11 @@ var particle_parry := preload("res://scenes/particle_arrow_parry.tscn")
 
 var shadow_scene := preload("res://scenes/player_shadow.tscn")
 var smoke_scene := preload("res://scenes/smoke.tscn")
+
+var morto := false
+
+func _ready() -> void:
+	animation_player.play("RESET")
 
 func move_false():
 	moving = false
@@ -57,108 +63,122 @@ func move():
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	
-	if time_mov > 0:
-		time_mov -= delta
-	
-	if !defendendo:
-		if (Input.is_action_pressed("LEFT") and !time_mov):
-			rayan.target_position = Vector2(-16,0)
-			animation.flip_h = true
-			animation.play("side")
-			last = "side"
-			move()
-		if Input.is_action_pressed("RIGHT") and !time_mov:
-			rayan.target_position = Vector2(16,0)
-			animation.flip_h = false
-			animation.play("side")
-			last = "side"
-			move()
-		if (Input.is_action_pressed("UP") and !time_mov):
-			rayan.target_position = Vector2(0,-16)
-			animation.play("up")
-			last = "up"
-			move()
-		if (Input.is_action_pressed("DOWN") and !time_mov):
-			rayan.target_position = Vector2(0,16)
-			last = "down"
-			animation.play("down")
-			move()
-	
-	if Input.is_action_just_pressed("parry_block"):
-		clicou = true
-	
-	if Input.is_action_pressed("parry_block") && clicou && player_has_shield:
+	if !morto:
+		if time_mov > 0:
+			time_mov -= delta
+		
 		if !defendendo:
-			parry_timer = PTIME
-			defendendo = true
-	else:
-		defendendo = false
+			if (Input.is_action_pressed("LEFT") and !time_mov):
+				rayan.target_position = Vector2(-16,0)
+				animation.flip_h = true
+				animation.play("side")
+				last = "side"
+				move()
+			if Input.is_action_pressed("RIGHT") and !time_mov:
+				rayan.target_position = Vector2(16,0)
+				animation.flip_h = false
+				animation.play("side")
+				last = "side"
+				move()
+			if (Input.is_action_pressed("UP") and !time_mov):
+				rayan.target_position = Vector2(0,-16)
+				animation.play("up")
+				last = "up"
+				move()
+			if (Input.is_action_pressed("DOWN") and !time_mov):
+				rayan.target_position = Vector2(0,16)
+				last = "down"
+				animation.play("down")
+				move()
+		
+		if Input.is_action_just_pressed("parry_block"):
+			clicou = true
+		
+		if Input.is_action_pressed("parry_block") && clicou && player_has_shield:
+			if !defendendo:
+				parry_timer = PTIME
+				defendendo = true
+		else:
+			defendendo = false
 
-	if defendendo:
-		escudo.play("shield_front")
-		brilho.play("null")
-	elif foi_parry > 0:
-		escudo.play("sucess_parry")
-		brilho.play("sucess_parry")
-	else:
-		escudo.play("null")
-		brilho.play("null")
-	
-	if parry_timer > 0:
-		parry_timer -= delta
+		if defendendo:
+			escudo.play("shield_front")
+			brilho.play("null")
+		elif foi_parry > 0:
+			pass
+		else:
+			escudo.play("null")
+			brilho.play("null")
 		
-	if foi_parry > 0:	
-		foi_parry -= delta
-	
-	if timer_shield > 0:
-		timer_shield -= delta
-	else:
-		player_has_shield = true
-		Global.quebrado = false
+		if parry_timer > 0:
+			parry_timer -= delta
+			
+		if foi_parry > 0:	
+			foi_parry -= delta
 		
-	
-	if moving:
-		var shadow := shadow_scene.instantiate()
-		shadow.position = position
-		shadow.player = self
-		get_tree().current_scene.add_child(shadow, true)
+		if timer_shield > 0:
+			timer_shield -= delta
+		else:
+			player_has_shield = true
+			Global.quebrado = false
+			
+		
+		if moving:
+			var shadow := shadow_scene.instantiate()
+			shadow.position = position
+			shadow.player = self
+			get_tree().current_scene.add_child(shadow, true)
+	else:
+		morte()
 
 func _on_dano_area_entered(area: Area2D) -> void:
 
-	if area.id == "Flecha":
-		area.destroy_player()
-			
-	if defendendo && parry_timer > 0:
-		print("parry")
-		Global.score += 100
-		foi_parry = 1
-		defendendo = false
-		player_has_shield = false
-		parry_part()
-		clicou = false
-		animation_player.stop()
-		animation_player.play("parry")
-		return
-	elif defendendo:
-		defendendo = false
-		print("block")
-		player_has_shield = false
-		Global.screen_shake(3.0)
-		Global.quebrado = true
-		timer_shield = STIME
-		clicou = false
-		return
-	else:
-		#pass
-		#if area.id == "Flecha":
-		#	area.destroy_player()
-		Global.score = 0
-		get_tree().reload_current_scene()
-
+	if !morto:
+		if area.id == "Flecha":
+			area.destroy_player()
+				
+		if defendendo && parry_timer > 0:
+			print("parry")
+			Global.score += 100
+			foi_parry = 1
+			defendendo = false
+			player_has_shield = false
+			parry_part()
+			clicou = false
+			escudo_animation.stop()
+			escudo_animation.play("sucess_parry")
+			animation_player.stop()
+			animation_player.play("parry")
+			brilho.play("sucess_parry")
+			return
+		elif defendendo:
+			defendendo = false
+			print("block")
+			player_has_shield = false
+			Global.screen_shake(5.0)
+			Global.quebrado = true
+			timer_shield = STIME
+			clicou = false
+			return
+		else:
+			#Global.score = 0
+			Global.screen_shake(25.0)
+			escudo.play("null")
+			morto = true
 func _input(event: InputEvent) -> void:
 	pass
 
 func parry_part():
 	Global.create_particles(particle_parry, 20, 30, position.x, position.y, 0, 0, 0, 0)
 
+func morte():
+	if animation.animation != "morte":
+		animation.play("morte")
+		
+
 	#get_tree().reload_current_scene()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animation.animation == "morte":
+		Global.call_transition("res://scenes/final.tscn")

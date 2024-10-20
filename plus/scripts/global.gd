@@ -33,3 +33,7 @@ x : float, y: float, min_x : float, max_x : float, min_y : float, max_y : float)
 		var particle = particles.instantiate()
 		particle.position = Vector2(x + x_temp, y + y_temp)
 		get_tree().current_scene.add_child(particle, true)
+
+
+func call_transition(scene : String):
+	Transition.fade_in(scene)

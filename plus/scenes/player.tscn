@@ -1,10 +1,12 @@
-[gd_scene load_steps=31 format=3 uid="uid://cuxa2y5u7l0y2"]
+[gd_scene load_steps=44 format=3 uid="uid://cuxa2y5u7l0y2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pix2n"]
 [ext_resource type="Shader" path="res://shaders/blink_shader.gdshader" id="2_jhh6m"]
 [ext_resource type="Texture2D" uid="uid://bs6s1tad8j0x3" path="res://assets/Dodge_knight.png" id="2_r61ls"]
 [ext_resource type="Texture2D" uid="uid://dxqketygi0qsh" path="res://assets/shining_animation.png" id="4_2x0fn"]
+[ext_resource type="Texture2D" uid="uid://daopylql2xeoj" path="res://assets/Knight_death-Sheet.png" id="4_hlwls"]
 [ext_resource type="Texture2D" uid="uid://cerb1bxgutxov" path="res://assets/Parry_animation.png" id="4_kyw13"]
+[ext_resource type="Texture2D" uid="uid://bj7t8xn0bqyo6" path="res://assets/barreira.png" id="5_jbw1y"]
 [ext_resource type="AudioStream" uid="uid://bf5tdkwon6qs6" path="res://assets/sons/magias/block.mp3" id="6_76o6w"]
 [ext_resource type="AudioStream" uid="uid://b4ambc0jhyqbt" path="res://assets/sons/magias/parry.mp3" id="7_o14sv"]
 
@@ -16,6 +18,34 @@ shader_parameter/blink_intensity = 0.0
 [sub_resource type="AtlasTexture" id="AtlasTexture_utfpn"]
 atlas = ExtResource("2_r61ls")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obkdf"]
+atlas = ExtResource("4_hlwls")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ogvt"]
+atlas = ExtResource("4_hlwls")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p08ay"]
+atlas = ExtResource("4_hlwls")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qe7ed"]
+atlas = ExtResource("4_hlwls")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8t6v"]
+atlas = ExtResource("4_hlwls")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mptif"]
+atlas = ExtResource("4_hlwls")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a83ix"]
+atlas = ExtResource("4_hlwls")
+region = Rect2(112, 0, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mskja"]
 atlas = ExtResource("2_r61ls")
@@ -34,6 +64,71 @@ animations = [{
 "loop": true,
 "name": &"down",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obkdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ogvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p08ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qe7ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8t6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mptif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a83ix")
+}],
+"loop": false,
+"name": &"morte",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -58,9 +153,14 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seueo"]
 size = Vector2(12, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_axvx5"]
-atlas = ExtResource("4_kyw13")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uow44"]
+shader = ExtResource("2_jhh6m")
+shader_parameter/blink_color = Color(1, 1, 1, 1)
+shader_parameter/blink_intensity = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u10c5"]
+atlas = ExtResource("5_jbw1y")
+region = Rect2(0, 0, 22, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewpof"]
 atlas = ExtResource("4_kyw13")
@@ -94,7 +194,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_axvx5")
+"texture": SubResource("AtlasTexture_u10c5")
 }],
 "loop": true,
 "name": &"shield_front",
@@ -120,6 +220,42 @@ animations = [{
 "name": &"sucess_parry",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_wqdnb"]
+resource_name = "sucess_parry"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/blink_intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fyi7f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/blink_intensity")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yor26"]
+_data = {
+"RESET": SubResource("Animation_fyi7f"),
+"sucess_parry": SubResource("Animation_wqdnb")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bgdhx"]
 atlas = ExtResource("4_2x0fn")
@@ -167,9 +303,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0obsl")
 }],
-"loop": true,
+"loop": false,
 "name": &"sucess_parry",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="Animation" id="Animation_3htlk"]
@@ -234,15 +370,19 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_seueo")
 
 [node name="Escudo" type="AnimatedSprite2D" parent="."]
-position = Vector2(6, 6)
+material = SubResource("ShaderMaterial_uow44")
 sprite_frames = SubResource("SpriteFrames_u6gmb")
 animation = &"shield_front"
-autoplay = "sucess_parry"
+
+[node name="AnimationShield" type="AnimationPlayer" parent="Escudo"]
+libraries = {
+"": SubResource("AnimationLibrary_yor26")
+}
 
 [node name="brilho" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_mp70i")
-animation = &"null"
+animation = &"sucess_parry"
 autoplay = "null"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -256,4 +396,5 @@ stream = ExtResource("6_76o6w")
 [node name="parrySound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_o14sv")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Dano" to="." method="_on_dano_area_entered"]
