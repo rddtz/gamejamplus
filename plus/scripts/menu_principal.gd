@@ -9,8 +9,5 @@ func _on_jogar_pressed() -> void:
 	AudioServer.set_bus_volume_db(mainTheme, 0)
 	Global.call_transition("res://scenes/main.tscn")
 
-
-
-
 func _on_sair_pressed() -> void:
 	get_tree().quit()
