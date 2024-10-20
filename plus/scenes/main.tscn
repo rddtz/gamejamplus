@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c62vvxatsst46"]
+[gd_scene load_steps=16 format=3 uid="uid://c62vvxatsst46"]
 
 [ext_resource type="PackedScene" uid="uid://bqqfwtxj0i78a" path="res://scenes/mapa_exemplo.tscn" id="1_dnd6x"]
 [ext_resource type="PackedScene" uid="uid://cuxa2y5u7l0y2" path="res://scenes/player.tscn" id="2_1m067"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dxm6uy4mlng2t" path="res://scenes/armadilha_spawner.tscn" id="12_jp7ru"]
 [ext_resource type="PackedScene" uid="uid://c6dq3gl435piw" path="res://scenes/timer.tscn" id="13_utv0c"]
 [ext_resource type="PackedScene" uid="uid://cl7mw413ftgqn" path="res://scenes/hud.tscn" id="14_sfs7t"]
+[ext_resource type="PackedScene" uid="uid://ddplfj571jhqc" path="res://scenes/music.tscn" id="15_2dk6j"]
 
 [node name="main2" type="Node2D"]
 process_mode = 1
@@ -59,3 +60,5 @@ position = Vector2(211, 107)
 
 [node name="Timer" parent="." instance=ExtResource("13_utv0c")]
 position = Vector2(-59, 403)
+
+[node name="music" parent="." instance=ExtResource("15_2dk6j")]
