@@ -26,12 +26,11 @@ func le_csv():
 	var file = FileAccess.open(file_holder, FileAccess.READ)
 	if file == null:
 		for i in range(10):
-			Global.leaders["___"] =  0
+			Global.leaders[str(1 + i) + "th"] =  0
 			Global.NUM_PLAYERS = 10
 	else:
 		var aux
 		var linhas = 0
-		
 		while !file.eof_reached():
 			aux = file.get_csv_line()
 			if len(aux) == 2:
@@ -45,13 +44,16 @@ func le_csv():
 		file.close()
 
 func monta_string():
+	print(Global.final_names)
+	print(Global.leaders)
+	print(Global.final_score)
 	for i in range(Global.NUM_PLAYERS):
+		print(len(Global.final_score))
 		if Global.leaders.find_key(Global.final_score[i]) == null:
 			Global.final_names[i] = Global.nome
 			#print("eh o gremoi")
 		else:
 			Global.final_names[i] = Global.leaders.find_key(Global.final_score[i])
-
 
 func coloca_nomes():
 	$VBoxContainer/Container2/HBoxContainer/nomes.text = "NAMES"
@@ -79,8 +81,9 @@ func _on_enviar_pressed() -> void:
 		file.store_csv_line(tmp)
 	file.close()
 	
+	Global.highscore = Global.leaders.values().max()
+	
 	Global.call_transition("res://scenes/menu_principal.tscn")
-
 
 func _on_button_pressed() -> void:
 	Global.call_transition("res://scenes/menu_principal.tscn")

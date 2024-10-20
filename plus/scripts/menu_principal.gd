@@ -16,11 +16,14 @@ func _process(delta: float) -> void:
 		AudioServer.set_bus_mute(menuTheme, true)
 		AudioServer.set_bus_volume_db(mainTheme, 0)
 		Global.call_transition("res://scenes/main.tscn")
-	if len(nome) < 3:
+	if len(nome) < 3 and Global.primeiro:
 		$CanvasLayer/Jogar.disabled = true
 		pass
 	else:
 		$CanvasLayer/Jogar.disabled = false
+		
+	if !Global.primeiro:
+		$CanvasLayer/LineEdit.text = Global.nome
 
 func _on_jogar_pressed() -> void:
 	#get_tree().change_scene_to_file("res://scenes/main.tscn")
@@ -36,3 +39,7 @@ func _on_leaderboard_pressed() -> void:
 	
 func _on_sair_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_label_tree_exiting() -> void:
+	Global.primeiro = false

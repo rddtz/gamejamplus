@@ -2,14 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
-uid="uid://u23wp428jvnj"
+uid="uid://djlusju66h3wo"
 
 [deps]
 
-files=["res://leaderboard.40.translation"]
+files=["res://leaderboard.0.translation"]
 
 source_file="res://leaderboard.csv"
-dest_files=["res://leaderboard.40.translation"]
+dest_files=["res://leaderboard.0.translation"]
 
 [params]
 

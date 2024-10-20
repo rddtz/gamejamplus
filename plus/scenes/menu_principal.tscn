@@ -103,10 +103,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -79.5
-offset_top = -7.0
-offset_right = 79.5
-offset_bottom = 32.0
+offset_left = -7.5
+offset_top = 4.5
+offset_right = 151.5
+offset_bottom = 43.5
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_68366")
@@ -232,6 +232,24 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_6p7hm")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kl3jn")
 icon_alignment = 1
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = 0.5
+offset_right = -22.0
+offset_bottom = 47.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_1im7n")
+theme_override_font_sizes/font_size = 30
+text = "NICKNAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="menuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_yi08g")
 autoplay = true
@@ -240,3 +258,4 @@ autoplay = true
 [connection signal="pressed" from="CanvasLayer/Leaderboard" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="CanvasLayer/Sair" to="." method="_on_sair_pressed"]
+[connection signal="tree_exiting" from="CanvasLayer/Label" to="." method="_on_label_tree_exiting"]
