@@ -172,24 +172,24 @@ script = ExtResource("1_pix2n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_617jy")
-animation = &"up"
+animation = &"down"
 autoplay = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_sx1jt")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 19)
 
 [node name="Dano" type="Area2D" parent="."]
+position = Vector2(0, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dano"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_seueo")
 
 [node name="Escudo" type="AnimatedSprite2D" parent="."]
-position = Vector2(6, 11)
+position = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_u6gmb")
 animation = &"shield_front"
 autoplay = "sucess_parry"
