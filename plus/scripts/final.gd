@@ -1,14 +1,13 @@
 extends Control
 
-var NUM_PLAYERS
-
-var leaders = {}
-var final_score = [0,0,0,0,0,0,0]
-var final_names = [0,0,0,0,0,0,0]
-
+var pro = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print(Global.final_names)
+	print(Global.final_score)
+	print(Global.leaders)
+	
 	le_csv()
 	ordena_gambiarra()
 	monta_string()
@@ -19,12 +18,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("enviar"):
 		_on_enviar_pressed()
+	if pro == 0:
+		print(Global.final_names)
+		print(Global.final_score)
+		print(Global.leaders)
+		pro = 1
 
 func ordena_gambiarra():
-	final_score = leaders.values()
-	if Global.score not in final_score:
-		final_score.append(Global.score)
-	final_score.sort_custom(func(a, b): return a > b)
+	Global.final_score = Global.leaders.values()
+	if Global.score not in Global.final_score:
+		Global.final_score.append(Global.score)
+	Global.final_score.sort_custom(func(a, b): return a > b)
 
 func le_csv():
 	var file_holder = "res://leaderboard.csv"
@@ -33,51 +37,49 @@ func le_csv():
 	var linhas = 0
 	
 	while !file.eof_reached():
-		linhas+=1
 		aux = file.get_csv_line()
 		if len(aux) == 2:
-			leaders[aux[0]] = int(aux[1])
+			linhas+=1
+			Global.leaders[aux[0]] = int(aux[1])
 
 	if linhas <= 7:
-		NUM_PLAYERS = linhas
+		Global.NUM_PLAYERS = linhas + 1
 	else:
-		NUM_PLAYERS = 7
+		Global.NUM_PLAYERS = 7
 	file.close()
 
 func monta_string():
-	#zerar a array primeiro 
-	
-	for i in range(NUM_PLAYERS):
-		if leaders.find_key(final_score[i]) == null:
-			final_names[i] = Global.nome
+	for i in range(Global.NUM_PLAYERS):
+		if Global.leaders.find_key(Global.final_score[i]) == null:
+			Global.final_names[i] = Global.nome
 			#print("eh o gremoi")
 		else:
-			final_names[i] = leaders.find_key(final_score[i])
+			Global.final_names[i] = Global.leaders.find_key(Global.final_score[i])
 
 
 func coloca_nomes():
 	$VBoxContainer/Container2/HBoxContainer/nomes.text = "Nomes"
-	for i in range(NUM_PLAYERS):
-		$VBoxContainer/Container2/HBoxContainer/nomes.text += "\n" + str(i+1) + ". " + final_names[i]
+	for i in range(Global.NUM_PLAYERS-1):
+		$VBoxContainer/Container2/HBoxContainer/nomes.text += "\n" + str(i+1) + ". " + Global.final_names[i]
 
 func coloca_scores():
 	$VBoxContainer/Container2/HBoxContainer/scores.text = "Scores"
-	for i in range(NUM_PLAYERS):
-		$VBoxContainer/Container2/HBoxContainer/scores.text += "\n" + str(final_score[i])
+	for i in range(Global.NUM_PLAYERS-1):
+		$VBoxContainer/Container2/HBoxContainer/scores.text += "\n" + str(Global.final_score[i])
 
 
 func _on_enviar_pressed() -> void: 
 	
 	#mudara o nome de You na leaderboard pelo valor do player
-	leaders[Global.nome] = Global.score
+	Global.leaders[Global.nome] = Global.score
 	ordena_gambiarra()
 	monta_string() #isso deve funcionar 
 	coloca_nomes()
 	#atualiza o csv com o novo valor 
 	var file_holder = "res://leaderboard.csv"
 	var file = FileAccess.open(file_holder, FileAccess.WRITE)
-	for i in leaders.keys():
-		var tmp = [i, leaders[i]]
+	for i in Global.leaders.keys():
+		var tmp = [i, Global.leaders[i]]
 		file.store_csv_line(tmp)
 	file.close()
 	
