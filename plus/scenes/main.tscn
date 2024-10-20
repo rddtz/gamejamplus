@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://dxm6uy4mlng2t" path="res://scenes/armadilha_spawner.tscn" id="12_jp7ru"]
 [ext_resource type="PackedScene" uid="uid://c6dq3gl435piw" path="res://scenes/timer.tscn" id="13_utv0c"]
 [ext_resource type="PackedScene" uid="uid://cl7mw413ftgqn" path="res://scenes/hud.tscn" id="14_sfs7t"]
-[ext_resource type="PackedScene" path="res://scenes/music.tscn" id="15_2dk6j"]
 [ext_resource type="Script" path="res://scripts/controlador.gd" id="16_affun"]
+[ext_resource type="AudioStream" uid="uid://ckdiv4ocmlmyy" path="res://assets/sons/musicaTranquila.wav" id="16_uttrl"]
 
 [node name="main2" type="Node2D"]
 process_mode = 1
@@ -56,8 +56,6 @@ position = Vector2(220, 107)
 [node name="Timer" parent="." instance=ExtResource("13_utv0c")]
 position = Vector2(-59, 403)
 
-[node name="music" parent="." instance=ExtResource("15_2dk6j")]
-
 [node name="controlador" type="Node2D" parent="."]
 script = ExtResource("16_affun")
 
@@ -66,3 +64,9 @@ offset_left = 367.0
 offset_top = 849.0
 offset_right = 367.0
 offset_bottom = 849.0
+
+[node name="main theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_uttrl")
+volume_db = -7.745
+autoplay = true
+bus = &"main theme"
