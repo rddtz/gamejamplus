@@ -54,7 +54,7 @@ script = ExtResource("1_2pked")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_0s6at")
 sprite_frames = SubResource("SpriteFrames_wh4aw")
-animation = &"up"
+animation = &"side"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

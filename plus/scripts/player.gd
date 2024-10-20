@@ -31,6 +31,7 @@ var moving := false
 var particle_parry := preload("res://scenes/particle_arrow_parry.tscn")
 
 var shadow_scene := preload("res://scenes/player_shadow.tscn")
+var smoke_scene := preload("res://scenes/smoke.tscn")
 
 func move_false():
 	moving = false
@@ -40,6 +41,11 @@ func move():
 	rayan.force_raycast_update()
 	if !rayan.is_colliding():
 		if !moving:
+			var smoke := smoke_scene.instantiate()
+			smoke.position = position
+			smoke.player = self
+			get_tree().current_scene.add_child(smoke, true)
+			smoke.animated_sprite_2d.play(animation.animation)
 			moving = true
 			var tween = create_tween()
 			tween.tween_property(self, "position", position + rayan.target_position, .1)
