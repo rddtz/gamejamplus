@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://1cp5hnyn2mh5"]
+[gd_scene load_steps=11 format=3 uid="uid://1cp5hnyn2mh5"]
 
 [ext_resource type="Script" path="res://scripts/menu_principal.gd" id="1_k1ykh"]
 [ext_resource type="Texture2D" uid="uid://dfwirun0i1scp" path="res://assets/title_screen.png" id="2_cdfrj"]
 [ext_resource type="FontFile" uid="uid://00ch3p5s45x2" path="res://assets/fonts/BOD_BLAI.TTF" id="3_oy2oy"]
+[ext_resource type="AudioStream" uid="uid://uflfial5qqth" path="res://assets/sons/main theme menu.wav" id="4_yi08g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x5fp"]
 bg_color = Color(0.054902, 0.054902, 0.0588235, 1)
@@ -125,6 +126,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_u3rxo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0e1um")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r4m2h")
 text = "Sair"
+
+[node name="menuTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_yi08g")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]
