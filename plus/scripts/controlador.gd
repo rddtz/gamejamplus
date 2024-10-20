@@ -5,6 +5,7 @@ extends Node2D
 @onready var e: Node2D = $"../spawner esquerda"
 @onready var armadilha_spawner_v: Node2D = $"../armadilha_spawner_v"
 @onready var bomba_spawner: Node2D = $"../bomba_spawner"
+@onready var player: CharacterBody2D = $"../Player"
 
 const SEG = 10
 var SHOOT_TIME = 1
@@ -17,6 +18,11 @@ var explosao := 1
 var inc_speed = 10
 var inc_arm = 20
 var inc_exp = 30
+
+var tempo_parado = 0
+
+var last_x = -29038190
+var last_y = +89218941
 
 var started_all = false
 # Called when the node enters the scene tree for the first time.
@@ -46,6 +52,11 @@ func active_side(l, q):
 			e.active = true
 			e.quantite = q
 
+func verifica_parado(t, x, y, lx, ly) -> int:
+	if x == lx && y == ly:
+		return t + 1
+	return 0
+
 func rand_arrow(f):
 
 	b.active = false
@@ -56,7 +67,6 @@ func rand_arrow(f):
 	var q = 0
 	var lado = 0
 	var lado2 = 0
-
 	
 	if q_lados == 1:
 		lado = randi_range(1, 4)
@@ -128,34 +138,45 @@ func set_arrow_speed(t):
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+var state = 0
 func _process(delta: float) -> void:
-	
+
 	flechas = num_flechas(1, timer)
 	timer += delta
 	shoot -= delta
 	inc_speed -= delta
+	inc_exp -= delta
+	inc_exp -= delta
+
+	tempo_parado = verifica_parado(tempo_parado, player.position.x, player.position.y, last_x, last_y)
 	
+	last_x = player.position.x
+	last_y = player.position.y
 	bomba_spawner.quantite = explosao
 	armadilha_spawner_v.quantite = espinhos
-	
-	if timer > 6*SEG:
-		
+
+	if tempo_parado >= 100:
+			bomba_spawner.run_special(player.position.x - 24, player.position.y - 24)
+			tempo_parado = 0
+
+	if timer > .75*SEG:
+
 		if !started_all:
 			started_all == true
 			explosao = 1
 			espinhos = 1
-		
+
 		SHOOT_TIME = 0
 		bomba_spawner.active = true
 		armadilha_spawner_v.active = true
 		rand_arrow(flechas)
-		
+
 		if inc_speed <= 0:
 			set_arrow_speed(timer)
 			inc_speed = 10
 		else:
 			inc_speed -= delta
-		
+
 		if inc_arm <= 0:
 			espinhos += 1
 			inc_arm = 10
@@ -167,9 +188,9 @@ func _process(delta: float) -> void:
 			inc_exp = 10
 		else:
 			inc_exp -= delta
-	
-	
-	elif timer > 4*SEG:
+
+
+	elif timer > 0.5*SEG:
 		bomba_spawner.active = true
 		explosao = 4
 		armadilha_spawner_v.active = false
@@ -177,8 +198,8 @@ func _process(delta: float) -> void:
 		c.active = false
 		e.active = false
 		d.active = false
-		
-	elif timer > 3*SEG:
+
+	elif timer > .25*SEG:
 		#SHOOT_TIME -= delta
 		armadilha_spawner_v.active = true
 		espinhos = 2

@@ -7,6 +7,13 @@ var bomba_scene := preload("res://scenes/explosao.tscn")
 @export var active: bool = true
 @export var quantite: int = 1
 
+
+func run_special(xp, yp) -> void:
+	var bomba := bomba_scene.instantiate()
+	bomba.position = Vector2(xp,yp)
+	get_tree().current_scene.add_child(bomba, true)
+
+
 func _on_timer_timeout() -> void:
 	if active:
 		for i in range(quantite):
