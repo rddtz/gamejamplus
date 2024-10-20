@@ -27,12 +27,12 @@ func att_escudo():
 	if Global.quebrado and !animando:
 		idle = 0
 		animando+=1
-		$Quebrado.play("RESET")
+		#$Quebrado.play("RESET")
 		$Quebrado.play("quebra")
 	elif !Global.quebrado:
 		animando = 0
 		if !idle:
-			$Quebrado.play("RESET")
+			#$Quebrado.play("RESET")
 			$Quebrado.play("quebra_invert")
 			idle = 1
    
