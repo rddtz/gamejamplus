@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3o4tyjmksugc"]
+[gd_scene load_steps=8 format=3 uid="uid://c3o4tyjmksugc"]
 
 [ext_resource type="Script" path="res://scripts/transition.gd" id="1_bkfwh"]
 [ext_resource type="Shader" path="res://shaders/transition.gdshader" id="1_jncb1"]
@@ -53,10 +53,26 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_jniud"]
+resource_name = "white"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.75, 0.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q3o8s"]
 _data = {
 "RESET": SubResource("Animation_co5ij"),
-"transition": SubResource("Animation_62yt5")
+"transition": SubResource("Animation_62yt5"),
+"white": SubResource("Animation_jniud")
 }
 
 [node name="Transition" type="CanvasLayer"]

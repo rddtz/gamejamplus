@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @export var next_scene : String
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+var on_tran := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,13 +11,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("enviar") && on_tran:
+		animation_player.stop()
+		#animation_player.play("white")
+		change_scene()
 	
 func fade_in(next : String):
 	next_scene = next
+	on_tran = true
 	#reset_scene = reset
 	animation_player.stop()
 	animation_player.play("transition")
 
 func change_scene():
 		get_tree().change_scene_to_file(next_scene)
+		on_tran = false
