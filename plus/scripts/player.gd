@@ -114,6 +114,7 @@ func _physics_process(delta: float) -> void:
 		timer_shield -= delta
 	else:
 		player_has_shield = true
+		Global.quebrado = false
 		
 	
 	if moving:
@@ -143,6 +144,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		print("block")
 		player_has_shield = false
 		Global.screen_shake(3.0)
+		Global.quebrado = true
 		timer_shield = STIME
 		clicou = false
 		return
@@ -150,6 +152,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		#pass
 		#if area.id == "Flecha":
 		#	area.destroy_player()
+		Global.score = 0
 		get_tree().reload_current_scene()
 
 func _input(event: InputEvent) -> void:

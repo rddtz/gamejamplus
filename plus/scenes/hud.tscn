@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://cl7mw413ftgqn"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_6sv8g"]
-[ext_resource type="Texture2D" uid="uid://b13i8jr2cqf2a" path="res://assets/Moldura.png" id="1_80lg8"]
 [ext_resource type="FontFile" uid="uid://00ch3p5s45x2" path="res://assets/fonts/BOD_BLAI.TTF" id="2_6610f"]
+[ext_resource type="Texture2D" uid="uid://bmvrtjxjmanri" path="res://assets/Moldura3.png" id="2_qmc7a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8x5d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5ah1"]
-texture = ExtResource("1_80lg8")
+texture = ExtResource("2_qmc7a")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sh607"]
 
@@ -48,10 +48,15 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_sh607")
 horizontal_alignment = 2
 
 [node name="Label" type="Label" parent="."]
-offset_left = 876.0
-offset_top = 87.0
-offset_right = 1142.0
-offset_bottom = 162.0
+anchors_preset = -1
+anchor_left = 0.038
+anchor_top = 0.021
+anchor_right = 0.038
+anchor_bottom = 0.021
+offset_left = 832.224
+offset_top = 73.392
+offset_right = 1098.22
+offset_bottom = 148.392
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_6610f")

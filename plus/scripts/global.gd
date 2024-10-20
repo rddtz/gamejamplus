@@ -5,6 +5,7 @@ var shake_force := 5.0
 var paused
 var score = 0
 var nome = "YOU"
+var quebrado
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
