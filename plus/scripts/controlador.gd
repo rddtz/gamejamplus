@@ -57,7 +57,7 @@ func _process(delta: float) -> void:
 		while i > 0:
 			i -= rand_arrow(i)
 	else:
-		#armadilha_spawner_v.active = false
+		armadilha_spawner_v.active = false
 		bomba_spawner.active = false
 		var i = flechas
 		while i > 0:
