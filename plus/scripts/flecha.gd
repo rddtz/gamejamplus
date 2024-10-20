@@ -25,16 +25,16 @@ func _ready() -> void:
 	
 	if tipo == CIMA:
 		aviso.position.x = position.x
-		aviso.position.y = y_topo
+		aviso.position.y = y_topo + 16 + 6
 	elif tipo == BAIXO:
 		aviso.position.x = position.x
-		aviso.position.y = y_topo + 256 + 16
+		aviso.position.y = y_topo + 240 + 6
 	elif tipo == DIREITA:
 		aviso.position.y = position.y
-		aviso.position.x = x_meio + 126 + 32
+		aviso.position.x = x_meio + 126 - 8
 	elif tipo == ESQUERDA:
 		aviso.position.y = position.y
-		aviso.position.x = x_meio - 126 - 32
+		aviso.position.x = x_meio - 126 + 8
 	
 		
 	get_tree().current_scene.add_child(aviso, true)

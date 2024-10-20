@@ -75,7 +75,7 @@ theme_override_constants/separation = 4
 
 [node name="Label" type="Label" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_0g3hh")
+theme_override_fonts/font = ExtResource("1_o1u10")
 theme_override_font_sizes/font_size = 35
 text = "INSIRA AS INICIAIS"
 horizontal_alignment = 1
@@ -100,7 +100,7 @@ script = ExtResource("2_isjwd")
 [node name="enviar" type="Button" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("2_0g3hh")
+theme_override_fonts/font = ExtResource("1_o1u10")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/focus = SubResource("StyleBoxEmpty_driek")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ruktu")
@@ -113,7 +113,7 @@ layout_mode = 2
 
 [node name="ScorePlayer" type="Label" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_0g3hh")
+theme_override_fonts/font = ExtResource("1_o1u10")
 theme_override_font_sizes/font_size = 35
 text = "SCORE
 "
@@ -134,13 +134,13 @@ theme_override_constants/separation = 320
 
 [node name="nomes" type="Label" parent="VBoxContainer/Container2/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_0g3hh")
+theme_override_fonts/font = ExtResource("1_o1u10")
 theme_override_font_sizes/font_size = 30
 text = "NOMES"
 
 [node name="scores" type="Label" parent="VBoxContainer/Container2/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_0g3hh")
+theme_override_fonts/font = ExtResource("1_o1u10")
 theme_override_font_sizes/font_size = 30
 text = "SCORES"
 
