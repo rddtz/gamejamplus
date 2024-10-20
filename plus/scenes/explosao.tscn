@@ -199,6 +199,7 @@ script = ExtResource("1_itwwq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
+position = Vector2(24, 24)
 sprite_frames = SubResource("SpriteFrames_os5kg")
 animation = &"surgindo"
 autoplay = "surgindo"
@@ -210,9 +211,9 @@ libraries = {
 autoplay = "life_span"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 24)
 shape = SubResource("RectangleShape2D_rchp0")
 disabled = true
 
 [node name="bombSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_lksw4")
-bus = &"SFX"

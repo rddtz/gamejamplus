@@ -11,7 +11,7 @@ func _on_timer_timeout() -> void:
 	if active:
 		for i in range(quantite):
 			var bomba := bomba_scene.instantiate()
-			var y = randi_range(80,296)/16
-			var x = randi_range(96, 328)/16
+			var y = randi_range(67,275)/16
+			var x = randi_range(85, 292)/16
 			bomba.position = Vector2(x*16,y*16)
 			get_tree().current_scene.add_child(bomba, true)
