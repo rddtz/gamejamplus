@@ -14,3 +14,4 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	Global.score += 10
+#	print(Global.score) 
