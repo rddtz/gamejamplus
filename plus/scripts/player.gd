@@ -106,7 +106,7 @@ func _physics_process(delta: float) -> void:
 			brilho.play("null")
 		else:
 			escudo.play("null")
-			brilho.play("null")
+			#brilho.play("null")
 		
 		if parry_timer > 0:
 			parry_timer -= delta
@@ -150,6 +150,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 			escudo_animation.play("sucess_parry")
 			animation_player.stop()
 			animation_player.play("parry")
+			brilho.play("null")
 			brilho.play("sucess_parry")
 			return
 		elif defendendo:

@@ -302,10 +302,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0obsl")
+}, {
+"duration": 1.0,
+"texture": null
 }],
 "loop": false,
 "name": &"sucess_parry",
-"speed": 15.0
+"speed": 10.0
 }]
 
 [sub_resource type="Animation" id="Animation_3htlk"]
@@ -380,7 +383,7 @@ libraries = {
 }
 
 [node name="brilho" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(-7, -7)
 sprite_frames = SubResource("SpriteFrames_mp70i")
 animation = &"sucess_parry"
 autoplay = "null"
