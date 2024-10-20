@@ -4,9 +4,6 @@ var pro = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(Global.final_names)
-	print(Global.final_score)
-	print(Global.leaders)
 	
 	le_csv()
 	ordena_gambiarra()
@@ -18,11 +15,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("enviar"):
 		_on_enviar_pressed()
-	if pro == 0:
-		print(Global.final_names)
-		print(Global.final_score)
-		print(Global.leaders)
-		pro = 1
 
 func ordena_gambiarra():
 	Global.final_score = Global.leaders.values()

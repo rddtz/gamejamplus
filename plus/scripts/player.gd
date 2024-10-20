@@ -144,7 +144,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		if area.id == "Flecha":
 			area.destroy_player()
 				
-		if defendendo && parry_timer > 0:
+		if (defendendo && parry_timer > 0):
 			$parrySound.pitch_scale = randf_range(1.2,1.8)
 			$parrySound.play(float(position.x))
 			Global.score += 100
