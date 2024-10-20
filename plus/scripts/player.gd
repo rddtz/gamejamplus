@@ -15,7 +15,6 @@ var time_mov := TIME
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var escudo_animation: AnimationPlayer = $Escudo/AnimationShield
-@onready var cem: Node2D = $Cem
 
 var last = ""
 
@@ -23,6 +22,9 @@ const PTIME = 0.2
 var defendendo = false
 var parry_timer = PTIME
 var foi_parry = 0
+var parry = false
+const PS = 0.1
+var set_parry = PS 
 
 const STIME = 5
 var player_has_shield = true
@@ -73,7 +75,7 @@ func _physics_process(delta: float) -> void:
 		if time_mov > 0:
 			time_mov -= delta
 		
-		if !defendendo:
+		if !defendendo && !parry:
 			if (Input.is_action_pressed("LEFT") and !time_mov):
 				rayan.target_position = Vector2(-16,0)
 				animation.flip_h = true
@@ -97,17 +99,27 @@ func _physics_process(delta: float) -> void:
 				animation.play("down")
 				move()
 		
-		if Input.is_action_just_pressed("parry_block"):
+		if Input.is_action_just_pressed("parry_block") && player_has_shield:
 			clicou = true
+			parry = true
+			set_parry = PS
 		
 		if Input.is_action_pressed("parry_block") && clicou && player_has_shield:
 			if !defendendo:
-				parry_timer = PTIME
 				defendendo = true
 		else:
 			defendendo = false
 
-		if defendendo:
+		if Input.is_action_just_released("parry_block") && player_has_shield:
+			if set_parry > 0:
+				parry_timer = PTIME
+
+		if set_parry > 0 || parry_timer > 0:
+			parry = true
+		else:
+			parry = false
+
+		if defendendo || parry:
 			#escudo.play("shield_front")
 			choosing_shield()
 			brilho.play("null")
@@ -117,6 +129,9 @@ func _physics_process(delta: float) -> void:
 		
 		if parry_timer > 0:
 			parry_timer -= delta
+		
+		if set_parry > 0:
+			set_parry -= delta
 			
 		if foi_parry > 0:	
 			foi_parry -= delta
@@ -149,7 +164,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		if area.id == "Flecha":
 			area.destroy_player()
 				
-		if (defendendo && parry_timer > 0):
+		if parry:
 			$parrySound.pitch_scale = randf_range(1.2,1.8)
 			$parrySound.play(float(position.x))
 			Global.score += 100
@@ -163,8 +178,6 @@ func _on_dano_area_entered(area: Area2D) -> void:
 			animation_player.play("parry")
 			brilho.play("null")
 			brilho.play("sucess_parry")
-			cem.get_node("AnimationPlayer").stop()
-			cem.get_node("AnimationPlayer").play("up")
 			hit_lag(0.05, .75)
 			return
 		elif defendendo:
@@ -215,7 +228,7 @@ func hit_lag(time_scale : float, duration : float):
 	parry_part()
 
 func choosing_shield():
-	if parry_timer > 0:
+	if parry:
 		escudo.play("shield_parry")
 	else:
 		escudo.play("shield")
