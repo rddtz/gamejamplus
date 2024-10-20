@@ -13,18 +13,18 @@ void fragment() {
 	vec2 uv_offset = centered_uv.yx / curvature;
 	vec2 warped_uv = centered_uv + centered_uv * uv_offset * uv_offset;
 	vec3 cutoof = vec3(step(abs(warped_uv.x), 1.0) * step(abs(warped_uv.y), 1.0));
-	
+
 	//Scanlines
 	vec3 scanlines = vec3(sin(2.0 * warped_uv.y * height) * 0.3 + 1.0);//.1 + .8
-	
+
 	//Vinheta
 	vec3 vignette = vec3(length(pow(abs(centered_uv), vec2(4.0)) / 3.0));
-	
+
 	vec3 screen_color = textureLod(screen_texture, (warped_uv + 1.0) / 2.0, .1).rgb * cutoof * scanlines;
 	screen_color -= vignette * vignette_multipllier;
-	
+
 	COLOR = vec4(screen_color, 1.0);
-	
+
 }
 
 //void light() {

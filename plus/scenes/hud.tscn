@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://cl7mw413ftgqn"]
+[gd_scene load_steps=34 format=3 uid="uid://cl7mw413ftgqn"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_6sv8g"]
 [ext_resource type="FontFile" uid="uid://00ch3p5s45x2" path="res://assets/fonts/BOD_BLAI.TTF" id="2_6610f"]
 [ext_resource type="Texture2D" uid="uid://btgmgqiyp67mb" path="res://assets/HUD_moldura.png" id="2_jj3jd"]
 [ext_resource type="Texture2D" uid="uid://do4o74wt1v0f3" path="res://assets/HUD_Knight-Sheet.png" id="4_5cjvy"]
-[ext_resource type="Texture2D" uid="uid://ce0sxc3kqmw5f" path="res://assets/HUD_Knight.png" id="5_pptq6"]
+[ext_resource type="Texture2D" uid="uid://chion5ylbc36c" path="res://assets/Animation_shield_HUD-Sheet.png" id="4_y1u7e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8x5d"]
 
@@ -13,13 +13,142 @@ texture = ExtResource("2_jj3jd")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sh607"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f4yo0"]
-texture = ExtResource("5_pptq6")
-region_rect = Rect2(49, 33, 30, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwg1a"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3mh6g"]
-texture = ExtResource("5_pptq6")
-region_rect = Rect2(48, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ik4ko"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywmxn"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yht57"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5c82"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykng8"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_plw3g"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iusjk"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyl4w"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcqr5"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hnjb"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8ci6"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhwbw"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mycw2"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjgog"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pc1c"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roq7h"]
+atlas = ExtResource("4_y1u7e")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yk0tb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwg1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ik4ko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywmxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yht57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5c82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykng8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_plw3g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iusjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyl4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcqr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hnjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8ci6")
+}],
+"loop": false,
+"name": &"quebra",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhwbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mycw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjgog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pc1c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roq7h")
+}],
+"loop": false,
+"name": &"quebra_invert",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bi7wj"]
 atlas = ExtResource("4_5cjvy")
@@ -72,6 +201,7 @@ animations = [{
 }]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+layer = 0
 script = ExtResource("1_6sv8g")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -115,20 +245,12 @@ theme_override_font_sizes/font_size = 30
 text = "MOVE: W A S D
 PARRY: SPACE"
 
-[node name="Inteiro" type="Panel" parent="."]
-offset_left = 111.0
-offset_top = 28.0
-offset_right = 165.0
-offset_bottom = 82.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_f4yo0")
-
-[node name="Quebrado" type="Panel" parent="."]
-visible = false
-offset_left = 112.0
-offset_top = 28.0
-offset_right = 166.0
-offset_bottom = 82.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_3mh6g")
+[node name="Quebrado" type="AnimatedSprite2D" parent="."]
+position = Vector2(142, 56)
+scale = Vector2(1.67969, 1.79261)
+sprite_frames = SubResource("SpriteFrames_yk0tb")
+animation = &"quebra_invert"
+autoplay = "idle"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(78, 124)
@@ -136,3 +258,5 @@ scale = Vector2(2.82812, 2.82812)
 sprite_frames = SubResource("SpriteFrames_uthkt")
 autoplay = "default"
 frame_progress = 0.262343
+
+[connection signal="animation_finished" from="Quebrado" to="." method="_on_quebrado_animation_finished"]

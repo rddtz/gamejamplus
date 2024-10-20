@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var animando = 0
+var idle = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -13,10 +15,19 @@ func _process(delta: float) -> void:
 
 
 func att_escudo():
-	if Global.quebrado:
-		$Quebrado.show()
-		$Inteiro.hide()
+	if Global.quebrado and !animando:
+		idle = 0
+		animando+=1
+		$Quebrado.play("RESET")
+		$Quebrado.play("quebra")
 	elif !Global.quebrado:
-		$Quebrado.hide()
-		$Inteiro.show()
-		
+		animando = 0
+		if !idle:
+			$Quebrado.play("RESET")
+			$Quebrado.play("quebra_invert")
+			idle = 1
+   
+
+func _on_quebrado_animation_finished() -> void:
+	if $Quebrado.animation == "quebra_invert" or $Quebrado.animation == "idle":
+		$Quebrado.play("idle")
