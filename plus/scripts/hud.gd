@@ -40,19 +40,3 @@ func le_csv():
 	var high = Global.leaders.values().max()
 	if Global.highscore < Global.score:
 		Global.highscore = Global.score
-	else:
-		Global.highscore = high
-func mete_leaders():
-	$Leaders.text = ""
-	for i in range(Global.NUM_PLAYERS):
-		$Leaders.text += "\n" + Global.final_names[i] + "         " + str(Global.final_score[i])
-
-
-func atualiza_tabela():
-	Global.final_score[index] = Global.score
-	if index != 0 and Global.score > Global.final_score[index-1]:
-		Global.final_score[index] = Global.final_score[index-1]
-		Global.final_names[index] = Global.final_names[index-1]
-		Global.final_score[index-1] = Global.score
-		Global.final_names[index-1] = Global.nome
-		index-=1
