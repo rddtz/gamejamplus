@@ -1,31 +1,29 @@
-[gd_scene load_steps=14 format=3 uid="uid://cl05qearacoj8"]
+[gd_scene load_steps=9 format=3 uid="uid://cl05qearacoj8"]
 
 [ext_resource type="Script" path="res://scripts/final.gd" id="1_cyc0y"]
 [ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="1_o1u10"]
-[ext_resource type="FontFile" uid="uid://00ch3p5s45x2" path="res://assets/fonts/BOD_BLAI.TTF" id="2_0g3hh"]
-[ext_resource type="Script" path="res://scripts/line_edit.gd" id="2_isjwd"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cg606"]
-
-[sub_resource type="Theme" id="Theme_0smak"]
-default_font = ExtResource("1_o1u10")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6ntu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_driek"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ruktu"]
-bg_color = Color(0.162066, 0.162066, 0.162065, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6lecd"]
-bg_color = Color(0.370364, 0.370365, 0.370364, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32uh0"]
-bg_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0orwe"]
+[ext_resource type="Texture2D" uid="uid://dc6sgmuydeerh" path="res://assets/botoes2.png" id="3_w0g1m"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwaje"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mocfj"]
+texture = ExtResource("3_w0g1m")
+region_rect = Rect2(28, 95, 41, 29)
+modulate_color = Color(0.74978, 0.74978, 0.74978, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ox7tk"]
+texture = ExtResource("3_w0g1m")
+region_rect = Rect2(28, 95, 41, 29)
+modulate_color = Color(0.603922, 0.603922, 0.603922, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvou0"]
+texture = ExtResource("3_w0g1m")
+region_rect = Rect2(28, 95, 41, 29)
+modulate_color = Color(0.427451, 0.427451, 0.427451, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6d54"]
+texture = ExtResource("3_w0g1m")
+region_rect = Rect2(28, 95, 41, 29)
 
 [node name="Leaderboard" type="Control"]
 layout_mode = 3
@@ -60,68 +58,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 100
 
-[node name="Container" type="PanelContainer" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_styles/panel = SubResource("StyleBoxEmpty_cg606")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Container"]
-layout_mode = 2
-theme_override_constants/separation = 33
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Container/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 4
-
-[node name="Label" type="Label" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_o1u10")
-theme_override_font_sizes/font_size = 35
-text = "INSIRA AS INICIAIS"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 9
-
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_0smak")
-theme_override_constants/caret_width = 3
-theme_override_fonts/font = ExtResource("2_0g3hh")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_o6ntu")
-max_length = 3
-caret_blink = true
-caret_blink_interval = 0.37
-caret_mid_grapheme = true
-script = ExtResource("2_isjwd")
-
-[node name="enviar" type="Button" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("1_o1u10")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_driek")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ruktu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6lecd")
-theme_override_styles/normal = SubResource("StyleBoxFlat_32uh0")
-text = "ENVIAR"
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Container/HBoxContainer"]
-layout_mode = 2
-
-[node name="ScorePlayer" type="Label" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_o1u10")
-theme_override_font_sizes/font_size = 35
-text = "SCORE
-"
-
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Container/HBoxContainer/VBoxContainer2"]
-layout_mode = 2
-theme_override_styles/separator = SubResource("StyleBoxEmpty_0orwe")
-
 [node name="Container2" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_qwaje")
@@ -144,4 +80,30 @@ theme_override_fonts/font = ExtResource("1_o1u10")
 theme_override_font_sizes/font_size = 30
 text = "SCORES"
 
-[connection signal="pressed" from="VBoxContainer/Container/HBoxContainer/VBoxContainer/HBoxContainer/enviar" to="." method="_on_enviar_pressed"]
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 498.0
+offset_right = 234.0
+offset_bottom = 627.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_o1u10")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxTexture_mocfj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ox7tk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kvou0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_h6d54")
+
+[connection signal="pressed" from="Back" to="." method="_on_button_pressed"]

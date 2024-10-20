@@ -4,13 +4,12 @@ var pro = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
 	le_csv()
 	ordena_gambiarra()
 	monta_string()
-	$VBoxContainer/Container/HBoxContainer/VBoxContainer2/ScorePlayer.text += str(Global.score) 
 	coloca_nomes()
 	coloca_scores()
+	$Back.grab_focus()
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("enviar"):
@@ -34,10 +33,10 @@ func le_csv():
 			linhas+=1
 			Global.leaders[aux[0]] = int(aux[1])
 
-	if linhas <= 7:
+	if linhas <= 10:
 		Global.NUM_PLAYERS = linhas + 1
 	else:
-		Global.NUM_PLAYERS = 7
+		Global.NUM_PLAYERS = 10
 	file.close()
 
 func monta_string():
@@ -50,12 +49,12 @@ func monta_string():
 
 
 func coloca_nomes():
-	$VBoxContainer/Container2/HBoxContainer/nomes.text = "Nomes"
+	$VBoxContainer/Container2/HBoxContainer/nomes.text = "NAMES"
 	for i in range(Global.NUM_PLAYERS-1):
 		$VBoxContainer/Container2/HBoxContainer/nomes.text += "\n" + str(i+1) + ". " + Global.final_names[i]
 
 func coloca_scores():
-	$VBoxContainer/Container2/HBoxContainer/scores.text = "Scores"
+	$VBoxContainer/Container2/HBoxContainer/scores.text = "SCORES"
 	for i in range(Global.NUM_PLAYERS-1):
 		$VBoxContainer/Container2/HBoxContainer/scores.text += "\n" + str(Global.final_score[i])
 
@@ -75,4 +74,8 @@ func _on_enviar_pressed() -> void:
 		file.store_csv_line(tmp)
 	file.close()
 	
+	Global.call_transition("res://scenes/menu_principal.tscn")
+
+
+func _on_button_pressed() -> void:
 	Global.call_transition("res://scenes/menu_principal.tscn")
