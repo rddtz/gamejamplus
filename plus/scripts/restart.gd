@@ -12,12 +12,8 @@ func _process(delta: float) -> void:
 
 
 func _on_yes_pressed() -> void:
-	if Global.score > Global.leaders.values().max():
-		Global.highscore = Global.score
 	Global.call_transition("res://scenes/main.tscn")
 
 
 func _on_no_pressed() -> void:
-	if Global.score > Global.leaders.values().max():
-		Global.highscore = Global.score
 	Global.call_transition("res://scenes/menu_principal.tscn")
