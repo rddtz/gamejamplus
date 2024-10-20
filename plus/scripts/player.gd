@@ -104,7 +104,8 @@ func _physics_process(delta: float) -> void:
 			defendendo = false
 
 		if defendendo:
-			escudo.play("shield_front")
+			#escudo.play("shield_front")
+			choosing_shield()
 			brilho.play("null")
 		else:
 			escudo.play("null")
@@ -201,3 +202,9 @@ func hit_lag(time_scale : float, duration : float):
 	await get_tree().create_timer(time_scale * duration).timeout
 	Engine.time_scale = 1.0
 	parry_part()
+
+func choosing_shield():
+	if parry_timer > 0:
+		escudo.play("shield_parry")
+	else:
+		escudo.play("shield")
