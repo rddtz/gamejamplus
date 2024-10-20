@@ -3,7 +3,7 @@ extends Node
 var shake := false
 var shake_force := 5.0
 var paused
-var score = 178
+var score = 0
 var nome = "YOU"
 
 # Called when the node enters the scene tree for the first time.

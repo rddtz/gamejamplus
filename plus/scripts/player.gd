@@ -112,6 +112,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 			
 	if defendendo && parry_timer > 0:
 		print("parry")
+		Global.score += 100
 		foi_parry = 1
 		defendendo = false
 		player_has_shield = false
