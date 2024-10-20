@@ -55,13 +55,12 @@ func rand_arrow(f):
 	var lado = 0
 	var lado2 = 0
 
-	print(q_lados)
 	
 	if q_lados == 1:
 		lado = randi_range(1, 4)
 		active_side(lado, f)
 	
-	if q_lados == 2:
+	elif q_lados == 2:
 		while lado == lado2:
 			lado = randi_range(1, 4)
 			lado2 = randi_range(1, 4)
@@ -71,7 +70,7 @@ func rand_arrow(f):
 		q = randi_range(1, f-q)
 		active_side(lado2, q)
 
-	if q_lados == 3:
+	elif q_lados == 3:
 		lado = randi_range(1, 4)
 		var restam = 2
 		
@@ -95,7 +94,7 @@ func rand_arrow(f):
 			f -= q
 			restam -= 1
 			active_side(4, q)
-	if q_lados == 4:
+	elif q_lados == 4:
 		var restam = 3
 		q = randi_range(1, f-restam)
 		f -= q
@@ -113,7 +112,6 @@ func rand_arrow(f):
 		f -= q
 		restam -= 1
 		active_side(4, q)
-	print("ATIROU")
 
 func num_flechas(f, t):
 	
@@ -136,7 +134,6 @@ func _process(delta: float) -> void:
 	inc_speed -= delta
 	
 	
-	print(flechas)
 	
 	if timer > 6*SEG:
 		SHOOT_TIME = 0

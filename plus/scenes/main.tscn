@@ -69,4 +69,3 @@ offset_bottom = 849.0
 stream = ExtResource("16_uttrl")
 volume_db = -7.745
 autoplay = true
-bus = &"main theme"
