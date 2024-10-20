@@ -201,7 +201,7 @@ func morte():
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animation.animation == "morte":
-		Global.call_transition("res://scenes/final.tscn")
+		Global.call_transition("res://scenes/restart.tscn")
 
 func hit_lag(time_scale : float, duration : float):
 	Engine.time_scale = time_scale

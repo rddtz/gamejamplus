@@ -8,7 +8,9 @@ var clicou = false
 func _process(delta: float) -> void:
 	
 	var nome = $CanvasLayer/LineEdit.text
+	
 	if Input.is_action_just_pressed("enviar") && !clicou && len(nome) == 3:
+		#$Jogar.grab_focus()
 		Global.nome = nome
 		clicou = true
 		AudioServer.set_bus_mute(menuTheme, true)
