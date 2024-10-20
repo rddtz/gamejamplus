@@ -213,8 +213,6 @@ func morte():
 		$deathSound.play()
 		animation.play("morte")
 		Global.contando = false
-		if Global.score > Global.highscore:
-			Global.highscore = Global.score
 		
 
 	#get_tree().reload_current_scene()
