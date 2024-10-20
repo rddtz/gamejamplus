@@ -128,6 +128,9 @@ func _physics_process(delta: float) -> void:
 			get_tree().current_scene.add_child(shadow, true)
 	else:
 		morte()
+		
+	if Input.is_key_pressed(KEY_J):
+		Engine.time_scale = 0.0
 
 func _on_dano_area_entered(area: Area2D) -> void:
 
@@ -154,6 +157,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 			animation_player.play("parry")
 			brilho.play("null")
 			brilho.play("sucess_parry")
+			hit_lag(0.05, .75)
 			return
 		elif defendendo:
 			defendendo = false
@@ -188,3 +192,8 @@ func morte():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animation.animation == "morte":
 		Global.call_transition("res://scenes/final.tscn")
+
+func hit_lag(time_scale : float, duration : float):
+	Engine.time_scale = time_scale
+	await get_tree().create_timer(time_scale * duration).timeout
+	Engine.time_scale = 1.0
