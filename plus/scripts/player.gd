@@ -42,6 +42,7 @@ var particle_block_scene := preload("res://scenes/particle_break_shield.tscn")
 var morto := false
 @onready var escudo_cima: Node2D = $EscudoCima
 var quebrou := false
+@onready var cem: Node2D = $Cem
 
 
 func _ready() -> void:
@@ -179,6 +180,8 @@ func _on_dano_area_entered(area: Area2D) -> void:
 			brilho.play("null")
 			brilho.play("sucess_parry")
 			hit_lag(0.05, .75)
+			cem.get_node("AnimationPlayer").stop()
+			cem.get_node("AnimationPlayer").play("up")
 			return
 		elif defendendo:
 			defendendo = false
