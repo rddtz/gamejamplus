@@ -1,15 +1,75 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl7mw413ftgqn"]
+[gd_scene load_steps=18 format=3 uid="uid://cl7mw413ftgqn"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_6sv8g"]
 [ext_resource type="FontFile" uid="uid://00ch3p5s45x2" path="res://assets/fonts/BOD_BLAI.TTF" id="2_6610f"]
-[ext_resource type="Texture2D" uid="uid://bmvrtjxjmanri" path="res://assets/Moldura3.png" id="2_qmc7a"]
+[ext_resource type="Texture2D" uid="uid://btgmgqiyp67mb" path="res://assets/HUD_moldura.png" id="2_jj3jd"]
+[ext_resource type="Texture2D" uid="uid://do4o74wt1v0f3" path="res://assets/HUD_Knight-Sheet.png" id="4_5cjvy"]
+[ext_resource type="Texture2D" uid="uid://ce0sxc3kqmw5f" path="res://assets/HUD_Knight.png" id="5_pptq6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n8x5d"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5ah1"]
-texture = ExtResource("2_qmc7a")
+texture = ExtResource("2_jj3jd")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sh607"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f4yo0"]
+texture = ExtResource("5_pptq6")
+region_rect = Rect2(49, 33, 30, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3mh6g"]
+texture = ExtResource("5_pptq6")
+region_rect = Rect2(48, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bi7wj"]
+atlas = ExtResource("4_5cjvy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b48fc"]
+atlas = ExtResource("4_5cjvy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn8sn"]
+atlas = ExtResource("4_5cjvy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gkc4"]
+atlas = ExtResource("4_5cjvy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk780"]
+atlas = ExtResource("4_5cjvy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdbb5"]
+atlas = ExtResource("4_5cjvy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uthkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bi7wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b48fc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn8sn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gkc4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk780")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdbb5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_6sv8g")
@@ -24,19 +84,10 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_w5ah1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 51.0
-offset_top = 238.0
-offset_right = 169.0
-offset_bottom = 301.0
-
-[node name="Label2" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.787759, 0.787759, 0.787759, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("2_6610f")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxEmpty_sh607")
-text = "SCORE"
+offset_left = 33.0
+offset_top = 253.0
+offset_right = 151.0
+offset_bottom = 316.0
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -63,3 +114,25 @@ theme_override_fonts/font = ExtResource("2_6610f")
 theme_override_font_sizes/font_size = 30
 text = "MOVE: W A S D
 PARRY: SPACE"
+
+[node name="Inteiro" type="Panel" parent="."]
+offset_left = 111.0
+offset_top = 28.0
+offset_right = 165.0
+offset_bottom = 82.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_f4yo0")
+
+[node name="Quebrado" type="Panel" parent="."]
+visible = false
+offset_left = 112.0
+offset_top = 28.0
+offset_right = 166.0
+offset_bottom = 82.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3mh6g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(78, 124)
+scale = Vector2(2.82812, 2.82812)
+sprite_frames = SubResource("SpriteFrames_uthkt")
+autoplay = "default"
+frame_progress = 0.262343

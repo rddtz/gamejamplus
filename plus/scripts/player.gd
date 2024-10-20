@@ -129,8 +129,6 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		area.destroy_player()
 			
 	if defendendo && parry_timer > 0:
-		$parrySound.pitch_scale = randf_range(1.2,1.8)
-		$parrySound.play()
 		print("parry")
 		Global.score += 100
 		foi_parry = 1
@@ -142,8 +140,6 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		animation_player.play("parry")
 		return
 	elif defendendo:
-		$blockSound.pitch_scale = randf_range(1.0,1.4)
-		$blockSound.play()
 		defendendo = false
 		print("block")
 		player_has_shield = false

@@ -36,9 +36,9 @@ offset_top = 849.0
 offset_right = 367.0
 offset_bottom = 849.0
 
-[node name="CanvasLayer" parent="." instance=ExtResource("14_sfs7t")]
-
 [node name="CRT" parent="." instance=ExtResource("4_na3c3")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("14_sfs7t")]
 
 [node name="Portao" parent="." instance=ExtResource("8_572wc")]
 position = Vector2(212, 72)

@@ -9,3 +9,14 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$VBoxContainer/Label.text = str(Global.score)
+	att_escudo()
+
+
+func att_escudo():
+	if Global.quebrado:
+		$Quebrado.show()
+		$Inteiro.hide()
+	elif !Global.quebrado:
+		$Quebrado.hide()
+		$Inteiro.show()
+		
