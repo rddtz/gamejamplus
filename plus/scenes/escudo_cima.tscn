@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7ubwgcjdnp51"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ug5ei"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Quebrando",
+"speed": 5.0
+}]
+
+[node name="EscudoCima" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ug5ei")
+animation = &"Quebrando"
