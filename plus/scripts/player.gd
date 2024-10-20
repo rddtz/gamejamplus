@@ -18,7 +18,7 @@ var time_mov := TIME
 
 var last = ""
 
-const PTIME = 0.2781878459045
+const PTIME = 0.2
 var defendendo = false
 var parry_timer = PTIME
 var foi_parry = 0
@@ -35,7 +35,7 @@ var particle_parry := preload("res://scenes/particle_arrow_parry.tscn")
 
 var shadow_scene := preload("res://scenes/player_shadow.tscn")
 var smoke_scene := preload("res://scenes/smoke.tscn")
-
+var particle_block_scene := preload("res://scenes/particle_break_shield.tscn")
 var morto := false
 
 func _ready() -> void:
@@ -144,12 +144,10 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		if defendendo && parry_timer > 0:
 			$parrySound.pitch_scale = randf_range(1.2,1.8)
 			$parrySound.play(float(position.x))
-			print("parry")
 			Global.score += 100
 			foi_parry = 0.1
 			defendendo = false
 			player_has_shield = false
-			parry_part()
 			clicou = false
 			escudo_animation.stop()
 			escudo_animation.play("sucess_parry")
@@ -163,10 +161,10 @@ func _on_dano_area_entered(area: Area2D) -> void:
 			defendendo = false
 			$blockSound.pitch_scale = randf_range(1.0,1.4)
 			$blockSound.play(float(position.x))
-			print("block")
 			player_has_shield = false
 			Global.screen_shake(5.0)
 			Global.quebrado = true
+			Global.create_particles(particle_block_scene, 20, 30, position.x, position.y, 0, 0, 0, 0)
 			timer_shield = STIME
 			clicou = false
 			return
@@ -199,3 +197,4 @@ func hit_lag(time_scale : float, duration : float):
 	Engine.time_scale = time_scale
 	await get_tree().create_timer(time_scale * duration).timeout
 	Engine.time_scale = 1.0
+	parry_part()

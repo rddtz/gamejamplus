@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd2esou7pby05"]
+
+[ext_resource type="Script" path="res://scripts/particles.gd" id="1_13sp8"]
+[ext_resource type="Texture2D" uid="uid://cf6wfb0alwxt2" path="res://assets/particle.png" id="2_skmhx"]
+
+[node name="ParticleArrow" type="Node2D"]
+script = ExtResource("1_13sp8")
+sprite = ExtResource("2_skmhx")
+color = Color(0, 0.662728, 1.54018e-06, 1)
+max_direction = 360.0
+max_rotation = 360.0
+rotate_bool = true
+min_speed_rotation = 900.0
+max_speed_rotation = 1500.0
+min_scale = 0.5
+min_speed = 90.0
+max_speed = 180.0
+min_life = 15
+max_life = 30
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
