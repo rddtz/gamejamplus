@@ -12,6 +12,8 @@ var time_mov := TIME
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 @onready var escudo: AnimatedSprite2D = $Escudo
 @onready var brilho: AnimatedSprite2D = $brilho
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 
 var last = ""
 
@@ -133,6 +135,8 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		player_has_shield = false
 		parry_part()
 		clicou = false
+		animation_player.stop()
+		animation_player.play("parry")
 		return
 	elif defendendo:
 		defendendo = false
