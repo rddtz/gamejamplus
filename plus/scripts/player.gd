@@ -183,6 +183,8 @@ func parry_part():
 
 func morte():
 	if animation.animation != "morte":
+		$deathSound.pitch_scale = randf_range(1.0,1.15)
+		$deathSound.play()
 		animation.play("morte")
 		
 

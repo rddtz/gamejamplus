@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cuxa2y5u7l0y2"]
+[gd_scene load_steps=45 format=3 uid="uid://cuxa2y5u7l0y2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pix2n"]
 [ext_resource type="Shader" path="res://shaders/blink_shader.gdshader" id="2_jhh6m"]
@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://daopylql2xeoj" path="res://assets/Knight_death-Sheet.png" id="4_hlwls"]
 [ext_resource type="Texture2D" uid="uid://cerb1bxgutxov" path="res://assets/Parry_animation.png" id="4_kyw13"]
 [ext_resource type="Texture2D" uid="uid://bj7t8xn0bqyo6" path="res://assets/barreira.png" id="5_jbw1y"]
-[ext_resource type="AudioStream" uid="uid://bf5tdkwon6qs6" path="res://assets/sons/block.mp3" id="6_76o6w"]
+[ext_resource type="AudioStream" uid="uid://bf68eg7lcfu0g" path="res://assets/sons/block.mp3" id="6_76o6w"]
 [ext_resource type="AudioStream" uid="uid://b4ambc0jhyqbt" path="res://assets/sons/parry.mp3" id="7_o14sv"]
+[ext_resource type="AudioStream" uid="uid://dg384ykb4ry8g" path="res://assets/sons/morte.mp3" id="10_b5ly2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tlquy"]
 shader = ExtResource("2_jhh6m")
@@ -395,11 +396,15 @@ libraries = {
 
 [node name="blockSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_76o6w")
+volume_db = 11.686
 bus = &"SFX"
 
 [node name="parrySound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_o14sv")
 bus = &"SFX"
+
+[node name="deathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_b5ly2")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Dano" to="." method="_on_dano_area_entered"]

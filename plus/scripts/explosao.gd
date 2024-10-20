@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if sprite.animation == "explosao" && !explodiu:
 		Global.screen_shake(25.0)
-		$bombSound.randf_range(1.0,1.2)
+		$bombSound.pitch_scale = randf_range(1.0,1.2)
 		$bombSound.play()
 		explodiu = true
 		

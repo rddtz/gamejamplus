@@ -67,5 +67,6 @@ offset_bottom = 849.0
 
 [node name="main theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_uttrl")
+volume_db = -7.745
 autoplay = true
 bus = &"main theme"

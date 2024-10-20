@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://dmweoq67j5fjq"]
+[gd_scene load_steps=16 format=3 uid="uid://dmweoq67j5fjq"]
 
 [ext_resource type="Script" path="res://scripts/portao.gd" id="1_l3yjk"]
 [ext_resource type="Texture2D" uid="uid://bn14i85xwh6it" path="res://assets/Gate_animation.png" id="1_n3n8g"]
+[ext_resource type="AudioStream" uid="uid://bfij1726h084h" path="res://assets/sons/gate_closing.mp3" id="3_e6hh2"]
 
 [sub_resource type="Animation" id="Animation_8xtxa"]
 length = 0.001
@@ -50,6 +51,21 @@ tracks/1/keys = {
 "method": &"shake"
 }]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("closing_gate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_e6hh2")
+}],
+"times": PackedFloat32Array(4.43333)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aul10"]
 _data = {
@@ -141,3 +157,5 @@ autoplay = "aberto"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_0byoj")
+
+[node name="closing_gate" type="AudioStreamPlayer2D" parent="."]
