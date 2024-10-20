@@ -15,6 +15,7 @@ var time_mov := TIME
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @onready var escudo_animation: AnimationPlayer = $Escudo/AnimationShield
+@onready var cem: Node2D = $Cem
 
 var last = ""
 
@@ -162,6 +163,8 @@ func _on_dano_area_entered(area: Area2D) -> void:
 			animation_player.play("parry")
 			brilho.play("null")
 			brilho.play("sucess_parry")
+			cem.get_node("AnimationPlayer").stop()
+			cem.get_node("AnimationPlayer").play("up")
 			hit_lag(0.05, .75)
 			return
 		elif defendendo:
