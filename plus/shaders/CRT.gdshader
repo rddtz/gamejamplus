@@ -15,7 +15,7 @@ void fragment() {
 	vec3 cutoof = vec3(step(abs(warped_uv.x), 1.0) * step(abs(warped_uv.y), 1.0));
 	
 	//Scanlines
-	vec3 scanlines = vec3(sin(2.0 * warped_uv.y * height) * 0.25 + .5);//.1 + .8
+	vec3 scanlines = vec3(sin(2.0 * warped_uv.y * height) * 0.3 + 1.0);//.1 + .8
 	
 	//Vinheta
 	vec3 vignette = vec3(length(pow(abs(centered_uv), vec2(4.0)) / 3.0));

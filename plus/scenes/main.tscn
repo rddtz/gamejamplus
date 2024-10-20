@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://c6dq3gl435piw" path="res://scenes/timer.tscn" id="13_utv0c"]
 [ext_resource type="PackedScene" uid="uid://cl7mw413ftgqn" path="res://scenes/hud.tscn" id="14_sfs7t"]
 [ext_resource type="PackedScene" uid="uid://ddplfj571jhqc" path="res://scenes/music.tscn" id="15_2dk6j"]
-[ext_resource type="PackedScene" uid="uid://dnmbunej4me3p" path="res://scenes/portao_fechado.tscn" id="15_mw5o6"]
+[ext_resource type="PackedScene" path="res://scenes/portao_fechado.tscn" id="15_mw5o6"]
 [ext_resource type="Script" path="res://scripts/controlador.gd" id="16_affun"]
 
 [node name="main2" type="Node2D"]
@@ -57,6 +57,7 @@ position = Vector2(220, 107)
 position = Vector2(-59, 403)
 
 [node name="music" parent="." instance=ExtResource("15_2dk6j")]
+bus = &"Music"
 
 [node name="controlador" type="Node2D" parent="."]
 script = ExtResource("16_affun")

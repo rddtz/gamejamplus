@@ -16,8 +16,8 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
+Music="*res://scenes/music.tscn"
 Global="*res://scripts/global.gd"
-Music="res://scenes/music.tscn"
 Transition="*res://scenes/transition.tscn"
 Crt="*res://scenes/crt.tscn"
 

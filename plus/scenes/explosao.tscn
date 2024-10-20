@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://cx4dlkteeowlj"]
+[gd_scene load_steps=24 format=3 uid="uid://cx4dlkteeowlj"]
 
 [ext_resource type="Script" path="res://scripts/explosao.gd" id="1_itwwq"]
 [ext_resource type="Texture2D" uid="uid://tuv2q0yqwrby" path="res://assets/Warning_9-Sheet.png" id="3_2gi1e"]
 [ext_resource type="Texture2D" uid="uid://c06og6j36xa4y" path="res://assets/Explosion_dodge_knight-Sheet.png" id="3_d84ei"]
+[ext_resource type="AudioStream" uid="uid://cjyjf01nj2a8g" path="res://assets/sons/explosao2.mp3" id="4_lksw4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4cbq"]
 atlas = ExtResource("3_d84ei")
@@ -211,3 +212,7 @@ autoplay = "life_span"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rchp0")
 disabled = true
+
+[node name="bombSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lksw4")
+bus = &"SFX"
