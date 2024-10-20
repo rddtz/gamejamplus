@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dxm6uy4mlng2t" path="res://scenes/armadilha_spawner.tscn" id="12_jp7ru"]
 [ext_resource type="PackedScene" uid="uid://c6dq3gl435piw" path="res://scenes/timer.tscn" id="13_utv0c"]
 [ext_resource type="PackedScene" uid="uid://cl7mw413ftgqn" path="res://scenes/hud.tscn" id="14_sfs7t"]
-[ext_resource type="PackedScene" uid="uid://ddplfj571jhqc" path="res://scenes/music.tscn" id="15_2dk6j"]
+[ext_resource type="PackedScene" path="res://scenes/music.tscn" id="15_2dk6j"]
 
 [node name="main2" type="Node2D"]
 process_mode = 1
@@ -52,7 +52,7 @@ position = Vector2(40, 182)
 [node name="spawner_direita" parent="." instance=ExtResource("7_ey8y3")]
 
 [node name="Player" parent="." instance=ExtResource("2_1m067")]
-position = Vector2(211, 107)
+position = Vector2(220, 107)
 
 [node name="armadilha_spawner_v" parent="." instance=ExtResource("12_jp7ru")]
 
