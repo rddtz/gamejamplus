@@ -104,8 +104,6 @@ func _physics_process(delta: float) -> void:
 		if defendendo:
 			escudo.play("shield_front")
 			brilho.play("null")
-		elif foi_parry > 0:
-			pass
 		else:
 			escudo.play("null")
 			brilho.play("null")
@@ -133,6 +131,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_dano_area_entered(area: Area2D) -> void:
 
+	if(foi_parry > 0):
+		return
+
 	if !morto:
 		if area.id == "Flecha":
 			area.destroy_player()
@@ -140,7 +141,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		if defendendo && parry_timer > 0:
 			print("parry")
 			Global.score += 100
-			foi_parry = 1
+			foi_parry = 0.1
 			defendendo = false
 			player_has_shield = false
 			parry_part()
