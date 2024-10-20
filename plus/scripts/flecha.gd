@@ -6,7 +6,7 @@ extends Node2D
 var id := "Flecha"
 
 var particle := preload("res://scenes/particle_arrow.tscn")
-var particle_parry := preload("res://scenes/particle_arrow_parry.tscn")
+
 
 var flip_h = 0
 # Called when the node enters the scene tree for the first time.
@@ -27,8 +27,4 @@ func _physics_process(delta: float) -> void:
 
 func destroy_player():
 	Global.create_particles(particle, 20, 30, position.x, position.y, 0, 0, 0, 0)
-	queue_free()
-
-func destroy_parry():
-	Global.create_particles(particle_parry, 20, 30, position.x, position.y, 0, 0, 0, 0)
 	queue_free()

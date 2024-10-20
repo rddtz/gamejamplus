@@ -26,6 +26,8 @@ var timer_shield = 0
 
 var moving := false
 
+var particle_parry := preload("res://scenes/particle_arrow_parry.tscn")
+
 func move_false():
 	moving = false
 
@@ -82,7 +84,7 @@ func _physics_process(delta: float) -> void:
 		brilho.play("null")
 	elif foi_parry > 0:
 		escudo.play("sucess_parry")
-		brilho.play("sucess_parry")s
+		brilho.play("sucess_parry")
 	else:
 		escudo.play("null")
 		brilho.play("null")
@@ -99,14 +101,16 @@ func _physics_process(delta: float) -> void:
 		player_has_shield = true
 
 func _on_dano_area_entered(area: Area2D) -> void:
-	
+
+	if area.id == "Flecha":
+		area.destroy_player()
+			
 	if defendendo && parry_timer > 0:
 		print("parry")
 		foi_parry = 1
 		defendendo = false
 		player_has_shield = false
-		if area.id == "Flecha":
-			area.destroy_parry()
+		parry_part()
 		return
 	elif defendendo:
 		defendendo = false
@@ -114,8 +118,6 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		player_has_shield = false
 		Global.screen_shake(3.0)
 		timer_shield = STIME
-		if area.id == "Flecha":
-			area.destroy_player()
 		return
 	else:
 		#pass
@@ -126,5 +128,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 func _input(event: InputEvent) -> void:
 	pass
 
+func parry_part():
+	Global.create_particles(particle_parry, 20, 30, position.x, position.y, 0, 0, 0, 0)
 
 	#get_tree().reload_current_scene()
