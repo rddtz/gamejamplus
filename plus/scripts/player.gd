@@ -40,6 +40,8 @@ var morto := false
 
 func _ready() -> void:
 	animation_player.play("RESET")
+	Global.contando = true
+	Global.score = 0
 
 func move_false():
 	moving = false
@@ -184,6 +186,7 @@ func morte():
 		$deathSound.pitch_scale = randf_range(1.0,1.15)
 		$deathSound.play()
 		animation.play("morte")
+		Global.contando = false
 		
 
 	#get_tree().reload_current_scene()

@@ -17,6 +17,8 @@ var explosao := 1
 var inc_speed = 10
 var inc_arm = 20
 var inc_exp = 30
+
+var started_all = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
@@ -55,13 +57,12 @@ func rand_arrow(f):
 	var lado = 0
 	var lado2 = 0
 
-	print(q_lados)
 	
 	if q_lados == 1:
 		lado = randi_range(1, 4)
 		active_side(lado, f)
 	
-	if q_lados == 2:
+	elif q_lados == 2:
 		while lado == lado2:
 			lado = randi_range(1, 4)
 			lado2 = randi_range(1, 4)
@@ -71,7 +72,7 @@ func rand_arrow(f):
 		q = randi_range(1, f-q)
 		active_side(lado2, q)
 
-	if q_lados == 3:
+	elif q_lados == 3:
 		lado = randi_range(1, 4)
 		var restam = 2
 		
@@ -95,7 +96,7 @@ func rand_arrow(f):
 			f -= q
 			restam -= 1
 			active_side(4, q)
-	if q_lados == 4:
+	elif q_lados == 4:
 		var restam = 3
 		q = randi_range(1, f-restam)
 		f -= q
@@ -113,7 +114,6 @@ func rand_arrow(f):
 		f -= q
 		restam -= 1
 		active_side(4, q)
-	print("ATIROU")
 
 func num_flechas(f, t):
 	
@@ -135,10 +135,16 @@ func _process(delta: float) -> void:
 	shoot -= delta
 	inc_speed -= delta
 	
-	
-	print(flechas)
+	bomba_spawner.quantite = explosao
+	armadilha_spawner_v.quantite = espinhos
 	
 	if timer > 6*SEG:
+		
+		if !started_all:
+			started_all == true
+			explosao = 1
+			espinhos = 1
+		
 		SHOOT_TIME = 0
 		bomba_spawner.active = true
 		armadilha_spawner_v.active = true
@@ -165,6 +171,7 @@ func _process(delta: float) -> void:
 	
 	elif timer > 4*SEG:
 		bomba_spawner.active = true
+		explosao = 4
 		armadilha_spawner_v.active = false
 		b.active = false
 		c.active = false
@@ -174,6 +181,7 @@ func _process(delta: float) -> void:
 	elif timer > 3*SEG:
 		#SHOOT_TIME -= delta
 		armadilha_spawner_v.active = true
+		espinhos = 2
 		b.active = false
 		c.active = false
 		e.active = false
