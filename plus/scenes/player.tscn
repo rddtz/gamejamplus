@@ -1,27 +1,27 @@
 [gd_scene load_steps=24 format=3 uid="uid://cuxa2y5u7l0y2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pix2n"]
-[ext_resource type="Texture2D" uid="uid://dilvk1j30buuy" path="res://assets/player.webp" id="2_32oxi"]
+[ext_resource type="Texture2D" uid="uid://bs6s1tad8j0x3" path="res://assets/Dodge_knight.png" id="2_r61ls"]
 [ext_resource type="Texture2D" uid="uid://dxqketygi0qsh" path="res://assets/shining_animation.png" id="4_2x0fn"]
 [ext_resource type="Texture2D" uid="uid://cerb1bxgutxov" path="res://assets/Parry_animation.png" id="4_kyw13"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pejul"]
-atlas = ExtResource("2_32oxi")
-region = Rect2(0, 0, 18, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_utfpn"]
+atlas = ExtResource("2_r61ls")
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n2ech"]
-atlas = ExtResource("2_32oxi")
-region = Rect2(37, 0, 17, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mskja"]
+atlas = ExtResource("2_r61ls")
+region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0omsh"]
-atlas = ExtResource("2_32oxi")
-region = Rect2(19, 0, 18, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gblr"]
+atlas = ExtResource("2_r61ls")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_617jy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pejul")
+"texture": SubResource("AtlasTexture_utfpn")
 }],
 "loop": true,
 "name": &"down",
@@ -29,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n2ech")
+"texture": SubResource("AtlasTexture_mskja")
 }],
 "loop": true,
 "name": &"side",
@@ -37,7 +37,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0omsh")
+"texture": SubResource("AtlasTexture_5gblr")
 }],
 "loop": true,
 "name": &"up",
@@ -172,7 +172,7 @@ script = ExtResource("1_pix2n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_617jy")
-animation = &"down"
+animation = &"up"
 autoplay = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -191,7 +191,7 @@ shape = SubResource("RectangleShape2D_seueo")
 [node name="Escudo" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, 11)
 sprite_frames = SubResource("SpriteFrames_u6gmb")
-animation = &"sucess_parry"
+animation = &"shield_front"
 autoplay = "sucess_parry"
 
 [node name="brilho" type="AnimatedSprite2D" parent="."]

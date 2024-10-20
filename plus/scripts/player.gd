@@ -30,6 +30,8 @@ var moving := false
 
 var particle_parry := preload("res://scenes/particle_arrow_parry.tscn")
 
+var shadow_scene := preload("res://scenes/player_shadow.tscn")
+
 func move_false():
 	moving = false
 
@@ -104,6 +106,13 @@ func _physics_process(delta: float) -> void:
 		timer_shield -= delta
 	else:
 		player_has_shield = true
+		
+	
+	if moving:
+		var shadow := shadow_scene.instantiate()
+		shadow.position = position
+		shadow.player = self
+		get_tree().current_scene.add_child(shadow, true)
 
 func _on_dano_area_entered(area: Area2D) -> void:
 
