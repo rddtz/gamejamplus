@@ -7,40 +7,13 @@ var index = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	le_csv()
-	ordena_gambiarra()
-	monta_string()
-	mete_leaders()
+	$VBoxContainer/Highscore.text += "\n" + str(Global.highscore)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	$VBoxContainer/Label.text = str(Global.score)
-	
-	att_escudo()
-	
-	atualiza_tabela()
-	mete_leaders()
-
-
-func att_escudo():
-	if Global.quebrado and !animando:
-		idle = 0
-		animando+=1
-		#$Quebrado.play("RESET")
-		$Quebrado.play("quebra")
-	elif !Global.quebrado:
-		animando = 0
-		if !idle:
-			#$Quebrado.play("RESET")
-			$Quebrado.play("quebra_invert")
-			idle = 1
-   
-
-func _on_quebrado_animation_finished() -> void:
-	if $Quebrado.animation == "quebra_invert" or $Quebrado.animation == "idle":
-		$Quebrado.play("idle")
-
+	$VBoxContainer/Score.text = str(Global.score)
 
 func le_csv():
 	var file_holder = "res://leaderboard.csv"
@@ -48,7 +21,7 @@ func le_csv():
 	var aux
 	var linhas = 0
 	
-	while !file.eof_reached() && linhas < 5:
+	while !file.eof_reached():
 		aux = file.get_csv_line()
 		if len(aux) == 2:
 			linhas+=1
@@ -60,28 +33,10 @@ func le_csv():
 		Global.NUM_PLAYERS = 7
 	file.close()
 	
-func monta_string():
-	
-	#print(Global.final_names)
-	#print(Global.NUM_PLAYERS)
-	for i in range(Global.NUM_PLAYERS):
-		#print(Global.final_score)
-		if Global.leaders.find_key(Global.final_score[i]) == null:
-			index = i
-			Global.final_names[i] = Global.nome
-		else:
-			Global.final_names[i] = Global.leaders.find_key(Global.final_score[i])
-
-
-func ordena_gambiarra():
-	Global.final_score = Global.leaders.values()
-	if Global.score not in Global.final_score:
-		Global.final_score.append(Global.score)
-	Global.final_score.sort_custom(func(a, b): return a > b)
-
+	Global.highscore = Global.leaders.values().max()
 
 func mete_leaders():
-	$Leaders.text = "NOME	        SCORE"
+	$Leaders.text = ""
 	for i in range(Global.NUM_PLAYERS):
 		$Leaders.text += "\n" + Global.final_names[i] + "         " + str(Global.final_score[i])
 

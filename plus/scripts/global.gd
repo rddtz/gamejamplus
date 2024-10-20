@@ -12,6 +12,7 @@ var NUM_PLAYERS
 var leaders = {}
 var final_score = [0,0,0,0,0,0,0,0]
 var final_names = [0,0,0,0,0,0,0,0]
+var highscore
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
