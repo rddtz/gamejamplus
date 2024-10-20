@@ -17,6 +17,8 @@ var explosao := 1
 var inc_speed = 10
 var inc_arm = 20
 var inc_exp = 30
+
+var started_all = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
@@ -133,9 +135,16 @@ func _process(delta: float) -> void:
 	shoot -= delta
 	inc_speed -= delta
 	
-	
+	bomba_spawner.quantite = explosao
+	armadilha_spawner_v.quantite = espinhos
 	
 	if timer > 6*SEG:
+		
+		if !started_all:
+			started_all == true
+			explosao = 1
+			espinhos = 1
+		
 		SHOOT_TIME = 0
 		bomba_spawner.active = true
 		armadilha_spawner_v.active = true
@@ -162,6 +171,7 @@ func _process(delta: float) -> void:
 	
 	elif timer > 4*SEG:
 		bomba_spawner.active = true
+		explosao = 4
 		armadilha_spawner_v.active = false
 		b.active = false
 		c.active = false
@@ -171,6 +181,7 @@ func _process(delta: float) -> void:
 	elif timer > 3*SEG:
 		#SHOOT_TIME -= delta
 		armadilha_spawner_v.active = true
+		espinhos = 2
 		b.active = false
 		c.active = false
 		e.active = false

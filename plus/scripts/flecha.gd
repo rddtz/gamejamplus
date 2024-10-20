@@ -35,9 +35,10 @@ func _ready() -> void:
 	elif tipo == ESQUERDA:
 		aviso.position.y = position.y
 		aviso.position.x = x_meio - 126 - 32
+	
 		
 	get_tree().current_scene.add_child(aviso, true)
-			
+
 	rotation = deg_to_rad(direction)
 	if flip_h == 1: animated_sprite_2d.flip_h = 1 
 	if direction == -90: animated_sprite_2d.rotation = deg_to_rad(-180)
