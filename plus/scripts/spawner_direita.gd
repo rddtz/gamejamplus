@@ -4,7 +4,7 @@ var flecha_cena = preload("res://scenes/flecha.tscn")
 
 func _on_timer_timeout() -> void:
 	var flecha = flecha_cena.instantiate()
-	flecha.position = Vector2(500, 75+16*randi_range(0,14))
+	flecha.position = Vector2(500, 69+16*randi_range(0,14))
 	flecha.speed = -300
 	flecha.flip_h = 1
 	get_tree().current_scene.add_child(flecha, true)

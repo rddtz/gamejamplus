@@ -24,6 +24,8 @@ const STIME = 5
 var player_has_shield = true
 var timer_shield = 0
 
+var clicou := false
+
 var moving := false
 
 var particle_parry := preload("res://scenes/particle_arrow_parry.tscn")
@@ -72,7 +74,10 @@ func _physics_process(delta: float) -> void:
 			animation.play("down")
 			move()
 	
-	if Input.is_action_pressed("parry_block") && player_has_shield:
+	if Input.is_action_just_pressed("parry_block"):
+		clicou = true
+	
+	if Input.is_action_pressed("parry_block") && clicou && player_has_shield:
 		if !defendendo:
 			parry_timer = PTIME
 			defendendo = true
@@ -111,6 +116,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		defendendo = false
 		player_has_shield = false
 		parry_part()
+		clicou = false
 		return
 	elif defendendo:
 		defendendo = false
@@ -118,11 +124,12 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		player_has_shield = false
 		Global.screen_shake(3.0)
 		timer_shield = STIME
+		clicou = false
 		return
 	else:
 		#pass
-		if area.id == "Flecha":
-			area.destroy_player()
+		#if area.id == "Flecha":
+		#	area.destroy_player()
 		get_tree().reload_current_scene()
 
 func _input(event: InputEvent) -> void:
