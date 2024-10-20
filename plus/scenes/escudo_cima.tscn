@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7ubwgcjdnp51"]
+[gd_scene load_steps=12 format=3 uid="uid://c7ubwgcjdnp51"]
 
 [ext_resource type="Texture2D" uid="uid://dee7p7r7k471r" path="res://assets/broken_shield.png" id="1_dp43t"]
+[ext_resource type="Script" path="res://scripts/escudo_cima.gd" id="1_x82kw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnfut"]
 atlas = ExtResource("1_dp43t")
@@ -65,14 +66,38 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hpx6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpx6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpx6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpx6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpx6i")
 }],
 "loop": false,
 "name": &"Voltando",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"null",
+"speed": 5.0
 }]
 
 [node name="EscudoCima" type="Node2D"]
+script = ExtResource("1_x82kw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ug5ei")
 animation = &"Voltando"
+autoplay = "null"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

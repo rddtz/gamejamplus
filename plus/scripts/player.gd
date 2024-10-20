@@ -37,6 +37,9 @@ var shadow_scene := preload("res://scenes/player_shadow.tscn")
 var smoke_scene := preload("res://scenes/smoke.tscn")
 var particle_block_scene := preload("res://scenes/particle_break_shield.tscn")
 var morto := false
+@onready var escudo_cima: Node2D = $EscudoCima
+var quebrou := false
+
 
 func _ready() -> void:
 	animation_player.play("RESET")
@@ -129,11 +132,12 @@ func _physics_process(delta: float) -> void:
 			shadow.position = position
 			shadow.player = self
 			get_tree().current_scene.add_child(shadow, true)
+		
+		if quebrou && player_has_shield:
+			escudo_cima.get_node("AnimatedSprite2D").play("Voltando")
+			quebrou = false
 	else:
 		morte()
-		
-	if Input.is_key_pressed(KEY_J):
-		Engine.time_scale = 0.0
 
 func _on_dano_area_entered(area: Area2D) -> void:
 
@@ -170,6 +174,8 @@ func _on_dano_area_entered(area: Area2D) -> void:
 			Global.create_particles(particle_block_scene, 20, 30, position.x, position.y, 0, 0, 0, 0)
 			timer_shield = STIME
 			clicou = false
+			escudo_cima.get_node("AnimatedSprite2D").play("Quebrando")
+			quebrou = true
 			return
 		else:
 			#Global.score = 0

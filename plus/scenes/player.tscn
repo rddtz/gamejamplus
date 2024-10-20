@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cuxa2y5u7l0y2"]
+[gd_scene load_steps=48 format=3 uid="uid://cuxa2y5u7l0y2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_pix2n"]
 [ext_resource type="Shader" path="res://shaders/blink_shader.gdshader" id="2_jhh6m"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d0yobh1g6qoia" path="res://assets/Barrier (1).png" id="6_dwhyo"]
 [ext_resource type="AudioStream" uid="uid://b4ambc0jhyqbt" path="res://assets/sons/parry.mp3" id="7_o14sv"]
 [ext_resource type="AudioStream" uid="uid://dg384ykb4ry8g" path="res://assets/sons/morte.mp3" id="10_b5ly2"]
+[ext_resource type="PackedScene" uid="uid://c7ubwgcjdnp51" path="res://scenes/escudo_cima.tscn" id="12_1ghi0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tlquy"]
 shader = ExtResource("2_jhh6m")
@@ -418,6 +419,9 @@ bus = &"SFX"
 
 [node name="deathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_b5ly2")
+
+[node name="EscudoCima" parent="." instance=ExtResource("12_1ghi0")]
+position = Vector2(0, -16)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Dano" to="." method="_on_dano_area_entered"]
