@@ -15,10 +15,10 @@ var time_mov := TIME
 
 var last = ""
 
-const PTIME = 0.3
+const PTIME = 0.2781878459045
 var defendendo = false
 var parry_timer = PTIME
-var foi_parry = false
+var foi_parry = 0
 
 const STIME = 5
 var player_has_shield = true
@@ -76,13 +76,13 @@ func _physics_process(delta: float) -> void:
 			defendendo = true
 	else:
 		defendendo = false
-	
-	if foi_parry:
-		escudo.play("sucess_parry")
-		brilho.play("sucess_parry")
-	elif defendendo:
+
+	if defendendo:
 		escudo.play("shield_front")
 		brilho.play("null")
+	elif foi_parry > 0:
+		escudo.play("sucess_parry")
+		brilho.play("sucess_parry")s
 	else:
 		escudo.play("null")
 		brilho.play("null")
@@ -90,20 +90,21 @@ func _physics_process(delta: float) -> void:
 	if parry_timer > 0:
 		parry_timer -= delta
 		
+	if foi_parry > 0:	
+		foi_parry -= delta
+	
 	if timer_shield > 0:
 		timer_shield -= delta
 	else:
-		foi_parry = false
 		player_has_shield = true
 
 func _on_dano_area_entered(area: Area2D) -> void:
 	
 	if defendendo && parry_timer > 0:
 		print("parry")
-		foi_parry = true
+		foi_parry = 1
 		defendendo = false
 		player_has_shield = false
-		timer_shield = 1
 		if area.id == "Flecha":
 			area.destroy_parry()
 		return
