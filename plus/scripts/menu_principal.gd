@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 		clicou = true
 		AudioServer.set_bus_mute(menuTheme, true)
 		AudioServer.set_bus_volume_db(mainTheme, 0)
-		Global.call_transition("res://scenes/main.tscn")
+		Global.call_transition("res://space.tscn")
 	if len(nome) < 3 and Global.primeiro:
 		$CanvasLayer/Jogar.disabled = true
 		pass
@@ -31,7 +31,7 @@ func _on_jogar_pressed() -> void:
 		clicou = true
 		AudioServer.set_bus_mute(menuTheme, true)
 		AudioServer.set_bus_volume_db(mainTheme, 0)
-		Global.call_transition("res://scenes/main.tscn")
+		Global.call_transition("res://space.tscn")
 		
 func _on_leaderboard_pressed() -> void:
 	Global.call_transition("res://scenes/final.tscn")

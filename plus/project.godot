@@ -20,6 +20,10 @@ Global="*res://scripts/global.gd"
 Transition="*res://scenes/transition.tscn"
 Crt="*res://scenes/crt.tscn"
 
+[display]
+
+window/size/resizable=false
+
 [input]
 
 LEFT={
