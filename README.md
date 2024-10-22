@@ -1,3 +1,10 @@
+# Coisas fáceis para mudar:
+### (Enzo):
+	- aumentar som do portao fechando
+	- mudar sprite da bomba pra mostrar quando ta prester a explodir
+	- 4 caracteres do nome
+	- nao reiniciar a musica desde o começo quando morre
+
 ## Ideia principal:
       - Movimentação em grid em uma dungeon
       - Focando em desviar dos projeteis
