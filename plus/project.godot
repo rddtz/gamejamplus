@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="plus"
-run/main_scene="res://scenes/menu_principal.tscn"
+run/main_scene="res://scenes/ui/menu_principal.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
 [autoload]
 
-Global="*res://scripts/global.gd"
-Transition="*res://scenes/transition.tscn"
-Crt="*res://scenes/crt.tscn"
+Global="*res://scripts/outros/global.gd"
+Transition="*res://scenes/vfx/transition.tscn"
+Crt="*res://scenes/vfx/crt.tscn"
 
 [display]
 

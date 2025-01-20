@@ -1,0 +1,115 @@
+[gd_scene load_steps=16 format=3 uid="uid://dcthlxb73abyw"]
+
+[ext_resource type="Texture2D" uid="uid://cmsg47p03hoal" path="res://assets/player/Spritesheet_fumaca.png" id="1_1qenh"]
+[ext_resource type="Script" path="res://scripts/vfx/smoke.gd" id="1_r3a07"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxl7r"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0tye"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snweq"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d72cr"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2xpb"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltw06"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htrav"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icgno"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuua1"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpa4m"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye1ns"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8w04"]
+atlas = ExtResource("1_1qenh")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_unlls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxl7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0tye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snweq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d72cr")
+}],
+"loop": false,
+"name": &"down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2xpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltw06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htrav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icgno")
+}],
+"loop": false,
+"name": &"side",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuua1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpa4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye1ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8w04")
+}],
+"loop": false,
+"name": &"up",
+"speed": 10.0
+}]
+
+[node name="Smoke" type="Node2D"]
+script = ExtResource("1_r3a07")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_unlls")
+animation = &"up"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

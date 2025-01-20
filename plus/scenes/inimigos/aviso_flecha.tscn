@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://dm4cpi3tujp4m"]
+
+[ext_resource type="Texture2D" uid="uid://cwf537j1nr1ej" path="res://assets/inimigos/Warning-Sheet.png" id="1_6xccm"]
+[ext_resource type="Script" path="res://scripts/vfx/aviso_flecha.gd" id="2_ity6j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvsmu"]
+atlas = ExtResource("1_6xccm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h6ds"]
+atlas = ExtResource("1_6xccm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ve3o"]
+atlas = ExtResource("1_6xccm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43ixp"]
+atlas = ExtResource("1_6xccm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0e2w4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvsmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h6ds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ve3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43ixp")
+}],
+"loop": false,
+"name": &"aviso",
+"speed": 5.0
+}]
+
+[node name="aviso_flecha" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_0e2w4")
+animation = &"aviso"
+autoplay = "aviso"
+script = ExtResource("2_ity6j")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
