@@ -1,3 +1,6 @@
+#Drive de sprites:
+- https://drive.google.com/drive/folders/1hXNByFndUMK3DaHjJLnmqiNyVmkzXea3?usp=drive_link
+
 # Coisas fáceis para mudar:
 ### (Enzo):
 	- aumentar som do portao fechando
