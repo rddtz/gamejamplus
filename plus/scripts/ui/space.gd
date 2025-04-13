@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	Global.call_transition("res://scenes/mapas/main.tscn")
+	Global.call_transition("res://scenes/mapas/main_new.tscn")

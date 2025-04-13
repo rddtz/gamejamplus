@@ -44,6 +44,7 @@ var morto := false
 var quebrou := false
 @onready var cem: Node2D = $Cem
 
+var id = "player"
 
 func _ready() -> void:
 	animation_player.play("RESET")
@@ -162,45 +163,45 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		return
 
 	if !morto:
-		if area.id == "Flecha":
-			area.destroy_player()
-				
-		if parry:
-			$parrySound.pitch_scale = randf_range(1.2,1.8)
-			$parrySound.play(float(position.x))
-			Global.score += 100
-			foi_parry = 0.1
-			defendendo = false
-			player_has_shield = false
-			clicou = false
-			escudo_animation.stop()
-			escudo_animation.play("sucess_parry")
-			animation_player.stop()
-			animation_player.play("parry")
-			brilho.play("null")
-			brilho.play("sucess_parry")
-			hit_lag(0.05, .75)
-			cem.get_node("AnimationPlayer").stop()
-			cem.get_node("AnimationPlayer").play("up")
-			return
-		elif defendendo:
-			defendendo = false
-			$blockSound.pitch_scale = randf_range(1.0,1.4)
-			$blockSound.play(float(position.x))
-			player_has_shield = false
-			Global.screen_shake(5.0)
-			Global.quebrado = true
-			Global.create_particles(particle_block_scene, 20, 30, position.x, position.y, 0, 0, 0, 0)
-			timer_shield = STIME
-			clicou = false
-			escudo_cima.get_node("AnimatedSprite2D").play("Quebrando")
-			quebrou = true
-			return
-		else:
-			#Global.score = 0
-			Global.screen_shake(25.0)
-			escudo.play("null")
-			morto = true
+		#if area.id == "Flecha":
+		#	area.destroy_player()
+		if area.name == "Damage":
+			if parry:
+				$parrySound.pitch_scale = randf_range(1.2,1.8)
+				$parrySound.play(float(position.x))
+				Global.score += 100
+				foi_parry = 0.1
+				defendendo = false
+				player_has_shield = false
+				clicou = false
+				escudo_animation.stop()
+				escudo_animation.play("sucess_parry")
+				animation_player.stop()
+				animation_player.play("parry")
+				brilho.play("null")
+				brilho.play("sucess_parry")
+				hit_lag(0.05, .75)
+				cem.get_node("AnimationPlayer").stop()
+				cem.get_node("AnimationPlayer").play("up")
+				return
+			elif defendendo:
+				defendendo = false
+				$blockSound.pitch_scale = randf_range(1.0,1.4)
+				$blockSound.play(float(position.x))
+				player_has_shield = false
+				Global.screen_shake(5.0)
+				Global.quebrado = true
+				Global.create_particles(particle_block_scene, 20, 30, position.x, position.y, 0, 0, 0, 0)
+				timer_shield = STIME
+				clicou = false
+				escudo_cima.get_node("AnimatedSprite2D").play("Quebrando")
+				quebrou = true
+				return
+			else:
+				Global.score = 0
+				Global.screen_shake(25.0)
+				escudo.play("null")
+				morto = true
 func _input(event: InputEvent) -> void:
 	pass
 

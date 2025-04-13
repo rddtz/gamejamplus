@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 func _on_yes_pressed() -> void:
 	if Global.score > Global.highscore:
 		Global.highscore = Global.score 
-	Global.call_transition("res://scenes/mapas/main.tscn")
+	Global.call_transition("res://scenes/mapas/main_new.tscn")
 
 
 func _on_no_pressed() -> void:
