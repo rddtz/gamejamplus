@@ -5,6 +5,9 @@ var mainTheme = AudioServer.get_bus_index("main theme")
 
 var clicou = false
 
+func _ready() -> void:
+	Global.load_leaders()
+
 func _process(delta: float) -> void:
 	
 	var nome = $CanvasLayer/LineEdit.text
@@ -32,8 +35,10 @@ func _on_jogar_pressed() -> void:
 		AudioServer.set_bus_mute(menuTheme, true)
 		AudioServer.set_bus_volume_db(mainTheme, 0)
 		Global.call_transition("res://scenes/ui/space.tscn")
+		print("TCHAU")
 		
 func _on_leaderboard_pressed() -> void:
+	print("oi")
 	Global.call_transition("res://scenes/ui/final.tscn")
 	
 	

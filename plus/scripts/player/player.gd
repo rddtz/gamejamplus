@@ -198,7 +198,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 				quebrou = true
 				return
 			else:
-				Global.score = 0
+				#Global.score = 0
 				Global.screen_shake(25.0)
 				escudo.play("null")
 				morto = true
@@ -213,6 +213,7 @@ func morte():
 		$deathSound.pitch_scale = randf_range(1.0,1.15)
 		$deathSound.play()
 		animation.play("morte")
+		Global.ordena_score()
 		Global.contando = false
 		
 

@@ -256,6 +256,5 @@ autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Leaderboard" to="." method="_on_leaderboard_pressed"]
-[connection signal="pressed" from="CanvasLayer/Leaderboard" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Sair" to="." method="_on_sair_pressed"]
 [connection signal="tree_exiting" from="CanvasLayer/Label" to="." method="_on_label_tree_exiting"]
