@@ -57,13 +57,23 @@ func monta_string():
 
 func coloca_nomes():
 	$VBoxContainer/Container2/HBoxContainer/nomes.text = "NAMES"
-	for i in range(Global.NUM_PLAYERS-1):
-		$VBoxContainer/Container2/HBoxContainer/nomes.text += "\n" + str(i+1) + ". " + Global.final_names[i]
+	#for i in range(Global.NUM_PLAYERS-1):
+	#	$VBoxContainer/Container2/HBoxContainer/nomes.text += "\n" + str(i+1) + ". " + Global.final_names[i]
+	var i = Global.MAX_PLAYERS - 1
+	var j = 0
+	while i > -1:
+		$VBoxContainer/Container2/HBoxContainer/nomes.text += "\n" + str(j+1) + ". " + Global.leaderboard["names"][i]
+		j += 1
+		i -= 1
 
 func coloca_scores():
 	$VBoxContainer/Container2/HBoxContainer/scores.text = "SCORES"
-	for i in range(Global.NUM_PLAYERS-1):
-		$VBoxContainer/Container2/HBoxContainer/scores.text += "\n" + str(Global.final_score[i])
+	#for i in range(Global.NUM_PLAYERS-1):
+		#$VBoxContainer/Container2/HBoxContainer/scores.text += "\n" + str(Global.final_score[i])
+	var i = Global.MAX_PLAYERS - 1
+	while i > -1:
+		$VBoxContainer/Container2/HBoxContainer/scores.text += "\n" + str(Global.leaderboard["scores"][i])
+		i -= 1
 
 
 func _on_enviar_pressed() -> void: 

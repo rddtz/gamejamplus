@@ -15,6 +15,7 @@ var final_names = [0,0,0,0,0,0,0,0,0,0,0]
 var highscore = 0
 var primeiro = true
 
+const MAX_PLAYERS := 10
 var leaderboard : Dictionary = {
 	"names" : ["", "", "", "", "", "", "", "", "", ""],
 	"scores" : [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]} 
