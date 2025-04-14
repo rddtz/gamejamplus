@@ -8,10 +8,6 @@ var nome = "YOU"
 var quebrado
 var contando
 
-var NUM_PLAYERS
-var leaders = {}
-var final_score = [0,0,0,0,0,0,0,0,0,0,0]
-var final_names = [0,0,0,0,0,0,0,0,0,0,0]
 var highscore = 0
 var primeiro = true
 

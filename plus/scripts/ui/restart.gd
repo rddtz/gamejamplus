@@ -21,3 +21,4 @@ func _on_yes_pressed() -> void:
 
 func _on_no_pressed() -> void:
 	Global.call_transition("res://scenes/ui/menu_principal.tscn")
+	Global.primeiro = true

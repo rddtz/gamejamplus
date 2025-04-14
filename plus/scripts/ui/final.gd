@@ -30,6 +30,8 @@ func coloca_scores():
 func _on_enviar_pressed() -> void: 
 	
 	Global.call_transition("res://scenes/ui/menu_principal.tscn")
+	Global.primeiro = true
 
 func _on_button_pressed() -> void:
 	Global.call_transition("res://scenes/ui/menu_principal.tscn")
+	Global.primeiro = true
