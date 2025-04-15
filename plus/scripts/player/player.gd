@@ -66,13 +66,12 @@ func move():
 			smoke.animated_sprite_2d.play(animation.animation)
 			moving = true
 			var tween = create_tween()
-			tween.tween_property(self, "position", position + rayan.target_position, .1)
+			tween.tween_property(self, "position", position + rayan.target_position, .1)#.1
 			tween.tween_callback(move_false)
 		#position += rayan.target_position
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	
 	if !morto:
 		if time_mov > 0:
 			time_mov -= delta
@@ -163,8 +162,8 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		return
 
 	if !morto:
-		#if area.id == "Flecha":
-		#	area.destroy_player()
+		if area.get_parent().id == "Fireball":
+			area.get_parent().destroy()
 		if area.name == "Damage":
 			if parry:
 				$parrySound.pitch_scale = randf_range(1.2,1.8)

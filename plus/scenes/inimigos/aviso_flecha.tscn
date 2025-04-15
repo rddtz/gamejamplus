@@ -40,9 +40,12 @@ animations = [{
 }]
 
 [node name="aviso_flecha" type="AnimatedSprite2D"]
+position = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_0e2w4")
 animation = &"aviso"
 autoplay = "aviso"
+frame = 3
+frame_progress = 1.0
 script = ExtResource("2_ity6j")
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

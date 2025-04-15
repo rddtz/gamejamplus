@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://co01a6pudymie"]
+[gd_scene load_steps=11 format=3 uid="uid://co01a6pudymie"]
 
 [ext_resource type="PackedScene" uid="uid://cxy7ohkpuha2b" path="res://scenes/vfx/screenshake.tscn" id="1_8ubo8"]
 [ext_resource type="PackedScene" uid="uid://djcehrbduq3jf" path="res://scenes/cenario/mapa_exemplo.tscn" id="2_xht5c"]
 [ext_resource type="PackedScene" uid="uid://cl7mw413ftgqn" path="res://scenes/ui/hud.tscn" id="3_xwuig"]
 [ext_resource type="PackedScene" uid="uid://dnmbunej4me3p" path="res://scenes/cenario/portao_fechado.tscn" id="5_knef5"]
 [ext_resource type="PackedScene" uid="uid://d2b01vgnufnft" path="res://scenes/inimigos/new_spikes.tscn" id="9_18jwd"]
+[ext_resource type="PackedScene" uid="uid://lap435yjyml" path="res://scenes/inimigos/fireball.tscn" id="10_7s6c7"]
 [ext_resource type="PackedScene" uid="uid://cuxa2y5u7l0y2" path="res://scenes/player/player.tscn" id="10_foehw"]
 [ext_resource type="PackedScene" uid="uid://c6dq3gl435piw" path="res://scenes/outros/timer.tscn" id="13_w4u70"]
 [ext_resource type="PackedScene" uid="uid://dd5cfxjs31fh6" path="res://scenes/ui/menu_pause.tscn" id="15_rdl1t"]
@@ -14,31 +15,32 @@
 process_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(221, 184)
-zoom = Vector2(2.2, 2.2)
+position = Vector2(153, 133)
+zoom = Vector2(2, 2)
 
 [node name="Screenshake" parent="Camera2D" node_paths=PackedStringArray("cam") instance=ExtResource("1_8ubo8")]
 cam = NodePath("..")
 
 [node name="Mapa_exemplo" parent="." instance=ExtResource("2_xht5c")]
-position = Vector2(116, 99)
+position = Vector2(48, 48)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("3_xwuig")]
 
 [node name="PortaoFechado" parent="." instance=ExtResource("5_knef5")]
-position = Vector2(212, 72)
+position = Vector2(144, 21)
 
 [node name="Player" parent="." instance=ExtResource("10_foehw")]
-position = Vector2(220, 107)
+position = Vector2(152, 56)
 
 [node name="Timer" parent="." instance=ExtResource("13_w4u70")]
-position = Vector2(-59, 403)
+position = Vector2(-127, 352)
 
 [node name="Menu pause" parent="." instance=ExtResource("15_rdl1t")]
-offset_left = 367.0
-offset_top = 849.0
-offset_right = 367.0
-offset_bottom = 849.0
+offset_left = 299.0
+offset_top = 798.0
+offset_right = 299.0
+offset_bottom = 798.0
+metadata/_edit_use_anchors_ = true
 
 [node name="main theme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_6x820")
@@ -46,4 +48,9 @@ volume_db = -7.745
 autoplay = true
 
 [node name="new_spikes" parent="." instance=ExtResource("9_18jwd")]
-position = Vector2(153, 147)
+position = Vector2(85, 96)
+
+[node name="fireball" parent="." instance=ExtResource("10_7s6c7")]
+position = Vector2(672, 56)
+direction = 180
+speed = 300.0

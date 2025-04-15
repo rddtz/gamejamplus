@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/inimigos/spawner_cima.gd" id="1_w78bx"]
 
-
 [node name="spawner_cima" type="Node2D"]
 script = ExtResource("1_w78bx")
 

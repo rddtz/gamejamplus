@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/inimigos/spawner_direita.gd" id="1_fp4md"]
 
-
 [node name="spawner_direita" type="Node2D"]
 script = ExtResource("1_fp4md")
 

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7it02bdbm4mw"]
+
+[ext_resource type="Script" path="res://scripts/inimigos/fireball_shadow.gd" id="1_n00kc"]
+[ext_resource type="Texture2D" uid="uid://cofrp6x30w15t" path="res://assets/inimigos/fireball_shadow.png" id="2_vjkuv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlwk2"]
+atlas = ExtResource("2_vjkuv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_niudr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlwk2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="fireball_shadow" type="Node2D"]
+script = ExtResource("1_n00kc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_niudr")
+autoplay = "default"
