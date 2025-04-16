@@ -13,6 +13,7 @@ var id = "spike"
 func _ready() -> void:
 	damage_box.disabled = true
 	checking_box.disabled = false
+	pos_inicial()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,3 +50,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		animated_sprite_2d.stop()
 		animated_sprite_2d.play("damage")
 		damage_box.disabled = false
+
+func pos_inicial():
+	position = Vector2(int((position.x) / 16)*16 + 8, int((position.y) / 16)*16 + 8)

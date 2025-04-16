@@ -34,3 +34,5 @@ position = Vector2(8, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
 shape = SubResource("RectangleShape2D_xllyy")
+
+[connection signal="area_entered" from="Damage" to="." method="_on_damage_area_entered"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://babkioueow52w"]
+
+[ext_resource type="Script" path="res://scripts/inimigos/controlador_new.gd" id="1_6gpbh"]
+
+[node name="controlador_new" type="Node2D"]
+script = ExtResource("1_6gpbh")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

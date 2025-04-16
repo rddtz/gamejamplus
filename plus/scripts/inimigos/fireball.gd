@@ -7,17 +7,25 @@ var id := "Fireball"
 #400 pixels de distancia do mapa
 var warning_scene := preload("res://scenes/inimigos/aviso_flecha.tscn")
 var shadow_scene := preload("res://scenes/inimigos/fireball_shadow.tscn")
+var collided_inicial := false
+var timer := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	speed = 300
 	pos_inicial()
 	
 	create_warning()
 
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if collided_inicial and timer < 1:
+		destroy()
+		collided_inicial = false
+	
+	timer += 1
 	getting_out()
 
 func pos_inicial():
@@ -57,3 +65,8 @@ func getting_out():
 
 func destroy():
 	queue_free()
+
+
+func _on_damage_area_entered(area: Area2D) -> void:
+	if area.name == "Damage":
+		collided_inicial = true
