@@ -3,6 +3,7 @@ extends Node2D
 var id := "Fireball"
 @export var direction : int
 @export var speed : float
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 #400 pixels de distancia do mapa
 var warning_scene := preload("res://scenes/inimigos/aviso_flecha.tscn")
@@ -34,6 +35,8 @@ func pos_inicial():
 func _physics_process(delta: float) -> void:
 	position.x += cos(deg_to_rad(direction)) * speed * delta
 	position.y += sin(deg_to_rad(direction)) * speed * delta
+	
+	animated_sprite_2d.rotation = deg_to_rad(direction)
 	
 	#var shadow = shadow_scene.instantiate()
 	#shadow.position.x = position.x + 8
