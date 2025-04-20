@@ -5,7 +5,7 @@ var fireball_scene = preload("res://scenes/inimigos/fireball.tscn")
 #sentido trigonometrico: direita, cima, esquerda, baixo
 #var fireball_positions := [673, -400, -400, 656]
 #sentido: 0, 90, 180, 270 (lembrando que o eixo y eh invertido)
-var fireball_positions := [-400, -400, 673, 656]
+
 const size := 16
 const min_position := 2
 const max_position := 15
@@ -32,13 +32,13 @@ func spawn_fireball(dir, pos_x, pos_y):
 	var fireball := fireball_scene.instantiate()
 	
 	if dir == 0:
-		fireball.position = Vector2(fireball_positions[0], pos_y * size)
+		fireball.position = Vector2(Global.fireball_positions[0], pos_y * size)
 	elif dir == 90:
-		fireball.position = Vector2(pos_x * size, fireball_positions[1])
+		fireball.position = Vector2(pos_x * size, Global.fireball_positions[1])
 	elif dir == 180:
-		fireball.position = Vector2(fireball_positions[2], pos_y * size)
+		fireball.position = Vector2(Global.fireball_positions[2], pos_y * size)
 	else:
-		fireball.position = Vector2(pos_x * size, fireball_positions[3])
+		fireball.position = Vector2(pos_x * size, Global.fireball_positions[3])
 		
 	fireball.direction = dir
 	get_tree().current_scene.add_child(fireball, true)

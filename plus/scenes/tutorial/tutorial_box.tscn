@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://drtpy4g8irs48"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/tutorial_box.gd" id="1_hn6r2"]
+[ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="1_kyxm3"]
+[ext_resource type="Texture2D" uid="uid://drbyt3vsawohr" path="res://assets/tutorial/context.png" id="3_250q2"]
+[ext_resource type="Texture2D" uid="uid://48bq0j0sc00r" path="res://assets/tutorial/dodge.png" id="4_6mvs3"]
+[ext_resource type="Texture2D" uid="uid://br1u6y0v3beey" path="res://assets/tutorial/movements.png" id="5_217or"]
+[ext_resource type="Texture2D" uid="uid://bk5w5vaycq8w2" path="res://assets/tutorial/parry.png" id="6_jwnhp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2u1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_250q2")
+}],
+"loop": true,
+"name": &"context",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_6mvs3")
+}],
+"loop": true,
+"name": &"dodge",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_217or")
+}],
+"loop": true,
+"name": &"movements",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jwnhp")
+}],
+"loop": true,
+"name": &"parry",
+"speed": 0.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6t6dd"]
+font = ExtResource("1_kyxm3")
+
+[node name="tutorial_box" type="CanvasLayer"]
+script = ExtResource("1_hn6r2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(574, 288)
+sprite_frames = SubResource("SpriteFrames_j2u1o")
+animation = &"context"
+
+[node name="press" type="Label" parent="AnimatedSprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -463.5
+offset_top = -33.0
+offset_right = -234.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "PRESS ENTER TO CONTINUE"
+label_settings = SubResource("LabelSettings_6t6dd")

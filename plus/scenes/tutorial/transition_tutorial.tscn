@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3o4tyjmksugc"]
+[gd_scene load_steps=8 format=3 uid="uid://bv3f8tkxm3ty8"]
 
-[ext_resource type="Script" path="res://scripts/vfx/transition.gd" id="1_bkfwh"]
-[ext_resource type="Shader" path="res://shaders/transition.gdshader" id="1_jncb1"]
+[ext_resource type="Script" path="res://scripts/tutorial/transition_tutorial.gd" id="1_7krja"]
+[ext_resource type="Shader" path="res://shaders/transition.gdshader" id="2_mhyri"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_to1rm"]
-shader = ExtResource("1_jncb1")
+shader = ExtResource("2_mhyri")
 shader_parameter/progress = 0.0
 shader_parameter/pixel_size = 30.0
 
@@ -45,11 +45,11 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.46667),
+"times": PackedFloat32Array(1.5),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"change_scene"
+"method": &"reset"
 }]
 }
 
@@ -75,8 +75,8 @@ _data = {
 "white": SubResource("Animation_jniud")
 }
 
-[node name="Transition" type="CanvasLayer"]
-script = ExtResource("1_bkfwh")
+[node name="Transition_tutorial" type="CanvasLayer"]
+script = ExtResource("1_7krja")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_to1rm")

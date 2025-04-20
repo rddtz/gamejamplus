@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=3 uid="uid://cixu7c21s3xes"]
+
+[ext_resource type="Script" path="res://scripts/tutorial/hud_tutorial_move.gd" id="1_sng7i"]
+[ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="2_nvwpx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sh607"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r1um7"]
+font_size = 24
+
+[node name="hud_tutorial_move" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_sng7i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 6.0
+offset_top = 52.0
+offset_right = 194.0
+offset_bottom = 131.0
+
+[node name="Goals" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_nvwpx")
+theme_override_font_sizes/font_size = 35
+text = "GOALS:"
+
+[node name="Up" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.787759, 0.787759, 0.787759, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_nvwpx")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sh607")
+text = " - GO UP"
+label_settings = SubResource("LabelSettings_r1um7")
+
+[node name="Down" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.787759, 0.787759, 0.787759, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_nvwpx")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sh607")
+text = " - GO DOWN"
+label_settings = SubResource("LabelSettings_r1um7")
+
+[node name="Right" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.787759, 0.787759, 0.787759, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_nvwpx")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sh607")
+text = " - GO RIGHT"
+label_settings = SubResource("LabelSettings_r1um7")
+
+[node name="Left" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.787759, 0.787759, 0.787759, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_nvwpx")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sh607")
+text = " - GO LEFT"
+label_settings = SubResource("LabelSettings_r1um7")
+
+[node name="Help" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.038
+anchor_top = 0.021
+anchor_right = 0.038
+anchor_bottom = 0.021
+offset_left = 813.224
+offset_top = 41.392
+offset_right = 1100.22
+offset_bottom = 116.392
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_nvwpx")
+theme_override_font_sizes/font_size = 33
+text = "PRESS H FOR HELP"
+horizontal_alignment = 2

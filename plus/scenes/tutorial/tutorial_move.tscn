@@ -1,0 +1,59 @@
+[gd_scene load_steps=11 format=3 uid="uid://2sft6473rxyf"]
+
+[ext_resource type="PackedScene" uid="uid://cxy7ohkpuha2b" path="res://scenes/vfx/screenshake.tscn" id="1_p6ifu"]
+[ext_resource type="PackedScene" uid="uid://djcehrbduq3jf" path="res://scenes/cenario/mapa_exemplo.tscn" id="2_awani"]
+[ext_resource type="PackedScene" uid="uid://cixu7c21s3xes" path="res://scenes/tutorial/hud_tutorial_move.tscn" id="3_8xoui"]
+[ext_resource type="PackedScene" uid="uid://dnmbunej4me3p" path="res://scenes/cenario/portao_fechado.tscn" id="4_32cko"]
+[ext_resource type="PackedScene" uid="uid://dd5cfxjs31fh6" path="res://scenes/ui/menu_pause.tscn" id="7_secd2"]
+[ext_resource type="AudioStream" uid="uid://bmtjtwf1e0vrr" path="res://assets/sons/musicaFinal.mp3" id="8_jp48n"]
+[ext_resource type="PackedScene" uid="uid://bjql5u6isvnf0" path="res://scenes/tutorial/tutorial_controller.tscn" id="8_kmi0n"]
+[ext_resource type="PackedScene" uid="uid://ciuk87nilsi8a" path="res://scenes/tutorial/player_tutorial.tscn" id="8_ys1uc"]
+[ext_resource type="PackedScene" uid="uid://bjh3oegucu3je" path="res://scenes/tutorial/count_dodges_tutorial.tscn" id="9_by7y8"]
+[ext_resource type="PackedScene" uid="uid://drtpy4g8irs48" path="res://scenes/tutorial/tutorial_box.tscn" id="10_oq2w8"]
+
+[node name="main2" type="Node2D"]
+process_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(153, 133)
+zoom = Vector2(2, 2)
+
+[node name="Screenshake" parent="Camera2D" node_paths=PackedStringArray("cam") instance=ExtResource("1_p6ifu")]
+cam = NodePath("..")
+
+[node name="Mapa_exemplo" parent="." instance=ExtResource("2_awani")]
+position = Vector2(48, 48)
+
+[node name="hud_tutorial_move" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("3_8xoui")]
+color_off = Color(0.509286, 0.509286, 0.509286, 1)
+color_on = Color(1, 1, 1, 1)
+controller = NodePath("../tutorial_controller")
+
+[node name="PortaoFechado" parent="." instance=ExtResource("4_32cko")]
+position = Vector2(144, 21)
+
+[node name="Menu pause" parent="." instance=ExtResource("7_secd2")]
+offset_left = 362.0
+offset_top = 837.0
+offset_right = 362.0
+offset_bottom = 837.0
+metadata/_edit_use_anchors_ = true
+
+[node name="main theme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_jp48n")
+volume_db = -7.745
+autoplay = true
+
+[node name="tutorial_controller" parent="." node_paths=PackedStringArray("canvas", "player") instance=ExtResource("8_kmi0n")]
+canvas = NodePath("../hud_tutorial_move")
+player = NodePath("../Player")
+
+[node name="Player" parent="." node_paths=PackedStringArray("controller_move") instance=ExtResource("8_ys1uc")]
+position = Vector2(165, 120)
+controller_move = NodePath("../tutorial_controller")
+
+[node name="count_dodges_tutorial" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("9_by7y8")]
+position = Vector2(-15, 123)
+controller = NodePath("../tutorial_controller")
+
+[node name="tutorial_box" parent="." instance=ExtResource("10_oq2w8")]

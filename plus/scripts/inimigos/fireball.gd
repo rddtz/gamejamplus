@@ -63,7 +63,6 @@ func create_warning():
 
 func getting_out():
 	if position.x >= 1000 || position.x <= -1000 || position.y >= 1000 || position.y <= -1000:
-		print("SAIU")
 		queue_free()
 
 func destroy():

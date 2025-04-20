@@ -179,7 +179,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 				animation_player.play("parry")
 				brilho.play("null")
 				brilho.play("sucess_parry")
-				hit_lag(0.05, .75)
+				hit_lag(0.05, .90) #0.05, .75
 				cem.get_node("AnimationPlayer").stop()
 				cem.get_node("AnimationPlayer").play("up")
 				return

@@ -21,6 +21,8 @@ const save_location = "user://Save.json"
 var map_pivot := Vector2(84, 67)
 var map_size := Vector2(256, 240)
 
+var fireball_positions := [-400, -400, 673, 656]
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	paused = false # Replace with function body.
@@ -72,9 +74,7 @@ func ordena_score():
 	while i > -1:
 		if score >= leaderboard["scores"][i] and !exit:
 			exit = true
-			print("ENREI")
 			for j in i + 1:
-				print(j)
 				if j > 0:
 					leaderboard["scores"][j-1] = leaderboard["scores"][j]
 					leaderboard["names"][j-1] = leaderboard["names"][j]
