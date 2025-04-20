@@ -1,12 +1,15 @@
-extends CanvasLayer
+extends Control
 
-@onready var press: Label = $AnimatedSprite2D/press
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = $CanvasLayer/AnimatedSprite2D
+@onready var press: Label = $CanvasLayer/AnimatedSprite2D/press
+@onready var canvas: CanvasLayer = $CanvasLayer
+
 
 var alpha := 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().paused = true
 	pass # Replace with function body.
 
 
@@ -20,7 +23,11 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("enviar"):
-		visible = false
+		if sprite.animation == "context":
+			movements()
+		else:
+			canvas.visible = false
+			get_tree().paused = false
 
 func context():
 	sprite.play("context")
@@ -32,10 +39,11 @@ func parry():
 	sprite.play("parry")
 	
 func movements():
-	sprite.play("moviments")
+	sprite.play("movements")
 
 func show_box(page):
-	visible = true
+	get_tree().paused = true
+	canvas.visible = true
 	
 	match page:
 		0:

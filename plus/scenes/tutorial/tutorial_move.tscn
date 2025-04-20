@@ -44,9 +44,10 @@ stream = ExtResource("8_jp48n")
 volume_db = -7.745
 autoplay = true
 
-[node name="tutorial_controller" parent="." node_paths=PackedStringArray("canvas", "player") instance=ExtResource("8_kmi0n")]
+[node name="tutorial_controller" parent="." node_paths=PackedStringArray("canvas", "player", "box") instance=ExtResource("8_kmi0n")]
 canvas = NodePath("../hud_tutorial_move")
 player = NodePath("../Player")
+box = NodePath("../tutorial_box")
 
 [node name="Player" parent="." node_paths=PackedStringArray("controller_move") instance=ExtResource("8_ys1uc")]
 position = Vector2(165, 120)

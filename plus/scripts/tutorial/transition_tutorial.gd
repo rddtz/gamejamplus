@@ -18,6 +18,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("enviar") && on_tran:
 		reset()
+		tran_finished()
 		animation_player.stop()
 		#animation_player.play("white")
 	
@@ -38,8 +39,10 @@ func reset():
 		controller.player = new_player
 		player = new_player
 		start_fire()
-		on_tran = false
 
 func start_fire():
 	controller.do_fire = true
 	controller.timer.start()
+
+func tran_finished():
+	on_tran = false
