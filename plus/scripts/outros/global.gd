@@ -23,6 +23,10 @@ var map_size := Vector2(256, 240)
 
 var fireball_positions := [-400, -400, 673, 656]
 
+var time_max := 120
+var time := time_max
+var tran := false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	paused = false # Replace with function body.

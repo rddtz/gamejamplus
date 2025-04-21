@@ -59,25 +59,26 @@ func spawn_bomb():
 	get_tree().current_scene.add_child(bomb, true)
 
 func _on_timer_timeout() -> void:
-	seconds += 1
-	
-	if seconds == 1:
-		spawn_fireball(180, 0, rng.randi_range(min_position, max_position))
-	elif seconds == 3:
-		spawn_fireball(90, rng.randi_range(min_position, max_position), 0)
-		#spawn_bomb()
-	elif seconds == 5:
-		spawn_fireball(0, 0, rng.randi_range(min_position, max_position))
-	elif seconds == 7:
-		spawn_fireball(270, rng.randi_range(min_position, max_position), 0)
-	elif seconds == 10 || seconds == 13 || seconds == 16:
-		spawn_bomb()
-	
-	if seconds > 18 and seconds % 3 == 0:
-		spawn_bomb()
+	if Global.time > 0:
+		seconds += 1
 		
-	if seconds == 30 || seconds == 45 || seconds == 16:
-		qtd_fire += 1
-	
-	if seconds > 16:
-		random_fireball(rng.randi_range(1, qtd_fire))
+		if seconds == 1:
+			spawn_fireball(180, 0, rng.randi_range(min_position, max_position))
+		elif seconds == 3:
+			spawn_fireball(90, rng.randi_range(min_position, max_position), 0)
+			#spawn_bomb()
+		elif seconds == 5:
+			spawn_fireball(0, 0, rng.randi_range(min_position, max_position))
+		elif seconds == 7:
+			spawn_fireball(270, rng.randi_range(min_position, max_position), 0)
+		elif seconds == 10 || seconds == 13 || seconds == 16:
+			spawn_bomb()
+		
+		if seconds > 18 and seconds % 3 == 0:
+			spawn_bomb()
+			
+		if seconds == 30 || seconds == 45 || seconds == 16:
+			qtd_fire += 1
+		
+		if seconds > 16:
+			random_fireball(rng.randi_range(1, qtd_fire))

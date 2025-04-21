@@ -1,10 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnmbunej4me3p"]
+[gd_scene load_steps=11 format=3 uid="uid://dnmbunej4me3p"]
 
+[ext_resource type="Script" path="res://scripts/cenarios/gate.gd" id="1_4uoe1"]
 [ext_resource type="Texture2D" uid="uid://bn14i85xwh6it" path="res://assets/cenarios/Gate_animation.png" id="1_xrskd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbved"]
+size = Vector2(28, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5d4o"]
 atlas = ExtResource("1_xrskd")
 region = Rect2(160, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6p10"]
+atlas = ExtResource("1_xrskd")
+region = Rect2(160, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1r8sc"]
+atlas = ExtResource("1_xrskd")
+region = Rect2(96, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eprkv"]
+atlas = ExtResource("1_xrskd")
+region = Rect2(64, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fa17"]
+atlas = ExtResource("1_xrskd")
+region = Rect2(32, 0, 32, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptst0"]
+atlas = ExtResource("1_xrskd")
+region = Rect2(0, 0, 32, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_picn4"]
 animations = [{
@@ -15,16 +39,44 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6p10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1r8sc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eprkv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7fa17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptst0")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbved"]
-size = Vector2(28, 16)
+[node name="PortaoFechado" type="Node2D"]
+script = ExtResource("1_4uoe1")
 
-[node name="PortaoFechado" type="StaticBody2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_picn4")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+unique_name_in_owner = true
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_fbved")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_picn4")
+animation = &"open"
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

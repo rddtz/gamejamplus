@@ -12,7 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	animated_sprite_2d = player.animation
+	animated_sprite_2d.animation = player.animation.animation
 
 func _on_timer_timeout() -> void:
 	queue_free()

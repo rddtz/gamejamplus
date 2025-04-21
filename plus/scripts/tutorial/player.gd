@@ -50,6 +50,7 @@ func _ready() -> void:
 	animation_player.play("RESET")
 	Global.contando = true
 	Global.score = 0
+	Global.time = Global.time_max
 
 func move_false():
 	moving = false
@@ -76,7 +77,7 @@ func _physics_process(delta: float) -> void:
 		if time_mov > 0:
 			time_mov -= delta
 		
-		if !defendendo && !parry:
+		if !defendendo && !parry && !Global.tran:
 			if (Input.is_action_pressed("LEFT") and !time_mov):
 				rayan.target_position = Vector2(-16,0)
 				animation.flip_h = true
@@ -148,7 +149,7 @@ func _physics_process(delta: float) -> void:
 			var shadow := shadow_scene.instantiate()
 			shadow.position = position
 			shadow.player = self
-			get_tree().current_scene.add_child(shadow, true)
+			#get_tree().current_scene.add_child(shadow, true)
 		
 		if quebrou && player_has_shield:
 			escudo_cima.get_node("AnimatedSprite2D").play("Voltando")
@@ -162,7 +163,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		return
 
 	if !morto:
-		if area.get_parent().id == "Fireball":
+		if area.name != "Tran" && area.get_parent().id == "Fireball":
 			area.get_parent().destroy()
 		if area.name == "Damage":
 			if parry:

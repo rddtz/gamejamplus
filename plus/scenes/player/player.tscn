@@ -521,7 +521,7 @@ script = ExtResource("1_pix2n")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_tlquy")
 sprite_frames = SubResource("SpriteFrames_617jy")
-animation = &"down"
+animation = &"up"
 autoplay = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

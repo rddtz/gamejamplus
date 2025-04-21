@@ -15,4 +15,7 @@ func _process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	if Global.contando:
 		Global.score += 10
+		Global.time -= 1
+		if Global.time <= 0:
+			Global.contando = false
 #	print(Global.score) 
