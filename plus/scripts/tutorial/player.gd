@@ -16,6 +16,13 @@ var time_mov := TIME
 
 @onready var escudo_animation: AnimationPlayer = $Escudo/AnimationShield
 
+@export var cam : Camera2D
+
+var order_dirs = ["right", "down", "left", "up"]
+var order_index := 0
+var state := "idle"
+var walk_anim := false
+
 var last = ""
 
 const PTIME = 0.2
@@ -64,7 +71,7 @@ func move():
 			smoke.position = position
 			smoke.player = self
 			get_tree().current_scene.add_child(smoke, true)
-			smoke.animated_sprite_2d.play(animation.animation)
+			smoke.animated_sprite_2d.play("walk_"+order_dirs[order_index])
 			moving = true
 			var tween = create_tween()
 			tween.tween_property(self, "position", position + rayan.target_position, .1)#.1
@@ -73,76 +80,24 @@ func move():
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
-	if !morto:
-		if time_mov > 0:
-			time_mov -= delta
+	if state !=  "dead":
 		
-		if !defendendo && !parry && !Global.tran:
-			if (Input.is_action_pressed("LEFT") and !time_mov):
-				rayan.target_position = Vector2(-16,0)
-				animation.flip_h = true
-				animation.play("side")
-				last = "side"
-				move()
-			if Input.is_action_pressed("RIGHT") and !time_mov:
-				rayan.target_position = Vector2(16,0)
-				animation.flip_h = false
-				animation.play("side")
-				last = "side"
-				move()
-			if (Input.is_action_pressed("UP") and !time_mov):
-				rayan.target_position = Vector2(0,-16)
-				animation.play("up")
-				last = "up"
-				move()
-			if (Input.is_action_pressed("DOWN") and !time_mov):
-				rayan.target_position = Vector2(0,16)
-				last = "down"
-				animation.play("down")
-				move()
-		
-		if Input.is_action_just_pressed("parry_block") && player_has_shield:
-			clicou = true
-			parry = true
-			set_parry = PS
-		
-		if Input.is_action_pressed("parry_block") && clicou && player_has_shield:
-			if !defendendo:
-				defendendo = true
-		else:
-			defendendo = false
-
-		if Input.is_action_just_released("parry_block") && player_has_shield:
-			if set_parry > 0:
-				parry_timer = PTIME
-
-		if set_parry > 0 || parry_timer > 0:
-			parry = true
-		else:
-			parry = false
-
-		if defendendo || parry:
-			#escudo.play("shield_front")
-			choosing_shield()
-			brilho.play("null")
-		else:
-			escudo.play("null")
-			#brilho.play("null")
-		
-		if parry_timer > 0:
-			parry_timer -= delta
-		
-		if set_parry > 0:
-			set_parry -= delta
+		if !Global.tran && (state == "idle" || state == "walk"):
+			if time_mov > 0:
+				time_mov -= delta
 			
-		if foi_parry > 0:	
-			foi_parry -= delta
-		
-		if timer_shield > 0:
-			timer_shield -= delta
-		else:
-			player_has_shield = true
-			Global.quebrado = false
+			var _velh := int(Input.is_action_pressed("RIGHT")) - int(Input.is_action_pressed("LEFT"))
+			var _velv := int(Input.is_action_pressed("DOWN")) - int(Input.is_action_pressed("UP"))
+			
+			choosing_dir()
+			if (_velh != 0 || _velv != 0) && !time_mov:
+				rayan.target_position = Vector2(_velh * 16,_velv * 16)
+				state = "walk"
+				walk_anim = true
+				move()
+			
+			#if Input.is_action_just_pressed("parry_block"):
+			#	state = "parry"
 			
 		
 		if moving:
@@ -150,32 +105,21 @@ func _physics_process(delta: float) -> void:
 			shadow.position = position
 			shadow.player = self
 			#get_tree().current_scene.add_child(shadow, true)
-		
-		if quebrou && player_has_shield:
-			escudo_cima.get_node("AnimatedSprite2D").play("Voltando")
-			quebrou = false
-	else:
-		morte()
+	
+	state_machine()
 
 func _on_dano_area_entered(area: Area2D) -> void:
 
-	if(foi_parry > 0):
-		return
-
-	if !morto:
+	if state != "dead":
 		if area.name != "Tran" && area.get_parent().id == "Fireball":
 			area.get_parent().destroy()
 		if area.name == "Damage":
-			if parry:
+			if state == "parry":
 				$parrySound.pitch_scale = randf_range(1.2,1.8)
 				$parrySound.play(float(position.x))
 				Global.score += 100
-				foi_parry = 0.1
-				defendendo = false
-				player_has_shield = false
-				clicou = false
-				escudo_animation.stop()
-				escudo_animation.play("sucess_parry")
+				animation.stop()
+				animation.play("parry_hit")
 				animation_player.stop()
 				animation_player.play("parry")
 				brilho.play("null")
@@ -183,27 +127,14 @@ func _on_dano_area_entered(area: Area2D) -> void:
 				hit_lag(0.05, .90) #0.05, .75
 				cem.get_node("AnimationPlayer").stop()
 				cem.get_node("AnimationPlayer").play("up")
-				return
-			elif defendendo:
-				defendendo = false
-				$blockSound.pitch_scale = randf_range(1.0,1.4)
-				$blockSound.play(float(position.x))
-				player_has_shield = false
-				Global.screen_shake(5.0)
-				Global.quebrado = true
-				Global.create_particles(particle_block_scene, 20, 30, position.x, position.y, 0, 0, 0, 0)
-				timer_shield = STIME
-				clicou = false
-				escudo_cima.get_node("AnimatedSprite2D").play("Quebrando")
-				quebrou = true
-				return
 			else:
 				#Global.score = 0
 				Global.screen_shake(25.0)
 				escudo.play("null")
-				morto = true
+				state = "dead"
 func _input(event: InputEvent) -> void:
-	pass
+	if event.is_action_pressed("parry_block") && !Global.tran && (state == "idle" || state == "walk"):
+		state = "parry"
 
 func parry_part():
 	Global.create_particles(particle_parry, 20, 30, position.x, position.y, 0, 0, 0, 0)
@@ -223,6 +154,12 @@ func morte():
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if animation.animation == "morte":
 		Global.call_transition("res://scenes/ui/restart.tscn")
+	
+	if state == "walk":
+		state = "idle"
+	
+	if state == "recover" && animation.animation == "recover":
+		state = "idle"
 
 func hit_lag(time_scale : float, duration : float):
 	Engine.time_scale = time_scale
@@ -235,3 +172,48 @@ func choosing_shield():
 		escudo.play("shield_parry")
 	else:
 		escudo.play("shield")
+
+func state_machine():
+	match state:
+		"idle":
+			#Condições do estado
+			if animation.animation != "idle_"+order_dirs[order_index]:
+				animation.stop()
+				animation.play("idle_"+order_dirs[order_index])
+			
+			#Saindo do estado
+		"walk":
+			if walk_anim:
+				animation.stop()
+				animation.play("walk_"+order_dirs[order_index])
+				walk_anim = false
+		"parry":
+			if animation.animation != "parry" && animation.animation != "parry_hit":
+				animation.stop()
+				animation.play("parry")
+			
+			if animation.animation == "parry":
+				if animation.frame >= 4:
+					state = "recover"
+			
+			if animation.animation == "parry_hit":
+				if animation.frame >= 4:
+					state = "idle"
+		"recover":
+			if animation.animation != "recover":
+				animation.stop()
+				animation.play("recover")
+			
+		"dead":
+			morte()
+
+func choosing_dir():
+	if Input.is_action_pressed("RIGHT"):
+		order_index = 0
+	elif Input.is_action_pressed("LEFT"):
+		order_index = 2
+		
+	if Input.is_action_pressed("DOWN"):
+		order_index = 1
+	elif Input.is_action_pressed("UP"):
+		order_index = 3

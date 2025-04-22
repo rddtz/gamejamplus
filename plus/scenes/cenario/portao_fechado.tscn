@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnmbunej4me3p"]
+[gd_scene load_steps=12 format=3 uid="uid://dnmbunej4me3p"]
 
 [ext_resource type="Script" path="res://scripts/cenarios/gate.gd" id="1_4uoe1"]
 [ext_resource type="Texture2D" uid="uid://bn14i85xwh6it" path="res://assets/cenarios/Gate_animation.png" id="1_xrskd"]
@@ -30,6 +30,10 @@ region = Rect2(32, 0, 32, 80)
 atlas = ExtResource("1_xrskd")
 region = Rect2(0, 0, 32, 80)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8i7m2"]
+atlas = ExtResource("1_xrskd")
+region = Rect2(0, 60, 48, 20)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_picn4"]
 animations = [{
 "frames": [{
@@ -55,6 +59,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ptst0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8i7m2")
 }],
 "loop": false,
 "name": &"open",
