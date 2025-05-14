@@ -54,9 +54,9 @@ script = ExtResource("1_hn6r2")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(574, 288)
+position = Vector2(574, 335)
 sprite_frames = SubResource("SpriteFrames_j2u1o")
-animation = &"context"
+animation = &"parry"
 autoplay = "context"
 
 [node name="press" type="Label" parent="CanvasLayer/AnimatedSprite2D"]
@@ -65,10 +65,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -463.5
-offset_top = -33.0
-offset_right = -234.5
-offset_bottom = -10.0
+offset_left = -809.0
+offset_top = -138.0
+offset_right = -580.0
+offset_bottom = -115.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
