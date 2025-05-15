@@ -1,42 +1,37 @@
-[gd_scene load_steps=12 format=3 uid="uid://me3avq7ot0c4"]
+[gd_scene load_steps=13 format=3 uid="uid://me3avq7ot0c4"]
 
 [ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="1_2pgix"]
 [ext_resource type="Script" path="res://scripts/ui/restart.gd" id="1_kgxn0"]
 [ext_resource type="Texture2D" uid="uid://bidkwaap5dr3t" path="res://assets/ui/Yes_no.png" id="3_jcjl3"]
+[ext_resource type="Texture2D" uid="uid://bhu85sswp6doc" path="res://assets/ui/Yes_no2.png" id="4_s8wuu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wvhnp"]
-texture = ExtResource("3_jcjl3")
-region_rect = Rect2(0, 0, 32, 29)
-modulate_color = Color(0.603922, 0.603922, 0.603922, 1)
+texture = ExtResource("4_s8wuu")
+region_rect = Rect2(0, 0, 34, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xkf4v"]
-texture = ExtResource("3_jcjl3")
-region_rect = Rect2(0, 0, 32, 29)
-modulate_color = Color(0.603922, 0.603922, 0.603922, 1)
+texture = ExtResource("4_s8wuu")
+region_rect = Rect2(0, 0, 34, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qev31"]
-texture = ExtResource("3_jcjl3")
-region_rect = Rect2(0, 0, 32, 29)
-modulate_color = Color(0.427451, 0.427451, 0.427451, 1)
+texture = ExtResource("4_s8wuu")
+region_rect = Rect2(0, 0, 34, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vre0x"]
 texture = ExtResource("3_jcjl3")
 region_rect = Rect2(0, 0, 32, 29)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ek1dm"]
-texture = ExtResource("3_jcjl3")
-region_rect = Rect2(0, 35, 32, 29)
-modulate_color = Color(0.603922, 0.603922, 0.603922, 1)
+texture = ExtResource("4_s8wuu")
+region_rect = Rect2(0, 35, 34, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_did16"]
-texture = ExtResource("3_jcjl3")
-region_rect = Rect2(0, 35, 32, 29)
-modulate_color = Color(0.603922, 0.603922, 0.603922, 1)
+texture = ExtResource("4_s8wuu")
+region_rect = Rect2(0, 35, 34, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ojo7l"]
-texture = ExtResource("3_jcjl3")
-region_rect = Rect2(0, 35, 32, 29)
-modulate_color = Color(0.427451, 0.427451, 0.427451, 1)
+texture = ExtResource("4_s8wuu")
+region_rect = Rect2(0, 35, 34, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k52rk"]
 texture = ExtResource("3_jcjl3")

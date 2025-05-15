@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cl05qearacoj8"]
+[gd_scene load_steps=10 format=3 uid="uid://cl05qearacoj8"]
 
 [ext_resource type="Script" path="res://scripts/ui/final.gd" id="1_cyc0y"]
 [ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="1_o1u10"]
 [ext_resource type="Texture2D" uid="uid://dc6sgmuydeerh" path="res://assets/ui/botoes2.png" id="3_w0g1m"]
+[ext_resource type="Texture2D" uid="uid://dkugpion153am" path="res://assets/ui/botoes_out.png" id="4_1cmr1"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwaje"]
 
@@ -12,14 +13,12 @@ region_rect = Rect2(28, 95, 41, 29)
 modulate_color = Color(0.74978, 0.74978, 0.74978, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ox7tk"]
-texture = ExtResource("3_w0g1m")
-region_rect = Rect2(28, 95, 41, 29)
-modulate_color = Color(0.603922, 0.603922, 0.603922, 1)
+texture = ExtResource("4_1cmr1")
+region_rect = Rect2(29, 96, 43, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvou0"]
-texture = ExtResource("3_w0g1m")
-region_rect = Rect2(28, 95, 41, 29)
-modulate_color = Color(0.427451, 0.427451, 0.427451, 1)
+texture = ExtResource("4_1cmr1")
+region_rect = Rect2(29, 96, 43, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6d54"]
 texture = ExtResource("3_w0g1m")

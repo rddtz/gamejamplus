@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://1cp5hnyn2mh5"]
+[gd_scene load_steps=28 format=3 uid="uid://1cp5hnyn2mh5"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu_principal.gd" id="1_k1ykh"]
 [ext_resource type="Texture2D" uid="uid://cnxl54awydtaq" path="res://assets/ui/Title_dungeon_dodger.png" id="2_0wte6"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://uflfial5qqth" path="res://assets/sons/main theme menu.wav" id="4_yi08g"]
 [ext_resource type="Texture2D" uid="uid://dc6sgmuydeerh" path="res://assets/ui/botoes2.png" id="5_50vqk"]
 [ext_resource type="Script" path="res://scripts/ui/line_edit.gd" id="5_olkmr"]
+[ext_resource type="Texture2D" uid="uid://dkugpion153am" path="res://assets/ui/botoes_out.png" id="6_08tiv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x5fp"]
 bg_color = Color(0.054902, 0.054902, 0.0588235, 1)
@@ -26,28 +27,27 @@ region_rect = Rect2(29, 0, 40, 29)
 modulate_color = Color(0.427492, 0.427494, 0.427492, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wa8hr"]
-texture = ExtResource("5_50vqk")
-region_rect = Rect2(29, 0, 40, 29)
-modulate_color = Color(0.605274, 0.605275, 0.605274, 1)
+texture = ExtResource("6_08tiv")
+region_rect = Rect2(30, 0, 42, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ll6bq"]
-texture = ExtResource("5_50vqk")
-region_rect = Rect2(29, 0, 40, 29)
-modulate_color = Color(0.427492, 0.427493, 0.427493, 1)
+texture = ExtResource("6_08tiv")
+region_rect = Rect2(30, 0, 42, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i6cgx"]
 texture = ExtResource("5_50vqk")
 region_rect = Rect2(29, 0, 40, 29)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_piyef"]
+region_rect = Rect2(19, 129, 68, 31)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57k73"]
-texture = ExtResource("5_50vqk")
-region_rect = Rect2(17.9955, 128, 66.0045, 29)
-modulate_color = Color(0.603922, 0.603922, 0.603922, 1)
+texture = ExtResource("6_08tiv")
+region_rect = Rect2(19, 129, 68, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vcai"]
-texture = ExtResource("5_50vqk")
-region_rect = Rect2(18, 128, 66, 29)
-modulate_color = Color(0.427451, 0.427451, 0.427451, 1)
+texture = ExtResource("6_08tiv")
+region_rect = Rect2(19, 129, 68, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bh35o"]
 texture = ExtResource("5_50vqk")
@@ -56,28 +56,24 @@ region_rect = Rect2(18, 128, 66, 29)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmdun"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_utvj4"]
-texture = ExtResource("5_50vqk")
-region_rect = Rect2(0, 32, 96, 29)
-modulate_color = Color(0.427451, 0.427451, 0.427451, 1)
+texture = ExtResource("6_08tiv")
+region_rect = Rect2(1, 32, 98, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kjdl"]
-texture = ExtResource("5_50vqk")
-region_rect = Rect2(0, 32, 96, 29)
-modulate_color = Color(0.427451, 0.427451, 0.427451, 1)
+texture = ExtResource("6_08tiv")
+region_rect = Rect2(1, 32, 98, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5gh8f"]
 texture = ExtResource("5_50vqk")
 region_rect = Rect2(0, 32, 96, 29)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fcjfu"]
-texture = ExtResource("5_50vqk")
-region_rect = Rect2(32, 63, 34, 29)
-modulate_color = Color(0.603922, 0.603922, 0.603922, 1)
+texture = ExtResource("6_08tiv")
+region_rect = Rect2(33, 64, 36, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6p7hm"]
-texture = ExtResource("5_50vqk")
-region_rect = Rect2(32, 63, 34, 29)
-modulate_color = Color(0.603922, 0.603922, 0.603922, 1)
+texture = ExtResource("6_08tiv")
+region_rect = Rect2(33, 64, 36, 31)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kl3jn"]
 texture = ExtResource("5_50vqk")
@@ -210,7 +206,7 @@ theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1im7n")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qc8ai")
+theme_override_styles/focus = SubResource("StyleBoxTexture_piyef")
 theme_override_styles/hover = SubResource("StyleBoxTexture_57k73")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7vcai")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bh35o")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=97 format=3 uid="uid://cuxa2y5u7l0y2"]
 
-[ext_resource type="Script" path="res://scripts/tutorial/player.gd" id="1_pix2n"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_pix2n"]
 [ext_resource type="Shader" path="res://shaders/blink_shader.gdshader" id="2_jhh6m"]
 [ext_resource type="Texture2D" uid="uid://dkm47fevmbarm" path="res://assets/player/player_down.png" id="3_qoar4"]
 [ext_resource type="Texture2D" uid="uid://dxqketygi0qsh" path="res://assets/player/shining_animation.png" id="4_2x0fn"]

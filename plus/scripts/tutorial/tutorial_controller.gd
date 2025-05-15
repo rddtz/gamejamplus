@@ -83,6 +83,8 @@ func next_page():
 		box.show_box(page)
 	else:
 		Global.call_transition("res://scenes/ui/menu_principal.tscn")
+		Global.nome = ""
+		Global.primeiro = true
 
 
 

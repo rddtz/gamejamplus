@@ -52,8 +52,8 @@ var inicial_position : Vector2
 
 func _ready() -> void:
 	animation_player.play("RESET")
-	Global.contando = true
-	Global.score = 0
+	#Global.contando = true
+	#Global.score = 0
 	pos_inicial()
 
 func move_false():
@@ -181,7 +181,7 @@ func _on_dano_area_entered(area: Area2D) -> void:
 			if parry:
 				$parrySound.pitch_scale = randf_range(1.2,1.8)
 				$parrySound.play(float(position.x))
-				Global.score += 100
+				#Global.score += 100
 				foi_parry = 0.1
 				defendendo = false
 				player_has_shield = false
