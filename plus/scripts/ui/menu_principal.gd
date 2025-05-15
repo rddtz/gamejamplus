@@ -46,3 +46,7 @@ func _on_sair_pressed() -> void:
 
 func _on_label_tree_exiting() -> void:
 	Global.primeiro = false
+
+
+func _on_tutorial_pressed() -> void:
+	Global.call_transition("res://scenes/tutorial/tutorial_move.tscn")
