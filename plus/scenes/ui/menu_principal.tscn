@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://1cp5hnyn2mh5"]
+[gd_scene load_steps=26 format=3 uid="uid://1cp5hnyn2mh5"]
 
 [ext_resource type="Script" path="res://scripts/ui/menu_principal.gd" id="1_k1ykh"]
 [ext_resource type="Texture2D" uid="uid://cnxl54awydtaq" path="res://assets/ui/Title_dungeon_dodger.png" id="2_0wte6"]
@@ -41,15 +41,31 @@ region_rect = Rect2(29, 0, 40, 29)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57k73"]
 texture = ExtResource("5_50vqk")
-region_rect = Rect2(0, 32, 96, 29)
+region_rect = Rect2(17.9955, 128, 66.0045, 29)
 modulate_color = Color(0.603922, 0.603922, 0.603922, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vcai"]
 texture = ExtResource("5_50vqk")
-region_rect = Rect2(0, 32, 96, 29)
+region_rect = Rect2(18, 128, 66, 29)
 modulate_color = Color(0.427451, 0.427451, 0.427451, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bh35o"]
+texture = ExtResource("5_50vqk")
+region_rect = Rect2(18, 128, 66, 29)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmdun"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_utvj4"]
+texture = ExtResource("5_50vqk")
+region_rect = Rect2(0, 32, 96, 29)
+modulate_color = Color(0.427451, 0.427451, 0.427451, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7kjdl"]
+texture = ExtResource("5_50vqk")
+region_rect = Rect2(0, 32, 96, 29)
+modulate_color = Color(0.427451, 0.427451, 0.427451, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5gh8f"]
 texture = ExtResource("5_50vqk")
 region_rect = Rect2(0, 32, 96, 29)
 
@@ -176,8 +192,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Jogar")
-focus_neighbor_bottom = NodePath("../Sair")
-focus_next = NodePath("../Sair")
+focus_neighbor_bottom = NodePath("../Leaderboard")
+focus_next = NodePath("../Leaderboard")
 focus_previous = NodePath("../Jogar")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -213,10 +229,10 @@ offset_bottom = 244.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-focus_neighbor_top = NodePath("../Jogar")
+focus_neighbor_top = NodePath("../Tutorial")
 focus_neighbor_bottom = NodePath("../Sair")
 focus_next = NodePath("../Sair")
-focus_previous = NodePath("../Jogar")
+focus_previous = NodePath("../Tutorial")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -232,10 +248,10 @@ theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1im7n")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qc8ai")
-theme_override_styles/hover = SubResource("StyleBoxTexture_57k73")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_7vcai")
-theme_override_styles/normal = SubResource("StyleBoxTexture_bh35o")
+theme_override_styles/focus = SubResource("StyleBoxTexture_pmdun")
+theme_override_styles/hover = SubResource("StyleBoxTexture_utvj4")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7kjdl")
+theme_override_styles/normal = SubResource("StyleBoxTexture_5gh8f")
 icon_alignment = 1
 
 [node name="Sair" type="Button" parent="CanvasLayer"]
@@ -251,6 +267,10 @@ offset_bottom = 317.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Leaderboard")
+focus_neighbor_bottom = NodePath("../Jogar")
+focus_next = NodePath("../Jogar")
+focus_previous = NodePath("../Leaderboard")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)

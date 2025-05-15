@@ -77,6 +77,7 @@ var id = \"player\"
 var inicial_position : Vector2
 
 func _ready() -> void:
+	print(\"VIVO\")
 	animation_player.play(\"RESET\")
 	Global.contando = true
 	Global.score = 0
