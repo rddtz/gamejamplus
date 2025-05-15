@@ -7,7 +7,7 @@ var on_tran := false
 var controller : Node2D
 var player : CharacterBody2D
 
-var player_scene := preload("res://scenes/tutorial/player_tutorial.tscn")
+var player_scene := preload("res://scenes/tutorial/player_tutorial_2.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

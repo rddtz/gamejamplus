@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dd5cfxjs31fh6" path="res://scenes/ui/menu_pause.tscn" id="7_secd2"]
 [ext_resource type="AudioStream" uid="uid://bmtjtwf1e0vrr" path="res://assets/sons/musicaFinal.mp3" id="8_jp48n"]
 [ext_resource type="PackedScene" uid="uid://bjql5u6isvnf0" path="res://scenes/tutorial/tutorial_controller.tscn" id="8_kmi0n"]
-[ext_resource type="PackedScene" uid="uid://ciuk87nilsi8a" path="res://scenes/tutorial/player_tutorial.tscn" id="8_ys1uc"]
 [ext_resource type="PackedScene" uid="uid://bjh3oegucu3je" path="res://scenes/tutorial/count_dodges_tutorial.tscn" id="9_by7y8"]
+[ext_resource type="PackedScene" uid="uid://b6022e3t2mvmh" path="res://scenes/tutorial/player_tutorial_2.tscn" id="10_16jrh"]
 [ext_resource type="PackedScene" uid="uid://drtpy4g8irs48" path="res://scenes/tutorial/tutorial_box.tscn" id="10_oq2w8"]
 
 [node name="main2" type="Node2D"]
@@ -46,15 +46,16 @@ autoplay = true
 
 [node name="tutorial_controller" parent="." node_paths=PackedStringArray("canvas", "player", "box") instance=ExtResource("8_kmi0n")]
 canvas = NodePath("../hud_tutorial_move")
-player = NodePath("../Player")
+player = NodePath("../Player2")
 box = NodePath("../tutorial_box")
-
-[node name="Player" parent="." node_paths=PackedStringArray("controller_move") instance=ExtResource("8_ys1uc")]
-position = Vector2(165, 120)
-controller_move = NodePath("../tutorial_controller")
 
 [node name="count_dodges_tutorial" parent="." node_paths=PackedStringArray("controller") instance=ExtResource("9_by7y8")]
 position = Vector2(-15, 123)
 controller = NodePath("../tutorial_controller")
 
 [node name="tutorial_box" parent="." instance=ExtResource("10_oq2w8")]
+
+[node name="Player2" parent="." node_paths=PackedStringArray("cam", "controller_move") instance=ExtResource("10_16jrh")]
+position = Vector2(152, 151)
+cam = NodePath("../Camera2D")
+controller_move = NodePath("../tutorial_controller")
