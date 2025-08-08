@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://cuxa2y5u7l0y2"]
+[gd_scene load_steps=98 format=3 uid="uid://cuxa2y5u7l0y2"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_pix2n"]
 [ext_resource type="Shader" path="res://shaders/blink_shader.gdshader" id="2_jhh6m"]
@@ -14,10 +14,11 @@
 [ext_resource type="AudioStream" uid="uid://bf68eg7lcfu0g" path="res://assets/sons/block.mp3" id="6_76o6w"]
 [ext_resource type="Texture2D" uid="uid://d0yobh1g6qoia" path="res://assets/player/Barrier (1).png" id="6_dwhyo"]
 [ext_resource type="Texture2D" uid="uid://d4mcjecakxung" path="res://assets/player/knight_perfect_parry-Sheet.png" id="6_k46vr"]
-[ext_resource type="AudioStream" uid="uid://b4ambc0jhyqbt" path="res://assets/sons/parry.mp3" id="7_o14sv"]
 [ext_resource type="AudioStream" uid="uid://dg384ykb4ry8g" path="res://assets/sons/morte.mp3" id="10_b5ly2"]
 [ext_resource type="PackedScene" uid="uid://c7ubwgcjdnp51" path="res://scenes/player/escudo_cima.tscn" id="12_1ghi0"]
 [ext_resource type="PackedScene" uid="uid://dhi1tcppjvlro" path="res://scenes/player/cem.tscn" id="13_1jyod"]
+[ext_resource type="AudioStream" uid="uid://cjkyb6eq0qcqs" path="res://assets/sons/parry.wav" id="15_01iat"]
+[ext_resource type="Texture2D" uid="uid://cx35i1bx1ecke" path="res://assets/vfx/light.png" id="19_6tqb6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tlquy"]
 shader = ExtResource("2_jhh6m")
@@ -693,6 +694,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
 
 [sub_resource type="Animation" id="Animation_r033y"]
 resource_name = "parry"
@@ -707,6 +720,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 0.5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rj2tj"]
@@ -768,7 +793,7 @@ volume_db = 11.686
 bus = &"SFX"
 
 [node name="parrySound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_o14sv")
+stream = ExtResource("15_01iat")
 bus = &"SFX"
 
 [node name="deathSound" type="AudioStreamPlayer2D" parent="."]
@@ -779,6 +804,10 @@ position = Vector2(0, -16)
 
 [node name="Cem" parent="." instance=ExtResource("13_1jyod")]
 position = Vector2(-2, -19)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.5
+texture = ExtResource("19_6tqb6")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Dano" to="." method="_on_dano_area_entered"]

@@ -116,7 +116,8 @@ func _on_dano_area_entered(area: Area2D) -> void:
 		if area.name == "Damage":
 			if state == "parry":
 				$parrySound.pitch_scale = randf_range(1.2,1.8)
-				$parrySound.play(float(position.x))
+				#$parrySound.play(float(position.x))
+				$parrySound.play()
 				Global.score += 100
 				animation.stop()
 				animation.play("parry_hit")

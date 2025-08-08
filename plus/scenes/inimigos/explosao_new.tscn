@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://bom40nnbmf8dd"]
+[gd_scene load_steps=25 format=3 uid="uid://bom40nnbmf8dd"]
 
 [ext_resource type="Script" path="res://scripts/inimigos/explosao.gd" id="1_pciy4"]
 [ext_resource type="Texture2D" uid="uid://c06og6j36xa4y" path="res://assets/inimigos/Explosion_dodge_knight-Sheet.png" id="2_3jq2w"]
 [ext_resource type="Texture2D" uid="uid://tuv2q0yqwrby" path="res://assets/inimigos/Warning_9-Sheet.png" id="3_nhxlc"]
 [ext_resource type="AudioStream" uid="uid://cjyjf01nj2a8g" path="res://assets/sons/explosao2.mp3" id="4_swe4w"]
+[ext_resource type="Texture2D" uid="uid://cx35i1bx1ecke" path="res://assets/vfx/light.png" id="5_082cq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rchp0"]
 size = Vector2(48, 48)
@@ -145,6 +146,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [&"surgindo"]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_cw1cq"]
 resource_name = "life_span"
@@ -187,6 +200,18 @@ tracks/2/keys = {
 "method": &"destroy"
 }]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PointLight2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.36667, 1.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 3.0, 0.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gb5hl"]
 _data = {
@@ -219,3 +244,10 @@ autoplay = "life_span"
 
 [node name="bombSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_swe4w")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(24, 24)
+color = Color(1, 0.603922, 0.0470588, 1)
+energy = 0.0
+texture = ExtResource("5_082cq")
+texture_scale = 1.5

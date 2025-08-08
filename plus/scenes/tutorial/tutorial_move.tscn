@@ -59,3 +59,14 @@ controller = NodePath("../tutorial_controller")
 position = Vector2(152, 151)
 cam = NodePath("../Camera2D")
 controller_move = NodePath("../tutorial_controller")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
+offset_left = -174.0
+offset_top = -60.0
+offset_right = 553.0
+offset_bottom = 374.0
+color = Color(0.215686, 0.215686, 0.215686, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.364706, 0.364706, 0.364706, 1)

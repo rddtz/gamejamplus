@@ -132,3 +132,14 @@ position = Vector2(137, 87)
 
 [node name="new_spikes" parent="." instance=ExtResource("9_18jwd")]
 position = Vector2(121, 87)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.364706, 0.364706, 0.364706, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
+offset_left = -148.0
+offset_top = -40.0
+offset_right = 474.0
+offset_bottom = 329.0
+color = Color(0.215902, 0.215902, 0.215902, 1)
