@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://bom40nnbmf8dd"]
 
-[ext_resource type="Script" path="res://scripts/inimigos/explosao.gd" id="1_pciy4"]
+[ext_resource type="Script" uid="uid://cbpk47ewyde4p" path="res://scripts/inimigos/explosao.gd" id="1_pciy4"]
 [ext_resource type="Texture2D" uid="uid://c06og6j36xa4y" path="res://assets/inimigos/Explosion_dodge_knight-Sheet.png" id="2_3jq2w"]
 [ext_resource type="Texture2D" uid="uid://tuv2q0yqwrby" path="res://assets/inimigos/Warning_9-Sheet.png" id="3_nhxlc"]
 [ext_resource type="AudioStream" uid="uid://cjyjf01nj2a8g" path="res://assets/sons/explosao2.mp3" id="4_swe4w"]
@@ -215,8 +215,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gb5hl"]
 _data = {
-"RESET": SubResource("Animation_eebkg"),
-"life_span": SubResource("Animation_cw1cq")
+&"RESET": SubResource("Animation_eebkg"),
+&"life_span": SubResource("Animation_cw1cq")
 }
 
 [node name="Explosao" type="Node2D"]

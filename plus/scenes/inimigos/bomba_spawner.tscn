@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://j4j8ai7emk67"]
 
-[ext_resource type="Script" path="res://scripts/inimigos/bomba_spawner.gd" id="1_fctis"]
+[ext_resource type="Script" uid="uid://c5sm32hiwxrky" path="res://scripts/inimigos/bomba_spawner.gd" id="1_fctis"]
 
 [node name="bomba_spawner" type="Node2D"]
 script = ExtResource("1_fctis")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://de8y70ljk8ycb"]
 
-[ext_resource type="Script" path="res://scripts/inimigos/flecha.gd" id="1_gpbhr"]
+[ext_resource type="Script" uid="uid://ixutkec8ushx" path="res://scripts/inimigos/flecha.gd" id="1_gpbhr"]
 [ext_resource type="Texture2D" uid="uid://c6rjul783wuq0" path="res://assets/inimigos/Flecha.png" id="1_sb2l6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xp4kv"]

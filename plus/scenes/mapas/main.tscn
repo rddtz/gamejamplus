@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dxm6uy4mlng2t" path="res://scenes/inimigos/armadilha_spawner.tscn" id="11_odqwj"]
 [ext_resource type="PackedScene" uid="uid://j4j8ai7emk67" path="res://scenes/inimigos/bomba_spawner.tscn" id="12_8nts3"]
 [ext_resource type="PackedScene" uid="uid://c6dq3gl435piw" path="res://scenes/outros/timer.tscn" id="13_jl3xg"]
-[ext_resource type="Script" path="res://scripts/inimigos/controlador.gd" id="14_ynxvk"]
+[ext_resource type="Script" uid="uid://rdn2beqiemb6" path="res://scripts/inimigos/controlador.gd" id="14_ynxvk"]
 [ext_resource type="PackedScene" uid="uid://dd5cfxjs31fh6" path="res://scenes/ui/menu_pause.tscn" id="15_ywaww"]
 [ext_resource type="AudioStream" uid="uid://bmtjtwf1e0vrr" path="res://assets/sons/musicaFinal.mp3" id="16_7tn0x"]
 

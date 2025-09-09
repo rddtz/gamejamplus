@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjh3oegucu3je"]
 
-[ext_resource type="Script" path="res://scripts/tutorial/count_dodges_tutorial.gd" id="1_kk2do"]
+[ext_resource type="Script" uid="uid://cklpega67x4r3" path="res://scripts/tutorial/count_dodges_tutorial.gd" id="1_kk2do"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wfurd"]
 

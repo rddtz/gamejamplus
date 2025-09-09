@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c7it02bdbm4mw"]
 
-[ext_resource type="Script" path="res://scripts/inimigos/fireball_shadow.gd" id="1_n00kc"]
+[ext_resource type="Script" uid="uid://bhhcplp083c88" path="res://scripts/inimigos/fireball_shadow.gd" id="1_n00kc"]
 [ext_resource type="Texture2D" uid="uid://cofrp6x30w15t" path="res://assets/inimigos/fireball_shadow.png" id="2_vjkuv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dlwk2"]

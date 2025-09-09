@@ -58,8 +58,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sisjf"]
 _data = {
-"RESET": SubResource("Animation_3lr3u"),
-"up": SubResource("Animation_4n0sv")
+&"RESET": SubResource("Animation_3lr3u"),
+&"up": SubResource("Animation_4n0sv")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gy3ac"]

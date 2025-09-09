@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dnmbunej4me3p"]
 
-[ext_resource type="Script" path="res://scripts/cenarios/gate.gd" id="1_4uoe1"]
+[ext_resource type="Script" uid="uid://crvumk5r1uug8" path="res://scripts/cenarios/gate.gd" id="1_4uoe1"]
 [ext_resource type="Texture2D" uid="uid://bn14i85xwh6it" path="res://assets/cenarios/Gate_animation.png" id="1_xrskd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbved"]

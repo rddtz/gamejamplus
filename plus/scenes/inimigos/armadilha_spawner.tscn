@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dxm6uy4mlng2t"]
 
-[ext_resource type="Script" path="res://scripts/inimigos/armadilha_spawner.gd" id="1_fp1is"]
-
+[ext_resource type="Script" uid="uid://b1cx4bwmptbow" path="res://scripts/inimigos/armadilha_spawner.gd" id="1_fp1is"]
 
 [node name="armadilha_spawner_v" type="Node2D"]
 script = ExtResource("1_fp1is")

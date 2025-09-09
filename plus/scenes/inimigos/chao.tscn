@@ -1,7 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmg8o35yugx2y"]
 
-[ext_resource type="Script" path="res://scripts/inimigos/bomba_spawner.gd" id="1_gfha4"]
-
+[ext_resource type="Script" uid="uid://c5sm32hiwxrky" path="res://scripts/inimigos/bomba_spawner.gd" id="1_gfha4"]
 
 [node name="bomba_spawner" type="Node2D"]
 script = ExtResource("1_gfha4")

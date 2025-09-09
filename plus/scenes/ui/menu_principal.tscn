@@ -1,11 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://1cp5hnyn2mh5"]
+[gd_scene load_steps=33 format=3 uid="uid://1cp5hnyn2mh5"]
 
-[ext_resource type="Script" path="res://scripts/ui/menu_principal.gd" id="1_k1ykh"]
+[ext_resource type="Script" uid="uid://d1ygi8n2yqp2w" path="res://scripts/ui/menu_principal.gd" id="1_k1ykh"]
 [ext_resource type="Texture2D" uid="uid://cnxl54awydtaq" path="res://assets/ui/Title_dungeon_dodger.png" id="2_0wte6"]
 [ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="3_1im7n"]
 [ext_resource type="AudioStream" uid="uid://uflfial5qqth" path="res://assets/sons/main theme menu.wav" id="4_yi08g"]
 [ext_resource type="Texture2D" uid="uid://dc6sgmuydeerh" path="res://assets/ui/botoes2.png" id="5_50vqk"]
-[ext_resource type="Script" path="res://scripts/ui/line_edit.gd" id="5_olkmr"]
+[ext_resource type="Script" uid="uid://bapw3w7bo7c2i" path="res://scenes/ui/cima_1.gd" id="6_5xhmr"]
 [ext_resource type="Texture2D" uid="uid://dkugpion153am" path="res://assets/ui/botoes_out.png" id="6_08tiv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x5fp"]
@@ -14,12 +14,13 @@ bg_color = Color(0.054902, 0.054902, 0.0588235, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_77ck7"]
 texture = ExtResource("2_0wte6")
 
-[sub_resource type="Theme" id="Theme_68366"]
-default_font = ExtResource("3_1im7n")
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7nhh5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qc8ai"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xhmr"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5xnx5"]
 texture = ExtResource("5_50vqk")
@@ -38,8 +39,13 @@ region_rect = Rect2(30, 0, 42, 31)
 texture = ExtResource("5_50vqk")
 region_rect = Rect2(29, 0, 40, 29)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_piyef"]
-region_rect = Rect2(19, 129, 68, 31)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imway"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57k73"]
 texture = ExtResource("6_08tiv")
@@ -53,7 +59,13 @@ region_rect = Rect2(19, 129, 68, 31)
 texture = ExtResource("5_50vqk")
 region_rect = Rect2(18, 128, 66, 29)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pmdun"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkfpr"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_utvj4"]
 texture = ExtResource("6_08tiv")
@@ -67,6 +79,14 @@ region_rect = Rect2(1, 32, 98, 31)
 texture = ExtResource("5_50vqk")
 region_rect = Rect2(0, 32, 96, 29)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jotn3"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fcjfu"]
 texture = ExtResource("6_08tiv")
 region_rect = Rect2(33, 64, 36, 31)
@@ -78,6 +98,54 @@ region_rect = Rect2(33, 64, 36, 31)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kl3jn"]
 texture = ExtResource("5_50vqk")
 region_rect = Rect2(32, 63, 34, 29)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0glb0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh8uh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1hbe"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ht0a5"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ly2o"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjela"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 0, 1)
 
 [node name="Menu Principal" type="Control"]
 layout_mode = 3
@@ -94,8 +162,10 @@ script = ExtResource("1_k1ykh")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_bottom = -40.0
+offset_left = 2.0
+offset_top = 8.0
+offset_right = 2.0
+offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3x5fp")
@@ -111,30 +181,6 @@ offset_bottom = 222.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_77ck7")
 
-[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -7.5
-offset_top = -35.5
-offset_right = 151.5
-offset_bottom = 3.5
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_68366")
-theme_override_constants/caret_width = 3
-theme_override_fonts/font = ExtResource("3_1im7n")
-theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_7nhh5")
-placeholder_text = "___"
-max_length = 3
-caret_blink = true
-caret_blink_interval = 0.37
-caret_mid_grapheme = true
-script = ExtResource("5_olkmr")
-
 [node name="Jogar" type="Button" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -149,26 +195,26 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
-focus_neighbor_top = NodePath("../Sair")
-focus_neighbor_bottom = NodePath("../Leaderboard")
-focus_next = NodePath("../Leaderboard")
-focus_previous = NodePath("../Sair")
+focus_neighbor_top = NodePath("../baixo1")
+focus_neighbor_bottom = NodePath("../Tutorial")
+focus_next = NodePath("../Tutorial")
+focus_previous = NodePath("../cima1")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1im7n")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qc8ai")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5xhmr")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_5xnx5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wa8hr")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ll6bq")
@@ -194,19 +240,19 @@ focus_previous = NodePath("../Jogar")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1im7n")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxTexture_piyef")
+theme_override_styles/focus = SubResource("StyleBoxFlat_imway")
 theme_override_styles/hover = SubResource("StyleBoxTexture_57k73")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7vcai")
 theme_override_styles/normal = SubResource("StyleBoxTexture_bh35o")
@@ -232,19 +278,19 @@ focus_previous = NodePath("../Tutorial")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1im7n")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxTexture_pmdun")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pkfpr")
 theme_override_styles/hover = SubResource("StyleBoxTexture_utvj4")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_7kjdl")
 theme_override_styles/normal = SubResource("StyleBoxTexture_5gh8f")
@@ -264,25 +310,25 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Leaderboard")
-focus_neighbor_bottom = NodePath("../Jogar")
-focus_next = NodePath("../Jogar")
+focus_neighbor_bottom = NodePath("../cima1")
+focus_next = NodePath("../cima1")
 focus_previous = NodePath("../Leaderboard")
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_1im7n")
 theme_override_font_sizes/font_size = 30
-theme_override_styles/focus = SubResource("StyleBoxEmpty_qc8ai")
+theme_override_styles/focus = SubResource("StyleBoxFlat_jotn3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_fcjfu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_6p7hm")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kl3jn")
@@ -294,17 +340,120 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -170.0
-offset_top = -39.5
-offset_right = -22.0
-offset_bottom = 7.5
+offset_left = -78.0
+offset_top = -54.0
+offset_right = 74.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_1im7n")
 theme_override_font_sizes/font_size = 30
-text = "NICKNAME"
+text = "-  -  -"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="cima1" type="Button" parent="CanvasLayer"]
+offset_left = 528.0
+offset_top = 240.0
+offset_right = 554.0
+offset_bottom = 268.0
+focus_neighbor_left = NodePath("../cima3")
+focus_neighbor_top = NodePath("../Sair")
+focus_neighbor_right = NodePath("../cima2")
+focus_neighbor_bottom = NodePath("../baixo1")
+focus_next = NodePath("../cima2")
+focus_previous = NodePath("../cima3")
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("3_1im7n")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_0glb0")
+text = "/\\"
+script = ExtResource("6_5xhmr")
+
+[node name="cima2" type="Button" parent="CanvasLayer"]
+offset_left = 562.0
+offset_top = 240.0
+offset_right = 588.0
+offset_bottom = 268.0
+focus_neighbor_left = NodePath("../cima1")
+focus_neighbor_top = NodePath("../Sair")
+focus_neighbor_right = NodePath("../cima3")
+focus_neighbor_bottom = NodePath("../baixo2")
+focus_next = NodePath("../cima3")
+focus_previous = NodePath("../cima1")
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("3_1im7n")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_nh8uh")
+text = "/\\"
+
+[node name="cima3" type="Button" parent="CanvasLayer"]
+offset_left = 596.0
+offset_top = 241.0
+offset_right = 622.0
+offset_bottom = 269.0
+focus_neighbor_left = NodePath("../cima2")
+focus_neighbor_top = NodePath("../Sair")
+focus_neighbor_right = NodePath("../cima1")
+focus_neighbor_bottom = NodePath("../baixo3")
+focus_next = NodePath("../cima1")
+focus_previous = NodePath("../cima2")
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("3_1im7n")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_h1hbe")
+text = "/\\"
+
+[node name="baixo1" type="Button" parent="CanvasLayer"]
+offset_left = 529.0
+offset_top = 295.0
+offset_right = 555.0
+offset_bottom = 324.0
+focus_neighbor_left = NodePath("../baixo3")
+focus_neighbor_top = NodePath("../cima1")
+focus_neighbor_right = NodePath("../baixo2")
+focus_neighbor_bottom = NodePath("../Jogar")
+focus_next = NodePath("../baixo2")
+focus_previous = NodePath("../baixo3")
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("3_1im7n")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ht0a5")
+text = "\\/"
+
+[node name="baixo2" type="Button" parent="CanvasLayer"]
+offset_left = 563.0
+offset_top = 296.0
+offset_right = 589.0
+offset_bottom = 325.0
+focus_neighbor_left = NodePath("../baixo1")
+focus_neighbor_top = NodePath("../cima2")
+focus_neighbor_right = NodePath("../baixo3")
+focus_neighbor_bottom = NodePath("../Jogar")
+focus_next = NodePath("../baixo3")
+focus_previous = NodePath("../baixo1")
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("3_1im7n")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_5ly2o")
+text = "\\/"
+
+[node name="baixo3" type="Button" parent="CanvasLayer"]
+offset_left = 597.0
+offset_top = 294.0
+offset_right = 623.0
+offset_bottom = 323.0
+focus_neighbor_left = NodePath("../baixo2")
+focus_neighbor_top = NodePath("../cima3")
+focus_neighbor_right = NodePath("../baixo1")
+focus_neighbor_bottom = NodePath("../Jogar")
+focus_next = NodePath("../baixo1")
+focus_previous = NodePath("../baixo2")
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("3_1im7n")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_bjela")
+text = "\\/"
 
 [node name="menuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_yi08g")
@@ -315,3 +464,9 @@ autoplay = true
 [connection signal="pressed" from="CanvasLayer/Leaderboard" to="." method="_on_leaderboard_pressed"]
 [connection signal="pressed" from="CanvasLayer/Sair" to="." method="_on_sair_pressed"]
 [connection signal="tree_exiting" from="CanvasLayer/Label" to="." method="_on_label_tree_exiting"]
+[connection signal="pressed" from="CanvasLayer/cima1" to="." method="_on_cima_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/cima2" to="." method="_on_cima_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/cima3" to="." method="_on_cima_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/baixo1" to="." method="_on_baixo_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/baixo2" to="." method="_on_baixo_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/baixo3" to="." method="_on_baixo_3_pressed"]

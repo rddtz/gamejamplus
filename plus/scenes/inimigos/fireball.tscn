@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://lap435yjyml"]
 
 [ext_resource type="Texture2D" uid="uid://binubsopmkbj4" path="res://assets/inimigos/fireball.png" id="1_4ceke"]
-[ext_resource type="Script" path="res://scripts/inimigos/fireball.gd" id="1_f7lpl"]
+[ext_resource type="Script" uid="uid://bwttc7wlwyghi" path="res://scripts/inimigos/fireball.gd" id="1_f7lpl"]
 [ext_resource type="Texture2D" uid="uid://dtosm8421qnua" path="res://assets/inimigos/Fireball-Sheet.png" id="3_bihi4"]
 [ext_resource type="Texture2D" uid="uid://cx35i1bx1ecke" path="res://assets/vfx/light.png" id="4_6ltla"]
 

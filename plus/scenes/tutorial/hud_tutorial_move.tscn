@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cixu7c21s3xes"]
 
-[ext_resource type="Script" path="res://scripts/tutorial/hud_tutorial_move.gd" id="1_sng7i"]
+[ext_resource type="Script" uid="uid://b6tv5tkjh1tap" path="res://scripts/tutorial/hud_tutorial_move.gd" id="1_sng7i"]
 [ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="2_nvwpx"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sh607"]

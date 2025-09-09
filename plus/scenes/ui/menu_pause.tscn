@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://dd5cfxjs31fh6"]
 
-[ext_resource type="Shader" path="res://shaders/menu_pause.gdshader" id="1_a72j3"]
-[ext_resource type="Script" path="res://scripts/ui/menu_pause.gd" id="1_pw61s"]
+[ext_resource type="Shader" uid="uid://bnwxwdn3qb0jt" path="res://shaders/menu_pause.gdshader" id="1_a72j3"]
+[ext_resource type="Script" uid="uid://d2h20p2fqpwv8" path="res://scripts/ui/menu_pause.gd" id="1_pw61s"]
 [ext_resource type="FontFile" uid="uid://2acyjhqidwb5" path="res://assets/fonts/Pixellari.ttf" id="3_3uxsg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ryv2"]
 shader = ExtResource("1_a72j3")
-shader_parameter/blur = null
+shader_parameter/blur = 0.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wpoyy"]
 bg_color = Color(0, 0, 0, 0.619608)
@@ -68,8 +68,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nny03"]
 _data = {
-"RESET": SubResource("Animation_vvmse"),
-"blur_bg": SubResource("Animation_c6mcc")
+&"RESET": SubResource("Animation_vvmse"),
+&"blur_bg": SubResource("Animation_c6mcc")
 }
 
 [node name="Menu pause" type="Control"]

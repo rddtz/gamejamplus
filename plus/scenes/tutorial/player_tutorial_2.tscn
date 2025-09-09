@@ -1,6 +1,6 @@
 [gd_scene load_steps=98 format=3 uid="uid://b6022e3t2mvmh"]
 
-[ext_resource type="Shader" path="res://shaders/blink_shader.gdshader" id="2_ynrrj"]
+[ext_resource type="Shader" uid="uid://b0x2lk62nac5d" path="res://shaders/blink_shader.gdshader" id="2_ynrrj"]
 [ext_resource type="Texture2D" uid="uid://dkm47fevmbarm" path="res://assets/player/player_down.png" id="3_glntg"]
 [ext_resource type="Texture2D" uid="uid://clwm8cd38bsub" path="res://assets/player/player_left.png" id="4_dox73"]
 [ext_resource type="Texture2D" uid="uid://c2yr6xs0bnpbn" path="res://assets/player/player_right.png" id="5_rknnr"]
@@ -872,8 +872,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yor26"]
 _data = {
-"RESET": SubResource("Animation_fyi7f"),
-"sucess_parry": SubResource("Animation_wqdnb")
+&"RESET": SubResource("Animation_fyi7f"),
+&"sucess_parry": SubResource("Animation_wqdnb")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_seueo"]
@@ -989,8 +989,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rj2tj"]
 _data = {
-"RESET": SubResource("Animation_3htlk"),
-"parry": SubResource("Animation_r033y")
+&"RESET": SubResource("Animation_3htlk"),
+&"parry": SubResource("Animation_r033y")
 }
 
 [node name="Player" type="CharacterBody2D"]

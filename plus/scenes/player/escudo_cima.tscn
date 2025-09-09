@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://c7ubwgcjdnp51"]
 
-[ext_resource type="Script" path="res://scripts/player/escudo_cima.gd" id="1_10s2o"]
+[ext_resource type="Script" uid="uid://bsqv7bnfdc7qm" path="res://scripts/player/escudo_cima.gd" id="1_10s2o"]
 [ext_resource type="Texture2D" uid="uid://dee7p7r7k471r" path="res://assets/player/broken_shield.png" id="2_t15uv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnfut"]

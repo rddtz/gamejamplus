@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://cxwj846bjca2"]
 
-[ext_resource type="Script" path="res://scripts/inimigos/armadilha_chao.gd" id="1_hd33t"]
+[ext_resource type="Script" uid="uid://bqmctbdgrfpxv" path="res://scripts/inimigos/armadilha_chao.gd" id="1_hd33t"]
 [ext_resource type="Texture2D" uid="uid://b5kcyvip7di3d" path="res://assets/inimigos/New_spike-Sheet.png" id="2_7f6mk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_etxow"]
@@ -224,8 +224,8 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ict4c"]
 _data = {
-"RESET": SubResource("Animation_3jkjd"),
-"spikes": SubResource("Animation_455k4")
+&"RESET": SubResource("Animation_3jkjd"),
+&"spikes": SubResource("Animation_455k4")
 }
 
 [node name="Armadilha-chao" type="Area2D"]

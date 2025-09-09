@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c3o4tyjmksugc"]
 
-[ext_resource type="Script" path="res://scripts/vfx/transition.gd" id="1_bkfwh"]
-[ext_resource type="Shader" path="res://shaders/transition.gdshader" id="1_jncb1"]
+[ext_resource type="Script" uid="uid://chh8aep0hwigg" path="res://scripts/vfx/transition.gd" id="1_bkfwh"]
+[ext_resource type="Shader" uid="uid://ma1vd8r2svty" path="res://shaders/transition.gdshader" id="1_jncb1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_to1rm"]
 shader = ExtResource("1_jncb1")
@@ -70,9 +70,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q3o8s"]
 _data = {
-"RESET": SubResource("Animation_co5ij"),
-"transition": SubResource("Animation_62yt5"),
-"white": SubResource("Animation_jniud")
+&"RESET": SubResource("Animation_co5ij"),
+&"transition": SubResource("Animation_62yt5"),
+&"white": SubResource("Animation_jniud")
 }
 
 [node name="Transition" type="CanvasLayer"]
