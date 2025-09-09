@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://1cp5hnyn2mh5"]
+[gd_scene load_steps=34 format=3 uid="uid://1cp5hnyn2mh5"]
 
 [ext_resource type="Script" uid="uid://d1ygi8n2yqp2w" path="res://scripts/ui/menu_principal.gd" id="1_k1ykh"]
 [ext_resource type="Texture2D" uid="uid://cnxl54awydtaq" path="res://assets/ui/Title_dungeon_dodger.png" id="2_0wte6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dc6sgmuydeerh" path="res://assets/ui/botoes2.png" id="5_50vqk"]
 [ext_resource type="Script" uid="uid://bapw3w7bo7c2i" path="res://scenes/ui/cima_1.gd" id="6_5xhmr"]
 [ext_resource type="Texture2D" uid="uid://dkugpion153am" path="res://assets/ui/botoes_out.png" id="6_08tiv"]
+[ext_resource type="Texture2D" uid="uid://crl6t2qrknpjo" path="res://qr-code.png" id="7_imway"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3x5fp"]
 bg_color = Color(0.054902, 0.054902, 0.0588235, 1)
@@ -169,6 +170,25 @@ offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_3x5fp")
+
+[node name="nickname" type="Label" parent="CanvasLayer/Fundo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = -86.0
+offset_right = 147.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_1im7n")
+theme_override_font_sizes/font_size = 15
+text = "INSERT YOUR NAME TO START PLAYING:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Titulo" type="Panel" parent="CanvasLayer"]
 anchors_preset = 5
@@ -462,22 +482,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -138.0
-offset_top = -86.0
-offset_right = 147.0
-offset_bottom = -55.0
+offset_left = 233.0
+offset_top = 170.0
+offset_right = 542.0
+offset_bottom = 201.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_1im7n")
 theme_override_font_sizes/font_size = 15
-text = "INSERT YOUR NAME TO START PLAYING:"
+text = "LEAVE YOUR FEEDBACK ON OUR ITCH PAGE:"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(966, 578)
+scale = Vector2(0.0456208, 0.0456208)
+texture = ExtResource("7_imway")
 
 [node name="menuTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_yi08g")
 autoplay = true
 
+[connection signal="tree_exiting" from="CanvasLayer/Fundo/nickname" to="." method="_on_label_tree_exiting"]
 [connection signal="pressed" from="CanvasLayer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="CanvasLayer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="CanvasLayer/Leaderboard" to="." method="_on_leaderboard_pressed"]
