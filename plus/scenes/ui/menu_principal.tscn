@@ -41,10 +41,10 @@ region_rect = Rect2(29, 0, 40, 29)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imway"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_57k73"]
@@ -61,10 +61,10 @@ region_rect = Rect2(18, 128, 66, 29)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkfpr"]
 draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_utvj4"]
@@ -81,10 +81,10 @@ region_rect = Rect2(0, 32, 96, 29)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jotn3"]
 draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fcjfu"]
@@ -101,50 +101,50 @@ region_rect = Rect2(32, 63, 34, 29)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0glb0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh8uh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1hbe"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ht0a5"]
 draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ly2o"]
 draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(1, 1, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjela"]
 draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
 border_color = Color(1, 1, 0, 1)
 
 [node name="Menu Principal" type="Control"]

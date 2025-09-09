@@ -4,7 +4,7 @@ var shake := false
 var shake_force := 5.0
 var paused
 var score = 0
-var nome = "YOU"
+var nome = "INF"
 var quebrado
 var contando
 
@@ -23,7 +23,7 @@ var map_size := Vector2(256, 240)
 
 var fireball_positions := [-400, -400, 673, 656]
 
-var time_max := 120
+var time_max := 0
 var time := time_max
 var tran := false
 

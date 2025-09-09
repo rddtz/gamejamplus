@@ -27,18 +27,18 @@ var letras_validas = 0
 
 func _process(delta: float) -> void:
 	
-	var nome = "%s%s%s" % [letras[i1], letras[i2], letras[i3]]
 	$CanvasLayer/Label.text = "%s  %s  %s" % [letras[i1], letras[i2], letras[i3]]
+	var nome = "%s%s%s" % [letras[i1], letras[i2], letras[i3]]
 
 	letras_validas = 0
 	for i in [i1, i2, i3]:
 		if letras[i] != "-":
 			letras_validas += 1
 
-	
+
 	if Input.is_action_just_pressed("enviar") && clicou && letras_validas == 3:
 		#$Jogar.grab_focus()
-		Global.nome = nome
+		Global.nome = "%s%s%s" % [letras[i1], letras[i2], letras[i3]]
 		clicou = true
 		AudioServer.set_bus_mute(menuTheme, true)
 		AudioServer.set_bus_volume_db(mainTheme, 0)
@@ -53,6 +53,8 @@ func _process(delta: float) -> void:
 
 func _on_jogar_pressed() -> void:
 	#get_tree().change_scene_to_file("res://scenes/main.tscn")
+	Global.nome = "%s%s%s" % [letras[i1], letras[i2], letras[i3]]
+	
 	if !clicou and letras_validas == 3: 
 		clicou = true
 		AudioServer.set_bus_mute(menuTheme, true)
