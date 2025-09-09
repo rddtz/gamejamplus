@@ -12,31 +12,6 @@ bg_color = Color(1, 1, 1, 1)
 layer = 0
 script = ExtResource("1_6sv8g")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 6.0
-offset_top = 52.0
-offset_right = 194.0
-offset_bottom = 131.0
-
-[node name="Highscore" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_xx4oj")
-theme_override_font_sizes/font_size = 35
-text = "HIGHSCORE"
-
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 5
-theme_override_styles/separator = SubResource("StyleBoxFlat_w6ax4")
-
-[node name="Score" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.787759, 0.787759, 0.787759, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("2_xx4oj")
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxEmpty_sh607")
-
 [node name="Timer" type="Label" parent="."]
 anchors_preset = -1
 anchor_left = 0.038
@@ -52,3 +27,29 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_xx4oj")
 theme_override_font_sizes/font_size = 33
 text = "TIMER"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 6.0
+offset_top = 24.0
+offset_right = 194.0
+offset_bottom = 131.0
+theme_override_constants/separation = 10
+
+[node name="Highscore" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_xx4oj")
+theme_override_font_sizes/font_size = 35
+text = "HIGHSCORE"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxFlat_w6ax4")
+
+[node name="Score" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.881937, 0.881937, 0.881937, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_xx4oj")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sh607")
