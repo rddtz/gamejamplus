@@ -90,5 +90,5 @@ mouse_filter = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_q3o8s")
+&"": SubResource("AnimationLibrary_q3o8s")
 }

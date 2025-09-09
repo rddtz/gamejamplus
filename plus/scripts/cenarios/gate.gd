@@ -12,7 +12,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if !open && Global.time <= 0:
+	if !open && Global.time <= -1:
 		sprite.play("open")
 		open = true
 

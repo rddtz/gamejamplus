@@ -32,6 +32,7 @@ func _process(delta: float) -> void:
 			our_index = i
 			
 			
+			
 	var highlight_color: Color = Color.YELLOW
 	var leaderboard_font = preload("res://assets/fonts/Pixellari.ttf")
 

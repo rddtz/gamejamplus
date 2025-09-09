@@ -77,8 +77,6 @@ func _on_timer_timeout() -> void:
 		if seconds > 18 and seconds % 3 == 0:
 			spawn_bomb()
 			
-		if seconds == 30 || seconds == 45 || seconds == 16:
-			qtd_fire += 1
-		
 		if seconds > 16:
+			qtd_fire = min(1 + int(seconds/15), 15) # 1
 			random_fireball(rng.randi_range(1, qtd_fire))
