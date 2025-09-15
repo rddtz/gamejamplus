@@ -4,7 +4,8 @@ var animando = 0
 var idle = 1
 var index = 0
 @onready var timer: Label = $Timer
-
+@onready var fps: Label = $FPS
+var fps_bool := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -68,6 +69,8 @@ func _process(delta: float) -> void:
 		$VBoxContainer.add_child(label)
 
 	sec_to_minutes()
+	
+	show_fps()
 
 func sec_to_minutes():
 	if Global.time >= 0:
@@ -77,3 +80,11 @@ func sec_to_minutes():
 		if int(sec) < 10:
 			sec = "0"+sec
 		timer.text = "TIMER\n"+ "0" + str(min) + ":" + sec
+
+func show_fps():
+	if Input.is_action_just_pressed("FPS"):
+		fps_bool = !fps_bool
+	if fps_bool:
+		fps.text = "FPS: " + str(Engine.get_frames_per_second())
+	else:
+		fps.text = ""

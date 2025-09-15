@@ -12,7 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("enviar") || Input.is_action_just_pressed("parry_block") && on_tran:
+	if (Input.is_action_just_pressed("enviar") || Input.is_action_just_pressed("parry_block")) && on_tran:
 		change_scene()
 		animation_player.stop()
 		on_tran = false

@@ -766,7 +766,7 @@ animation = &"null"
 
 [node name="AnimationShield" type="AnimationPlayer" parent="Escudo"]
 libraries = {
-"": SubResource("AnimationLibrary_yor26")
+&"": SubResource("AnimationLibrary_yor26")
 }
 
 [node name="Dano" type="Area2D" parent="."]
@@ -784,7 +784,7 @@ autoplay = "null"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_rj2tj")
+&"": SubResource("AnimationLibrary_rj2tj")
 }
 
 [node name="blockSound" type="AudioStreamPlayer2D" parent="."]
